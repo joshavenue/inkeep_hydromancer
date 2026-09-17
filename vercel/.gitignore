@@ -1,0 +1,5 @@
+/public/embed.js
+/.test-build-*
+/node_modules/
+/.vercel/
+.env*
