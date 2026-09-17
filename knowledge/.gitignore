@@ -1,0 +1,5 @@
+# Unique temporary builds and interrupted SQLite sidecars contain source bodies.
+*.building
+*.building-journal
+*.building-wal
+*.building-shm

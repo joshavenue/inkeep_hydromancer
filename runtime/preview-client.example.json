@@ -1,0 +1,9 @@
+{
+  "apiRoot": "http://127.0.0.1:18502",
+  "tenantId": "hydromancer-preview",
+  "projectId": "hydromancer-public",
+  "agentId": "hydromancer-assistant",
+  "appId": "",
+  "manageAppUrl": "",
+  "allowedDomains": ["127.0.0.1:18580", "localhost:18580"]
+}

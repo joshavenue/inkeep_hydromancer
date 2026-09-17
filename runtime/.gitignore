@@ -1,0 +1,11 @@
+# Per-runtime defense in depth; root ignores should also cover generated state.
+.env
+.env.*
+!.env.example
+node_modules/
+.build/
+manage-migrations/
+preview-client.json
+logs/
+.pnpm-store/
+.npm-cache/

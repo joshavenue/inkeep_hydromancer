@@ -1,0 +1,44 @@
+# Credentials and generated local configuration
+.env
+.env.*
+!.env.example
+**/*.env
+!**/*.env.example
+*.pem
+*.key
+runtime/preview-client.json
+runtime/anonymous-session.json
+frontend/state*.json
+lifecycle.json
+
+# Installed/generated dependencies and tooling
+**/node_modules/
+**/.venv/
+**/.pnpm-store/
+**/.npm-cache/
+**/__pycache__/
+**/.pytest_cache/
+**/.test-tmp/
+bin/
+upstream/
+tunnel-home/
+*.tgz
+
+# Private sessions, generated indexes, fetched snapshots and receipts
+**/logs/
+*.log
+*.pid
+*.sqlite
+*.sqlite-*
+*.db
+*.db-*
+knowledge/manifest.json
+knowledge/sources/
+knowledge/snapshots/
+knowledge/data/
+knowledge/*receipt.json
+knowledge/test-results.*
+runtime/manage-migrations/
+runtime/run-migrations/
+.verification/
+coverage/

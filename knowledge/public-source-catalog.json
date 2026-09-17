@@ -1,0 +1,2246 @@
+{
+  "format_version": 1,
+  "description": "Public source metadata only; original snapshot bodies are not redistributed. Hashes identify historical captured bytes, not current website responses.",
+  "sources": [
+    {
+      "id": "hydro-4",
+      "url": "https://docs.hydromancer.xyz/readme/rest-api/user-position-data.md",
+      "title": "User position data",
+      "provider": "hydromancer",
+      "section": "rest-a",
+      "snapshot_date": "2026-09-14",
+      "snapshot_date_basis": "source-corpus directory date; exact page capture time unavailable",
+      "sha256": "c8dda24877a3c364579d37b3797f6707452f79917364cc3d634da886b66a91f9"
+    },
+    {
+      "id": "hydro-5",
+      "url": "https://docs.hydromancer.xyz/readme/rest-api/user-position-data/clearinghousestate.md",
+      "title": "clearinghouseState",
+      "provider": "hydromancer",
+      "section": "rest-a",
+      "snapshot_date": "2026-09-14",
+      "snapshot_date_basis": "source-corpus directory date; exact page capture time unavailable",
+      "sha256": "8a073de7481384267abb81ec16d527a4a0f6dd4f48a983b5707168479fce3923"
+    },
+    {
+      "id": "hydro-6",
+      "url": "https://docs.hydromancer.xyz/readme/rest-api/user-position-data/batchclearinghousestates.md",
+      "title": "batchClearinghouseStates",
+      "provider": "hydromancer",
+      "section": "rest-a",
+      "snapshot_date": "2026-09-14",
+      "snapshot_date_basis": "source-corpus directory date; exact page capture time unavailable",
+      "sha256": "80a433171cb0658606ab31a499d1850090977614f474b67cfd619af0eac5ccb3"
+    },
+    {
+      "id": "hydro-7",
+      "url": "https://docs.hydromancer.xyz/readme/rest-api/user-position-data/portfoliostate.md",
+      "title": "portfolioState",
+      "provider": "hydromancer",
+      "section": "rest-a",
+      "snapshot_date": "2026-09-14",
+      "snapshot_date_basis": "source-corpus directory date; exact page capture time unavailable",
+      "sha256": "282f7e3a513b1ce7dad9b6dc3796fc50214415a4d6114c3f93eca32719398af7"
+    },
+    {
+      "id": "hydro-8",
+      "url": "https://docs.hydromancer.xyz/readme/rest-api/user-position-data/batchportfoliostates.md",
+      "title": "batchPortfolioStates",
+      "provider": "hydromancer",
+      "section": "rest-a",
+      "snapshot_date": "2026-09-14",
+      "snapshot_date_basis": "source-corpus directory date; exact page capture time unavailable",
+      "sha256": "a16e3dca5ec70826138340eb30d53f243996174810f067e60abf0168c0c29d7b"
+    },
+    {
+      "id": "hydro-9",
+      "url": "https://docs.hydromancer.xyz/readme/rest-api/user-position-data/activeassetdata.md",
+      "title": "activeAssetData",
+      "provider": "hydromancer",
+      "section": "rest-a",
+      "snapshot_date": "2026-09-14",
+      "snapshot_date_basis": "source-corpus directory date; exact page capture time unavailable",
+      "sha256": "624633f58084a1de7f6d1d683202017be274b1656ac638f9e387c42554840f05"
+    },
+    {
+      "id": "hydro-10",
+      "url": "https://docs.hydromancer.xyz/readme/rest-api/user-position-data/spotclearinghousestate.md",
+      "title": "spotclearinghouseState",
+      "provider": "hydromancer",
+      "section": "rest-a",
+      "snapshot_date": "2026-09-14",
+      "snapshot_date_basis": "source-corpus directory date; exact page capture time unavailable",
+      "sha256": "7ed51ca313ce73c19d38e398d57541c643f960354218226b973cb0e371b586fb"
+    },
+    {
+      "id": "hydro-11",
+      "url": "https://docs.hydromancer.xyz/readme/rest-api/user-position-data/userabstraction.md",
+      "title": "userAbstraction",
+      "provider": "hydromancer",
+      "section": "rest-a",
+      "snapshot_date": "2026-09-14",
+      "snapshot_date_basis": "source-corpus directory date; exact page capture time unavailable",
+      "sha256": "63ed14f59c914b24944a092ff5ffe5daf3ad3c8fd9346266ddfbbde91df4afa9"
+    },
+    {
+      "id": "hydro-12",
+      "url": "https://docs.hydromancer.xyz/readme/rest-api/user-position-data/userdexabstraction.md",
+      "title": "userDexAbstraction",
+      "provider": "hydromancer",
+      "section": "rest-a",
+      "snapshot_date": "2026-09-14",
+      "snapshot_date_basis": "source-corpus directory date; exact page capture time unavailable",
+      "sha256": "5c21d19b56a9d9fe22bc3686c3a175f8ae3f448d87ba4f032fa3f64f0fc26cfc"
+    },
+    {
+      "id": "hydro-13",
+      "url": "https://docs.hydromancer.xyz/readme/rest-api/user-position-data/webdata2.md",
+      "title": "webData2",
+      "provider": "hydromancer",
+      "section": "rest-a",
+      "snapshot_date": "2026-09-14",
+      "snapshot_date_basis": "source-corpus directory date; exact page capture time unavailable",
+      "sha256": "3b7f90a35de40c58acfa0352cf097e5bfe7e995238e48fc5df43d43fafd64fda"
+    },
+    {
+      "id": "hydro-14",
+      "url": "https://docs.hydromancer.xyz/readme/rest-api/asset-data.md",
+      "title": "Asset data",
+      "provider": "hydromancer",
+      "section": "rest-a",
+      "snapshot_date": "2026-09-14",
+      "snapshot_date_basis": "source-corpus directory date; exact page capture time unavailable",
+      "sha256": "c042fe95ffa295a0e6d5f18ff0e8a14d93a7af1414f27f7fd356d05737c135f0"
+    },
+    {
+      "id": "hydro-15",
+      "url": "https://docs.hydromancer.xyz/readme/rest-api/asset-data/assetcontext.md",
+      "title": "assetContext",
+      "provider": "hydromancer",
+      "section": "rest-a",
+      "snapshot_date": "2026-09-14",
+      "snapshot_date_basis": "source-corpus directory date; exact page capture time unavailable",
+      "sha256": "f2a3547a96e50b1c6b7fdefe7d946d6ddf981820a111c6e4809573bc47191383"
+    },
+    {
+      "id": "hydro-16",
+      "url": "https://docs.hydromancer.xyz/readme/rest-api/asset-data/oraclepricehistory.md",
+      "title": "oraclePriceHistory",
+      "provider": "hydromancer",
+      "section": "rest-a",
+      "snapshot_date": "2026-09-14",
+      "snapshot_date_basis": "source-corpus directory date; exact page capture time unavailable",
+      "sha256": "ae6477d16358ef625ded70b3ff5866c0dbbe48af3932ad27f3ac690d5bd7e62f"
+    },
+    {
+      "id": "hydro-17",
+      "url": "https://docs.hydromancer.xyz/readme/rest-api/asset-data/oraclepricehistorybytime.md",
+      "title": "oraclePriceHistoryByTime",
+      "provider": "hydromancer",
+      "section": "rest-a",
+      "snapshot_date": "2026-09-14",
+      "snapshot_date_basis": "source-corpus directory date; exact page capture time unavailable",
+      "sha256": "683c48ba16523bb6421ddd995dcd753fcd440e97daf9cc61826791b4d33b9ee4"
+    },
+    {
+      "id": "hydro-18",
+      "url": "https://docs.hydromancer.xyz/readme/rest-api/asset-data/perppricehistorybytime.md",
+      "title": "perpPriceHistoryByTime",
+      "provider": "hydromancer",
+      "section": "rest-a",
+      "snapshot_date": "2026-09-14",
+      "snapshot_date_basis": "source-corpus directory date; exact page capture time unavailable",
+      "sha256": "3427a70d9a4b9c690b6d44b0843500c9d28b53838aa506498754cd4ddfaee8b2"
+    },
+    {
+      "id": "hydro-19",
+      "url": "https://docs.hydromancer.xyz/readme/rest-api/asset-data/allmids.md",
+      "title": "allMids",
+      "provider": "hydromancer",
+      "section": "rest-a",
+      "snapshot_date": "2026-09-14",
+      "snapshot_date_basis": "source-corpus directory date; exact page capture time unavailable",
+      "sha256": "18bdc508efc847a75f61d5cbd0c4d7f72d9a6354805b9bd91c3dd03a932e50b5"
+    },
+    {
+      "id": "hydro-20",
+      "url": "https://docs.hydromancer.xyz/readme/rest-api/user-order-data.md",
+      "title": "User order data",
+      "provider": "hydromancer",
+      "section": "rest-a",
+      "snapshot_date": "2026-09-14",
+      "snapshot_date_basis": "source-corpus directory date; exact page capture time unavailable",
+      "sha256": "c9a449ecf407c86b4192854c5a4af49c627e06452a12af5177536b6568943fa5"
+    },
+    {
+      "id": "hydro-21",
+      "url": "https://docs.hydromancer.xyz/readme/rest-api/user-order-data/openorders.md",
+      "title": "openOrders",
+      "provider": "hydromancer",
+      "section": "rest-a",
+      "snapshot_date": "2026-09-14",
+      "snapshot_date_basis": "source-corpus directory date; exact page capture time unavailable",
+      "sha256": "d30fe10d2f5ead7861b578ea822cac91ee650d3b17ae7d1474c9d69822dab1bb"
+    },
+    {
+      "id": "hydro-22",
+      "url": "https://docs.hydromancer.xyz/readme/rest-api/user-order-data/frontendopenorders.md",
+      "title": "frontendOpenOrders",
+      "provider": "hydromancer",
+      "section": "rest-a",
+      "snapshot_date": "2026-09-14",
+      "snapshot_date_basis": "source-corpus directory date; exact page capture time unavailable",
+      "sha256": "1cb7078186345fc45c7fb0e1a4babebba04983dbd5cd280205becd56d0c31149"
+    },
+    {
+      "id": "hydro-23",
+      "url": "https://docs.hydromancer.xyz/readme/rest-api/historical-data.md",
+      "title": "Historical data",
+      "provider": "hydromancer",
+      "section": "rest-a",
+      "snapshot_date": "2026-09-14",
+      "snapshot_date_basis": "source-corpus directory date; exact page capture time unavailable",
+      "sha256": "1dc648e6a2a0e31ca422fe0187736a265b50922e949e11651d485e69ee577067"
+    },
+    {
+      "id": "hydro-24",
+      "url": "https://docs.hydromancer.xyz/readme/rest-api/historical-data/userfills.md",
+      "title": "userFills",
+      "provider": "hydromancer",
+      "section": "rest-a",
+      "snapshot_date": "2026-09-14",
+      "snapshot_date_basis": "source-corpus directory date; exact page capture time unavailable",
+      "sha256": "d4397f20d09e1fd67fe27195d5cb598a23ec1c06228aad2245b03f777161ac44"
+    },
+    {
+      "id": "hydro-25",
+      "url": "https://docs.hydromancer.xyz/readme/rest-api/historical-data/userfillsbytime.md",
+      "title": "userFillsByTime",
+      "provider": "hydromancer",
+      "section": "rest-a",
+      "snapshot_date": "2026-09-14",
+      "snapshot_date_basis": "source-corpus directory date; exact page capture time unavailable",
+      "sha256": "88dfd0460ae4dfefa94e607bfe4c50b1ce163fb4966abcec7b76f90e530ab339"
+    },
+    {
+      "id": "hydro-26",
+      "url": "https://docs.hydromancer.xyz/readme/rest-api/historical-data/usertwapslicefills.md",
+      "title": "userTwapSliceFills",
+      "provider": "hydromancer",
+      "section": "rest-a",
+      "snapshot_date": "2026-09-14",
+      "snapshot_date_basis": "source-corpus directory date; exact page capture time unavailable",
+      "sha256": "2443a61693fbaae8864839e9de202f2078a1c3a80d6afd9539f00efffc6a7947"
+    },
+    {
+      "id": "hydro-27",
+      "url": "https://docs.hydromancer.xyz/readme/rest-api/historical-data/usertwapsummaries.md",
+      "title": "userTwapSummaries",
+      "provider": "hydromancer",
+      "section": "rest-a",
+      "snapshot_date": "2026-09-14",
+      "snapshot_date_basis": "source-corpus directory date; exact page capture time unavailable",
+      "sha256": "cea2b59234afc2e5677204795c7f7f03e826dc6807550bee87b5c252f2e7a8fe"
+    },
+    {
+      "id": "hydro-28",
+      "url": "https://docs.hydromancer.xyz/readme/rest-api/historical-data/usertwapstatusesbytime.md",
+      "title": "userTwapStatusesByTime",
+      "provider": "hydromancer",
+      "section": "rest-a",
+      "snapshot_date": "2026-09-14",
+      "snapshot_date_basis": "source-corpus directory date; exact page capture time unavailable",
+      "sha256": "267c8ce53e9ff7ce3f5f8d87af1908c935919843ab4acf98888107607dcdea96"
+    },
+    {
+      "id": "hydro-29",
+      "url": "https://docs.hydromancer.xyz/readme/rest-api/historical-data/builderfills.md",
+      "title": "builderFills",
+      "provider": "hydromancer",
+      "section": "rest-a",
+      "snapshot_date": "2026-09-14",
+      "snapshot_date_basis": "source-corpus directory date; exact page capture time unavailable",
+      "sha256": "b48b78aa97f8da90af432300661bb5239ae82ccb1c3f9279a6e89c5ff4a4946e"
+    },
+    {
+      "id": "hydro-30",
+      "url": "https://docs.hydromancer.xyz/readme/rest-api/historical-data/builderfillsbytime.md",
+      "title": "builderFillsByTime",
+      "provider": "hydromancer",
+      "section": "rest-a",
+      "snapshot_date": "2026-09-14",
+      "snapshot_date_basis": "source-corpus directory date; exact page capture time unavailable",
+      "sha256": "be13f547205bc42411e45a560ce4bb07c4c4a79e6aba926bc3b69737186feed8"
+    },
+    {
+      "id": "hydro-31",
+      "url": "https://docs.hydromancer.xyz/readme/rest-api/historical-data/builderapprovedfillsbytime.md",
+      "title": "builderApprovedFillsByTime",
+      "provider": "hydromancer",
+      "section": "rest-a",
+      "snapshot_date": "2026-09-14",
+      "snapshot_date_basis": "source-corpus directory date; exact page capture time unavailable",
+      "sha256": "baf65eff884517ceb93b60b2a6bbdb5097de8381d640cd7e130570bf0fd3c746"
+    },
+    {
+      "id": "hydro-32",
+      "url": "https://docs.hydromancer.xyz/readme/rest-api/historical-data/builderapprovedfundingbytime.md",
+      "title": "builderApprovedFundingByTime",
+      "provider": "hydromancer",
+      "section": "rest-a",
+      "snapshot_date": "2026-09-14",
+      "snapshot_date_basis": "source-corpus directory date; exact page capture time unavailable",
+      "sha256": "bde288c9c306243683257e7138f3574f0963e33aab8c6a15f2108bf754d23079"
+    },
+    {
+      "id": "hydro-33",
+      "url": "https://docs.hydromancer.xyz/readme/rest-api/historical-data/builderapprovednonfundingledgerupdatesbytime.md",
+      "title": "builderApprovedNonFundingLedgerUpdatesByTime",
+      "provider": "hydromancer",
+      "section": "rest-a",
+      "snapshot_date": "2026-09-14",
+      "snapshot_date_basis": "source-corpus directory date; exact page capture time unavailable",
+      "sha256": "421ad1cd689cad231fe3a68e5669e1818066d32242ffd58151966b13e7d64ec6"
+    },
+    {
+      "id": "hydro-34",
+      "url": "https://docs.hydromancer.xyz/readme/rest-api/historical-data/userfunding.md",
+      "title": "userFunding",
+      "provider": "hydromancer",
+      "section": "rest-a",
+      "snapshot_date": "2026-09-14",
+      "snapshot_date_basis": "source-corpus directory date; exact page capture time unavailable",
+      "sha256": "c2fca379361d5123f7ea41b0651a480dfb87876de9a8a59a962f6f20bd807d1c"
+    },
+    {
+      "id": "hydro-35",
+      "url": "https://docs.hydromancer.xyz/readme/rest-api/historical-data/fundinghistory.md",
+      "title": "fundingHistory",
+      "provider": "hydromancer",
+      "section": "rest-a",
+      "snapshot_date": "2026-09-14",
+      "snapshot_date_basis": "source-corpus directory date; exact page capture time unavailable",
+      "sha256": "782550fc8ca9a6c5e3366e8c46ab48ba9370a6b8f541207cc662b72807f1b495"
+    },
+    {
+      "id": "hydro-36",
+      "url": "https://docs.hydromancer.xyz/readme/rest-api/historical-data/liquidationhistorybytime.md",
+      "title": "liquidationHistoryByTime",
+      "provider": "hydromancer",
+      "section": "rest-a",
+      "snapshot_date": "2026-09-14",
+      "snapshot_date_basis": "source-corpus directory date; exact page capture time unavailable",
+      "sha256": "72e22cefdeb247090f8fd1e3ba3be2d7889e6249dbd3524575480c07aaf50b20"
+    },
+    {
+      "id": "hydro-37",
+      "url": "https://docs.hydromancer.xyz/readme/rest-api/historical-data/usernonfundingledgerupdates.md",
+      "title": "userNonFundingLedgerUpdates",
+      "provider": "hydromancer",
+      "section": "rest-a",
+      "snapshot_date": "2026-09-14",
+      "snapshot_date_basis": "source-corpus directory date; exact page capture time unavailable",
+      "sha256": "25bd648d2d77a5857e30ff70465aa9aaff35dcddc461a71367ddbfd896f622f3"
+    },
+    {
+      "id": "hydro-38",
+      "url": "https://docs.hydromancer.xyz/readme/rest-api/historical-data/historicalorders.md",
+      "title": "historicalOrders",
+      "provider": "hydromancer",
+      "section": "rest-a",
+      "snapshot_date": "2026-09-14",
+      "snapshot_date_basis": "source-corpus directory date; exact page capture time unavailable",
+      "sha256": "7c0ccb08f61e47aa1d76028aa4960f4f4cf6bb74986541b07be36e53894a287d"
+    },
+    {
+      "id": "hydro-39",
+      "url": "https://docs.hydromancer.xyz/readme/rest-api/historical-data/orderstatusbyoid.md",
+      "title": "orderStatusByOid",
+      "provider": "hydromancer",
+      "section": "rest-a",
+      "snapshot_date": "2026-09-14",
+      "snapshot_date_basis": "source-corpus directory date; exact page capture time unavailable",
+      "sha256": "22a27e70698a68fbcbf05504e177a2bffcd97d2d1016c6f4170ad779613e971a"
+    },
+    {
+      "id": "hydro-40",
+      "url": "https://docs.hydromancer.xyz/readme/rest-api/historical-data/builderordersbytime.md",
+      "title": "builderOrdersByTime",
+      "provider": "hydromancer",
+      "section": "rest-a",
+      "snapshot_date": "2026-09-14",
+      "snapshot_date_basis": "source-corpus directory date; exact page capture time unavailable",
+      "sha256": "b81757b9ce29640fe05c66a36d7d6d90d600a58c9e5f63e16e9d425a42e4208a"
+    },
+    {
+      "id": "hydro-41",
+      "url": "https://docs.hydromancer.xyz/readme/rest-api/historical-data/userleverageupdatesbytime.md",
+      "title": "userLeverageUpdatesByTime",
+      "provider": "hydromancer",
+      "section": "rest-a",
+      "snapshot_date": "2026-09-14",
+      "snapshot_date_basis": "source-corpus directory date; exact page capture time unavailable",
+      "sha256": "3b10018e0e315f5e103211813b21920f7316907b6269647b43968ff33dfadd2b"
+    },
+    {
+      "id": "hydro-42",
+      "url": "https://docs.hydromancer.xyz/readme/rest-api/historical-data/userisolatedmarginupdatesbytime.md",
+      "title": "userIsolatedMarginUpdatesByTime",
+      "provider": "hydromancer",
+      "section": "rest-a",
+      "snapshot_date": "2026-09-14",
+      "snapshot_date_basis": "source-corpus directory date; exact page capture time unavailable",
+      "sha256": "9f1fe323a48c24becc8470449a24466101d29b64b05bfe6b4535076b412f3b70"
+    },
+    {
+      "id": "hydro-43",
+      "url": "https://docs.hydromancer.xyz/readme/rest-api/user-performance.md",
+      "title": "User performance",
+      "provider": "hydromancer",
+      "section": "rest-a",
+      "snapshot_date": "2026-09-14",
+      "snapshot_date_basis": "source-corpus directory date; exact page capture time unavailable",
+      "sha256": "8633823a3ddbb7324dbf52d0272fbf118775aa5deb805fbf967aa560c853327b"
+    },
+    {
+      "id": "hydro-44",
+      "url": "https://docs.hydromancer.xyz/readme/rest-api/user-performance/userpnlsummary.md",
+      "title": "userPnlSummary",
+      "provider": "hydromancer",
+      "section": "rest-a",
+      "snapshot_date": "2026-09-14",
+      "snapshot_date_basis": "source-corpus directory date; exact page capture time unavailable",
+      "sha256": "6bd8d8a379b12f507878b3fae020316ca12d41b750ac89af34b58f4572832290"
+    },
+    {
+      "id": "hydro-45",
+      "url": "https://docs.hydromancer.xyz/readme/rest-api/user-performance/userpnlleaderboard.md",
+      "title": "userPnlLeaderboard",
+      "provider": "hydromancer",
+      "section": "rest-a",
+      "snapshot_date": "2026-09-14",
+      "snapshot_date_basis": "source-corpus directory date; exact page capture time unavailable",
+      "sha256": "818eab8031b4636e7c6268efe7b41547faa7e278f0c4113e4870f16ab38e7c5a"
+    },
+    {
+      "id": "hydro-46",
+      "url": "https://docs.hydromancer.xyz/readme/rest-api/user-performance/usercompletedtrades.md",
+      "title": "userCompletedTrades",
+      "provider": "hydromancer",
+      "section": "rest-a",
+      "snapshot_date": "2026-09-14",
+      "snapshot_date_basis": "source-corpus directory date; exact page capture time unavailable",
+      "sha256": "79692eadcd3c99b95c8ed0f4ce3b87d23c915a70feae838d496379bb43aad9a7"
+    },
+    {
+      "id": "hydro-47",
+      "url": "https://docs.hydromancer.xyz/readme/rest-api/user-performance/usercompletedtradesbytime.md",
+      "title": "userCompletedTradesByTime",
+      "provider": "hydromancer",
+      "section": "rest-a",
+      "snapshot_date": "2026-09-14",
+      "snapshot_date_basis": "source-corpus directory date; exact page capture time unavailable",
+      "sha256": "31038e75a3d467b5cad73479f7e0cb2a48dbff03249a4c33e3baa39d68b4bba3"
+    },
+    {
+      "id": "hydro-48",
+      "url": "https://docs.hydromancer.xyz/readme/rest-api/outcomes.md",
+      "title": "Outcomes",
+      "provider": "hydromancer",
+      "section": "rest-b",
+      "snapshot_date": "2026-09-14",
+      "snapshot_date_basis": "source-corpus directory date; exact page capture time unavailable",
+      "sha256": "5d7af07b359028ff304433728bffcf6703415faa080d88025751ecb4651cbfff"
+    },
+    {
+      "id": "hydro-49",
+      "url": "https://docs.hydromancer.xyz/readme/rest-api/outcomes/outcomemeta.md",
+      "title": "outcomeMeta",
+      "provider": "hydromancer",
+      "section": "rest-b",
+      "snapshot_date": "2026-09-14",
+      "snapshot_date_basis": "source-corpus directory date; exact page capture time unavailable",
+      "sha256": "96c184e984c5c32a55e52002874a782d99116595cb7b2d7eac87910c3051343e"
+    },
+    {
+      "id": "hydro-50",
+      "url": "https://docs.hydromancer.xyz/readme/rest-api/outcomes/settledoutcome.md",
+      "title": "settledOutcome",
+      "provider": "hydromancer",
+      "section": "rest-b",
+      "snapshot_date": "2026-09-14",
+      "snapshot_date_basis": "source-corpus directory date; exact page capture time unavailable",
+      "sha256": "d758f495eb9a98a526e19f37a08025584b32f29614a43e326bc0208cf5e9bdfa"
+    },
+    {
+      "id": "hydro-51",
+      "url": "https://docs.hydromancer.xyz/readme/rest-api/outcomes/settledoutcomesbyid.md",
+      "title": "settledOutcomesById",
+      "provider": "hydromancer",
+      "section": "rest-b",
+      "snapshot_date": "2026-09-14",
+      "snapshot_date_basis": "source-corpus directory date; exact page capture time unavailable",
+      "sha256": "8055fa3f3210204ef080098358d325939cd8a17f4c5fbb6a880117640c64b986"
+    },
+    {
+      "id": "hydro-52",
+      "url": "https://docs.hydromancer.xyz/readme/rest-api/outcomes/settledoutcomes.md",
+      "title": "settledOutcomes",
+      "provider": "hydromancer",
+      "section": "rest-b",
+      "snapshot_date": "2026-09-14",
+      "snapshot_date_basis": "source-corpus directory date; exact page capture time unavailable",
+      "sha256": "0f7d15b57ba939edf073fc94f576c2c603c93569a0dfa8f83cfd8772623c2d07"
+    },
+    {
+      "id": "hydro-53",
+      "url": "https://docs.hydromancer.xyz/readme/rest-api/outcomes/registeredoutcomesbyid.md",
+      "title": "registeredOutcomesById",
+      "provider": "hydromancer",
+      "section": "rest-b",
+      "snapshot_date": "2026-09-14",
+      "snapshot_date_basis": "source-corpus directory date; exact page capture time unavailable",
+      "sha256": "6015711652337c383f475bf999254b97853c64e21ae2d1bcec962346b665cd73"
+    },
+    {
+      "id": "hydro-54",
+      "url": "https://docs.hydromancer.xyz/readme/rest-api/outcomes/registeredoutcomes.md",
+      "title": "registeredOutcomes",
+      "provider": "hydromancer",
+      "section": "rest-b",
+      "snapshot_date": "2026-09-14",
+      "snapshot_date_basis": "source-corpus directory date; exact page capture time unavailable",
+      "sha256": "e28696b4197c39d823043c0f24af5f72d08d03aec5e7d45a45a1168e0dba765d"
+    },
+    {
+      "id": "hydro-55",
+      "url": "https://docs.hydromancer.xyz/readme/rest-api/outcomes/registeredoutcomessnapshot.md",
+      "title": "registeredOutcomesSnapshot",
+      "provider": "hydromancer",
+      "section": "rest-b",
+      "snapshot_date": "2026-09-14",
+      "snapshot_date_basis": "source-corpus directory date; exact page capture time unavailable",
+      "sha256": "1603baa8b3ed53de5bc37900899b2d6b90d3e9d3f1fa7e6c0f6c89f33d76e775"
+    },
+    {
+      "id": "hydro-56",
+      "url": "https://docs.hydromancer.xyz/readme/rest-api/outcomes/outcometemplatesoverview.md",
+      "title": "outcomeTemplatesOverview",
+      "provider": "hydromancer",
+      "section": "rest-b",
+      "snapshot_date": "2026-09-14",
+      "snapshot_date_basis": "source-corpus directory date; exact page capture time unavailable",
+      "sha256": "01cf0823b681c742d58f982aa9141f824917d8a210f19652902eb32f90401821"
+    },
+    {
+      "id": "hydro-57",
+      "url": "https://docs.hydromancer.xyz/readme/rest-api/outcomes/outcomevenuesoverview.md",
+      "title": "outcomeVenuesOverview",
+      "provider": "hydromancer",
+      "section": "rest-b",
+      "snapshot_date": "2026-09-14",
+      "snapshot_date_basis": "source-corpus directory date; exact page capture time unavailable",
+      "sha256": "f3e46da805e60c3613775b5549b5f9a59376bb2eda78383a26dfd17286073b70"
+    },
+    {
+      "id": "hydro-58",
+      "url": "https://docs.hydromancer.xyz/readme/rest-api/vaults.md",
+      "title": "Vaults",
+      "provider": "hydromancer",
+      "section": "rest-b",
+      "snapshot_date": "2026-09-14",
+      "snapshot_date_basis": "source-corpus directory date; exact page capture time unavailable",
+      "sha256": "9334ab217d5cbc746311c715dcfe9e0f56f35832f2ba3e75ca9130be0ec5b99c"
+    },
+    {
+      "id": "hydro-59",
+      "url": "https://docs.hydromancer.xyz/readme/rest-api/vaults/vaultsummaries.md",
+      "title": "vaultSummaries",
+      "provider": "hydromancer",
+      "section": "rest-b",
+      "snapshot_date": "2026-09-14",
+      "snapshot_date_basis": "source-corpus directory date; exact page capture time unavailable",
+      "sha256": "d79050f1603ea5c274360fc7d73fe011a2d83dbbad4fea929b64a6144072f3dd"
+    },
+    {
+      "id": "hydro-60",
+      "url": "https://docs.hydromancer.xyz/readme/rest-api/vaults/uservaultequities.md",
+      "title": "userVaultEquities",
+      "provider": "hydromancer",
+      "section": "rest-b",
+      "snapshot_date": "2026-09-14",
+      "snapshot_date_basis": "source-corpus directory date; exact page capture time unavailable",
+      "sha256": "f2bedb1d1e1edbe684f805aef843bf0c5f47aaefd261ccbdc3d67059027f25fd"
+    },
+    {
+      "id": "hydro-61",
+      "url": "https://docs.hydromancer.xyz/readme/rest-api/vaults/leadingvaults.md",
+      "title": "leadingVaults",
+      "provider": "hydromancer",
+      "section": "rest-b",
+      "snapshot_date": "2026-09-14",
+      "snapshot_date_basis": "source-corpus directory date; exact page capture time unavailable",
+      "sha256": "22ce1dde0ec03ad029c4c4b370d7203fd0a64f1088e61e779ad4bdb6476db329"
+    },
+    {
+      "id": "hydro-62",
+      "url": "https://docs.hydromancer.xyz/readme/rest-api/roles-and-agents.md",
+      "title": "Roles and agents",
+      "provider": "hydromancer",
+      "section": "rest-b",
+      "snapshot_date": "2026-09-14",
+      "snapshot_date_basis": "source-corpus directory date; exact page capture time unavailable",
+      "sha256": "3d092c2ce81eaf415cf553045aba32ce589dd3687693f5df367572aca43f5ab4"
+    },
+    {
+      "id": "hydro-63",
+      "url": "https://docs.hydromancer.xyz/readme/rest-api/roles-and-agents/userrole.md",
+      "title": "userRole",
+      "provider": "hydromancer",
+      "section": "rest-b",
+      "snapshot_date": "2026-09-14",
+      "snapshot_date_basis": "source-corpus directory date; exact page capture time unavailable",
+      "sha256": "057a332f2515b39976f44d9a4a27f69f1f1e02298da6eee826dc2bbddd542642"
+    },
+    {
+      "id": "hydro-64",
+      "url": "https://docs.hydromancer.xyz/readme/rest-api/roles-and-agents/extraagents.md",
+      "title": "extraAgents",
+      "provider": "hydromancer",
+      "section": "rest-b",
+      "snapshot_date": "2026-09-14",
+      "snapshot_date_basis": "source-corpus directory date; exact page capture time unavailable",
+      "sha256": "7a610e347bc9ae712991b977aacd4386fd769dc6b4e004449ca4b6c1444e4a1b"
+    },
+    {
+      "id": "hydro-65",
+      "url": "https://docs.hydromancer.xyz/readme/rest-api/roles-and-agents/multisigsbysigner.md",
+      "title": "multisigsBySigner",
+      "provider": "hydromancer",
+      "section": "rest-b",
+      "snapshot_date": "2026-09-14",
+      "snapshot_date_basis": "source-corpus directory date; exact page capture time unavailable",
+      "sha256": "3736d6867a8ba21c606dcd2344b8f45eae35da3ce9b0cfaec1f782068320e4e6"
+    },
+    {
+      "id": "hydro-66",
+      "url": "https://docs.hydromancer.xyz/readme/rest-api/roles-and-agents/approvedbuilders.md",
+      "title": "approvedBuilders",
+      "provider": "hydromancer",
+      "section": "rest-b",
+      "snapshot_date": "2026-09-14",
+      "snapshot_date_basis": "source-corpus directory date; exact page capture time unavailable",
+      "sha256": "71c6c9c7b6be0229628873f6eb6e2d195757ce3b1f432698c11040dc2c6412f1"
+    },
+    {
+      "id": "hydro-67",
+      "url": "https://docs.hydromancer.xyz/readme/rest-api/metadata.md",
+      "title": "Metadata",
+      "provider": "hydromancer",
+      "section": "rest-b",
+      "snapshot_date": "2026-09-14",
+      "snapshot_date_basis": "source-corpus directory date; exact page capture time unavailable",
+      "sha256": "15b48e2950d1c47494c077908060d55cb595250e93a51a35d5b5641a497885a4"
+    },
+    {
+      "id": "hydro-68",
+      "url": "https://docs.hydromancer.xyz/readme/rest-api/metadata/meta.md",
+      "title": "meta",
+      "provider": "hydromancer",
+      "section": "rest-b",
+      "snapshot_date": "2026-09-14",
+      "snapshot_date_basis": "source-corpus directory date; exact page capture time unavailable",
+      "sha256": "d9ff2e1fef1e71b06df3f8640b1fd2e45ed1089bd83daf47d6fd19d43ce6369d"
+    },
+    {
+      "id": "hydro-69",
+      "url": "https://docs.hydromancer.xyz/readme/rest-api/metadata/metaandassetctxs.md",
+      "title": "metaAndAssetCtxs",
+      "provider": "hydromancer",
+      "section": "rest-b",
+      "snapshot_date": "2026-09-14",
+      "snapshot_date_basis": "source-corpus directory date; exact page capture time unavailable",
+      "sha256": "42bc0861608060771dcf48973cf81d12f99834c7949e13050137b8de9c0fded7"
+    },
+    {
+      "id": "hydro-70",
+      "url": "https://docs.hydromancer.xyz/readme/rest-api/metadata/spotmeta.md",
+      "title": "spotMeta",
+      "provider": "hydromancer",
+      "section": "rest-b",
+      "snapshot_date": "2026-09-14",
+      "snapshot_date_basis": "source-corpus directory date; exact page capture time unavailable",
+      "sha256": "2ae43951803ca5f727a53a2a181830f5d85678e2e1c286f097ca55cd69a801c5"
+    },
+    {
+      "id": "hydro-71",
+      "url": "https://docs.hydromancer.xyz/readme/rest-api/metadata/margintable.md",
+      "title": "marginTable",
+      "provider": "hydromancer",
+      "section": "rest-b",
+      "snapshot_date": "2026-09-14",
+      "snapshot_date_basis": "source-corpus directory date; exact page capture time unavailable",
+      "sha256": "56a2a751c40dd67bbbefd6e4c7d28d5a74d8de419c3ebe3f94b3d6a2eb73a437"
+    },
+    {
+      "id": "hydro-72",
+      "url": "https://docs.hydromancer.xyz/readme/rest-api/metadata/perpdexs.md",
+      "title": "perpDexs",
+      "provider": "hydromancer",
+      "section": "rest-b",
+      "snapshot_date": "2026-09-14",
+      "snapshot_date_basis": "source-corpus directory date; exact page capture time unavailable",
+      "sha256": "2e974d6581326d4b5bb1fb76b5c2bebdb1dc11d3eb8dc52ca967075bf85912cc"
+    },
+    {
+      "id": "hydro-73",
+      "url": "https://docs.hydromancer.xyz/readme/rest-api/metadata/allperpmetas.md",
+      "title": "allPerpMetas",
+      "provider": "hydromancer",
+      "section": "rest-b",
+      "snapshot_date": "2026-09-14",
+      "snapshot_date_basis": "source-corpus directory date; exact page capture time unavailable",
+      "sha256": "536095e6ca3e1235c6fb62c06f605e54dbcf0c46644836c76c398b9532b99bce"
+    },
+    {
+      "id": "hydro-74",
+      "url": "https://docs.hydromancer.xyz/readme/rest-api/metadata/perpannotation.md",
+      "title": "perpAnnotation",
+      "provider": "hydromancer",
+      "section": "rest-b",
+      "snapshot_date": "2026-09-14",
+      "snapshot_date_basis": "source-corpus directory date; exact page capture time unavailable",
+      "sha256": "7a6b8600a4e810e1dcf215d385470ea050db7f82c89676eb74eebe69455e5aed"
+    },
+    {
+      "id": "hydro-75",
+      "url": "https://docs.hydromancer.xyz/readme/rest-api/metadata/batchperpannotations.md",
+      "title": "batchPerpAnnotations",
+      "provider": "hydromancer",
+      "section": "rest-b",
+      "snapshot_date": "2026-09-14",
+      "snapshot_date_basis": "source-corpus directory date; exact page capture time unavailable",
+      "sha256": "ff1eec922a95bca4f4c51bb09fc654d56fa7e2b02da87d3651ac712f30ea3abf"
+    },
+    {
+      "id": "hydro-76",
+      "url": "https://docs.hydromancer.xyz/readme/rest-api/metadata/perpcategories.md",
+      "title": "perpCategories",
+      "provider": "hydromancer",
+      "section": "rest-b",
+      "snapshot_date": "2026-09-14",
+      "snapshot_date_basis": "source-corpus directory date; exact page capture time unavailable",
+      "sha256": "bf3ada7311d3f8a523d6963639d87188234d86486f354e5183205c5629e4807e"
+    },
+    {
+      "id": "hydro-77",
+      "url": "https://docs.hydromancer.xyz/readme/rest-api/metadata/perpconciseannotations.md",
+      "title": "perpConciseAnnotations",
+      "provider": "hydromancer",
+      "section": "rest-b",
+      "snapshot_date": "2026-09-14",
+      "snapshot_date_basis": "source-corpus directory date; exact page capture time unavailable",
+      "sha256": "3340621dd4d0e7d610e2a9661c2193ae4d670b3c607a5677086cd5ab7e721181"
+    },
+    {
+      "id": "hydro-78",
+      "url": "https://docs.hydromancer.xyz/readme/rest-api/metadata/perpdexstatus.md",
+      "title": "perpDexStatus",
+      "provider": "hydromancer",
+      "section": "rest-b",
+      "snapshot_date": "2026-09-14",
+      "snapshot_date_basis": "source-corpus directory date; exact page capture time unavailable",
+      "sha256": "9902d563405e5f4d14b77885f777ddeaa1037308833c376e53c121ffcca98fd3"
+    },
+    {
+      "id": "hydro-79",
+      "url": "https://docs.hydromancer.xyz/readme/rest-api/metadata/perpdexlimits.md",
+      "title": "perpDexLimits",
+      "provider": "hydromancer",
+      "section": "rest-b",
+      "snapshot_date": "2026-09-14",
+      "snapshot_date_basis": "source-corpus directory date; exact page capture time unavailable",
+      "sha256": "baa9c4b3d485814956b28a287583e7144096b35afdf2a3dfbe428567e8d7b40d"
+    },
+    {
+      "id": "hydro-80",
+      "url": "https://docs.hydromancer.xyz/readme/rest-api/metadata/alignedquotetokeninfo.md",
+      "title": "alignedQuoteTokenInfo",
+      "provider": "hydromancer",
+      "section": "rest-b",
+      "snapshot_date": "2026-09-14",
+      "snapshot_date_basis": "source-corpus directory date; exact page capture time unavailable",
+      "sha256": "e3c432e90b89752977783059ec326d1df76f335f1ad5544f227bd091e63c066f"
+    },
+    {
+      "id": "hydro-81",
+      "url": "https://docs.hydromancer.xyz/readme/rest-api/metadata/exchangestatus.md",
+      "title": "exchangeStatus",
+      "provider": "hydromancer",
+      "section": "rest-b",
+      "snapshot_date": "2026-09-14",
+      "snapshot_date_basis": "source-corpus directory date; exact page capture time unavailable",
+      "sha256": "c517b00dcf21819d8598c3397f53e60de04cc31be6d0b044eb1fc1bbfe3e8304"
+    },
+    {
+      "id": "hydro-82",
+      "url": "https://docs.hydromancer.xyz/readme/rest-api/token-deployment.md",
+      "title": "Token deployment",
+      "provider": "hydromancer",
+      "section": "rest-b",
+      "snapshot_date": "2026-09-14",
+      "snapshot_date_basis": "source-corpus directory date; exact page capture time unavailable",
+      "sha256": "22c79171d28e0d74ac955fbd70b8c569f4393172fcca2e96baca1876832e46c4"
+    },
+    {
+      "id": "hydro-83",
+      "url": "https://docs.hydromancer.xyz/readme/rest-api/token-deployment/spotdeploystate.md",
+      "title": "spotDeployState",
+      "provider": "hydromancer",
+      "section": "rest-b",
+      "snapshot_date": "2026-09-14",
+      "snapshot_date_basis": "source-corpus directory date; exact page capture time unavailable",
+      "sha256": "d0738873cbdc64de67ceeda0b0bdf3c4299f1f66a8d78f2a55479d725bb28c64"
+    },
+    {
+      "id": "hydro-84",
+      "url": "https://docs.hydromancer.xyz/readme/rest-api/token-deployment/perpdeployauctionstatus.md",
+      "title": "perpDeployAuctionStatus",
+      "provider": "hydromancer",
+      "section": "rest-b",
+      "snapshot_date": "2026-09-14",
+      "snapshot_date_basis": "source-corpus directory date; exact page capture time unavailable",
+      "sha256": "803172726f9c28be1cf830e2a6eb7ddbe6af0b6fb682075abb086d0131e06321"
+    },
+    {
+      "id": "hydro-85",
+      "url": "https://docs.hydromancer.xyz/readme/rest-api/token-deployment/spotpairdeployauctionstatus.md",
+      "title": "spotPairDeployAuctionStatus",
+      "provider": "hydromancer",
+      "section": "rest-b",
+      "snapshot_date": "2026-09-14",
+      "snapshot_date_basis": "source-corpus directory date; exact page capture time unavailable",
+      "sha256": "fc86b5cb277a20acd7462280770556c8d56227b60d6216f7bb9a544287d0fc62"
+    },
+    {
+      "id": "hydro-86",
+      "url": "https://docs.hydromancer.xyz/readme/rest-api/borrow-lend.md",
+      "title": "Borrow / Lend",
+      "provider": "hydromancer",
+      "section": "rest-b",
+      "snapshot_date": "2026-09-14",
+      "snapshot_date_basis": "source-corpus directory date; exact page capture time unavailable",
+      "sha256": "a55f83de06531814be9b8015be2a030f5a0e34d1b6ad56688c637f24f849835c"
+    },
+    {
+      "id": "hydro-87",
+      "url": "https://docs.hydromancer.xyz/readme/rest-api/borrow-lend/allborrowlendreservestates.md",
+      "title": "allBorrowLendReserveStates",
+      "provider": "hydromancer",
+      "section": "rest-b",
+      "snapshot_date": "2026-09-14",
+      "snapshot_date_basis": "source-corpus directory date; exact page capture time unavailable",
+      "sha256": "0ab829cf983c5b6b4f43c05b08e24bcbb2592760fefcff2f5ba0023eec20f680"
+    },
+    {
+      "id": "hydro-88",
+      "url": "https://docs.hydromancer.xyz/readme/rest-api/borrow-lend/borrowlendreservestate.md",
+      "title": "borrowLendReserveState",
+      "provider": "hydromancer",
+      "section": "rest-b",
+      "snapshot_date": "2026-09-14",
+      "snapshot_date_basis": "source-corpus directory date; exact page capture time unavailable",
+      "sha256": "811751ce1afa0b0473267126543cdc228709d123fefe1e450fd05a9c904ecef8"
+    },
+    {
+      "id": "hydro-89",
+      "url": "https://docs.hydromancer.xyz/readme/rest-api/borrow-lend/borrowlenduserstate.md",
+      "title": "borrowLendUserState",
+      "provider": "hydromancer",
+      "section": "rest-b",
+      "snapshot_date": "2026-09-14",
+      "snapshot_date_basis": "source-corpus directory date; exact page capture time unavailable",
+      "sha256": "4743a67892aa1a5d7c129f99195cd69789c4e478a3133b00e621001d1495e3bc"
+    },
+    {
+      "id": "hydro-90",
+      "url": "https://docs.hydromancer.xyz/readme/rest-api/staking.md",
+      "title": "Staking",
+      "provider": "hydromancer",
+      "section": "rest-b",
+      "snapshot_date": "2026-09-14",
+      "snapshot_date_basis": "source-corpus directory date; exact page capture time unavailable",
+      "sha256": "27d0b4c32d967558f345ccb3345e7081da2120a2369892a6552ebc3d9bc62d3b"
+    },
+    {
+      "id": "hydro-91",
+      "url": "https://docs.hydromancer.xyz/readme/rest-api/staking/stakingoverview.md",
+      "title": "stakingOverview",
+      "provider": "hydromancer",
+      "section": "rest-b",
+      "snapshot_date": "2026-09-14",
+      "snapshot_date_basis": "source-corpus directory date; exact page capture time unavailable",
+      "sha256": "16e67ec11b28197ce342d3ef808acb0a4d9b2d3bf0b7bfc081a72820d7ff80d9"
+    },
+    {
+      "id": "hydro-92",
+      "url": "https://docs.hydromancer.xyz/readme/rest-api/staking/stakingvalidatorstakers.md",
+      "title": "stakingValidatorStakers",
+      "provider": "hydromancer",
+      "section": "rest-b",
+      "snapshot_date": "2026-09-14",
+      "snapshot_date_basis": "source-corpus directory date; exact page capture time unavailable",
+      "sha256": "9ea65891f7cef0eab23b4781ad7eef68c5b2700aea9a4facd1c35a4b90764579"
+    },
+    {
+      "id": "hydro-93",
+      "url": "https://docs.hydromancer.xyz/readme/rest-api/staking/validatoraprhistory.md",
+      "title": "validatorAprHistory",
+      "provider": "hydromancer",
+      "section": "rest-b",
+      "snapshot_date": "2026-09-14",
+      "snapshot_date_basis": "source-corpus directory date; exact page capture time unavailable",
+      "sha256": "aec9f2d018065eff1aee56c4277ff4827689a8b9ab8473d56acd3d271235a407"
+    },
+    {
+      "id": "hydro-94",
+      "url": "https://docs.hydromancer.xyz/readme/rest-api/staking/stakingevents.md",
+      "title": "stakingEvents",
+      "provider": "hydromancer",
+      "section": "rest-b",
+      "snapshot_date": "2026-09-14",
+      "snapshot_date_basis": "source-corpus directory date; exact page capture time unavailable",
+      "sha256": "cce8ddc0d6aa1ce7a3aff67a56fd1309aa2dae8ed1341c03edfa1eb52b13747e"
+    },
+    {
+      "id": "hydro-95",
+      "url": "https://docs.hydromancer.xyz/readme/rest-api/staking/globalstakingsummary.md",
+      "title": "globalStakingSummary",
+      "provider": "hydromancer",
+      "section": "rest-b",
+      "snapshot_date": "2026-09-14",
+      "snapshot_date_basis": "source-corpus directory date; exact page capture time unavailable",
+      "sha256": "471e163f39884f700c916c93e63472c1a8f6c659f178753a654963803b75e1c5"
+    },
+    {
+      "id": "hydro-96",
+      "url": "https://docs.hydromancer.xyz/readme/rest-api/delegations.md",
+      "title": "Delegations",
+      "provider": "hydromancer",
+      "section": "rest-b",
+      "snapshot_date": "2026-09-14",
+      "snapshot_date_basis": "source-corpus directory date; exact page capture time unavailable",
+      "sha256": "2f85db059b5f0b7d0f583b61375ec3bc96bdafed1dc190e0858125298d6f9f16"
+    },
+    {
+      "id": "hydro-97",
+      "url": "https://docs.hydromancer.xyz/readme/rest-api/delegations/delegations.md",
+      "title": "delegations",
+      "provider": "hydromancer",
+      "section": "rest-b",
+      "snapshot_date": "2026-09-14",
+      "snapshot_date_basis": "source-corpus directory date; exact page capture time unavailable",
+      "sha256": "d987c00d580e6ec799ceebb6974376097802979837bb9805872db84a6c9cd352"
+    },
+    {
+      "id": "hydro-98",
+      "url": "https://docs.hydromancer.xyz/readme/rest-api/delegations/delegatorsummary.md",
+      "title": "delegatorSummary",
+      "provider": "hydromancer",
+      "section": "rest-b",
+      "snapshot_date": "2026-09-14",
+      "snapshot_date_basis": "source-corpus directory date; exact page capture time unavailable",
+      "sha256": "bc284f8921547656ec66a61cda4855f6320c56df46ad37d1ff30ce9016bb4386"
+    },
+    {
+      "id": "hydro-99",
+      "url": "https://docs.hydromancer.xyz/readme/rest-api/delegations/delegatorhistory.md",
+      "title": "delegatorHistory",
+      "provider": "hydromancer",
+      "section": "rest-b",
+      "snapshot_date": "2026-09-14",
+      "snapshot_date_basis": "source-corpus directory date; exact page capture time unavailable",
+      "sha256": "b73d8345e79285d25132d0cbb8f5dc51dbb53759ffda727d232305c8b2218e2e"
+    },
+    {
+      "id": "hydro-100",
+      "url": "https://docs.hydromancer.xyz/readme/rest-api/delegations/delegatorrewards.md",
+      "title": "delegatorRewards",
+      "provider": "hydromancer",
+      "section": "rest-b",
+      "snapshot_date": "2026-09-14",
+      "snapshot_date_basis": "source-corpus directory date; exact page capture time unavailable",
+      "sha256": "6ed4774861b508edd9d64c564d3436701d7b2091df456af7b1b824d6c102d8f8"
+    },
+    {
+      "id": "hydro-101",
+      "url": "https://docs.hydromancer.xyz/readme/rest-api/delegations/maxbuilderfee.md",
+      "title": "maxBuilderFee",
+      "provider": "hydromancer",
+      "section": "rest-b",
+      "snapshot_date": "2026-09-14",
+      "snapshot_date_basis": "source-corpus directory date; exact page capture time unavailable",
+      "sha256": "969ccbe336cb9850e94da41efdcd80e7ea57a2ab6cb0723e131c1a3e435f226e"
+    },
+    {
+      "id": "hydro-102",
+      "url": "https://docs.hydromancer.xyz/readme/rest-api/delegations/validatorl1votes.md",
+      "title": "validatorL1Votes",
+      "provider": "hydromancer",
+      "section": "rest-b",
+      "snapshot_date": "2026-09-14",
+      "snapshot_date_basis": "source-corpus directory date; exact page capture time unavailable",
+      "sha256": "b050320fe52dcc4c4515130daf539da1b948309d3bb0a74eb8c32b6262470d6f"
+    },
+    {
+      "id": "hydro-103",
+      "url": "https://docs.hydromancer.xyz/readme/rest-api/fees.md",
+      "title": "Fees",
+      "provider": "hydromancer",
+      "section": "rest-b",
+      "snapshot_date": "2026-09-14",
+      "snapshot_date_basis": "source-corpus directory date; exact page capture time unavailable",
+      "sha256": "bb04ddef9521735efe3a2c44fcd0dc4b095190d4ecfa969d9e087a32fdb494e7"
+    },
+    {
+      "id": "hydro-104",
+      "url": "https://docs.hydromancer.xyz/readme/rest-api/fees/userfees.md",
+      "title": "userFees",
+      "provider": "hydromancer",
+      "section": "rest-b",
+      "snapshot_date": "2026-09-14",
+      "snapshot_date_basis": "source-corpus directory date; exact page capture time unavailable",
+      "sha256": "97a025482399b04675544d8a92c46424085a658ce99130e90d65a23c441ff278"
+    },
+    {
+      "id": "hydro-105",
+      "url": "https://docs.hydromancer.xyz/readme/rest-api/api-usage.md",
+      "title": "API Usage",
+      "provider": "hydromancer",
+      "section": "rest-b",
+      "snapshot_date": "2026-09-14",
+      "snapshot_date_basis": "source-corpus directory date; exact page capture time unavailable",
+      "sha256": "62baaf55199988f509831fb61669fadd52eaae62b94c5701095b13e0d589b85c"
+    },
+    {
+      "id": "hydro-106",
+      "url": "https://docs.hydromancer.xyz/readme/rest-api/api-usage/apiusage.md",
+      "title": "apiUsage",
+      "provider": "hydromancer",
+      "section": "rest-b",
+      "snapshot_date": "2026-09-14",
+      "snapshot_date_basis": "source-corpus directory date; exact page capture time unavailable",
+      "sha256": "8cbd0d93fed9d3b0591c958b5ebdae4662df3e32823338b024363061dd47451e"
+    },
+    {
+      "id": "hydro-107",
+      "url": "https://docs.hydromancer.xyz/readme/rest-api/subaccounts.md",
+      "title": "Subaccounts",
+      "provider": "hydromancer",
+      "section": "rest-b",
+      "snapshot_date": "2026-09-14",
+      "snapshot_date_basis": "source-corpus directory date; exact page capture time unavailable",
+      "sha256": "4f60c20818dbed4a1cea3ce5a4f5cbfe9a73ed28516c3a2304dbd4d92cb47505"
+    },
+    {
+      "id": "hydro-108",
+      "url": "https://docs.hydromancer.xyz/readme/rest-api/subaccounts/subaccounts.md",
+      "title": "subAccounts",
+      "provider": "hydromancer",
+      "section": "rest-b",
+      "snapshot_date": "2026-09-14",
+      "snapshot_date_basis": "source-corpus directory date; exact page capture time unavailable",
+      "sha256": "d151b5cff0f8e6ed0aa3f2112db9a0fc2f07a009e5e05b0ab4e99d4d0bc38d42"
+    },
+    {
+      "id": "hydro-109",
+      "url": "https://docs.hydromancer.xyz/readme/rest-api/candlesticks.md",
+      "title": "Candlesticks",
+      "provider": "hydromancer",
+      "section": "rest-b",
+      "snapshot_date": "2026-09-14",
+      "snapshot_date_basis": "source-corpus directory date; exact page capture time unavailable",
+      "sha256": "07557bda66d17fcef7ea90b42084387a6ac8be4ca4cf6bbd1b8fa513ad043477"
+    },
+    {
+      "id": "hydro-110",
+      "url": "https://docs.hydromancer.xyz/readme/rest-api/candlesticks/candlesnapshot.md",
+      "title": "candleSnapshot",
+      "provider": "hydromancer",
+      "section": "rest-b",
+      "snapshot_date": "2026-09-14",
+      "snapshot_date_basis": "source-corpus directory date; exact page capture time unavailable",
+      "sha256": "828e0df4610aec8c0411182e19bd6fb3e2efccdb7639122d80d933162a26a73a"
+    },
+    {
+      "id": "hydro-111",
+      "url": "https://docs.hydromancer.xyz/readme/rest-api/market-data.md",
+      "title": "Market data",
+      "provider": "hydromancer",
+      "section": "rest-b",
+      "snapshot_date": "2026-09-14",
+      "snapshot_date_basis": "source-corpus directory date; exact page capture time unavailable",
+      "sha256": "73ab64f2cddc8e953dcc78104689ed2bb95886a99f3fbe3ebeb6fb2cf6a9886d"
+    },
+    {
+      "id": "hydro-112",
+      "url": "https://docs.hydromancer.xyz/readme/rest-api/market-data/openinteresthistory.md",
+      "title": "openInterestHistory",
+      "provider": "hydromancer",
+      "section": "rest-b",
+      "snapshot_date": "2026-09-14",
+      "snapshot_date_basis": "source-corpus directory date; exact page capture time unavailable",
+      "sha256": "8aded51e971ec9720a766fccbf049c98c7643cc35e3085cc81519aec6f6e0370"
+    },
+    {
+      "id": "hydro-113",
+      "url": "https://docs.hydromancer.xyz/readme/rest-api/market-data/perpsnapshot.md",
+      "title": "perpSnapshot",
+      "provider": "hydromancer",
+      "section": "rest-b",
+      "snapshot_date": "2026-09-14",
+      "snapshot_date_basis": "source-corpus directory date; exact page capture time unavailable",
+      "sha256": "1edd2b8eb5176e9a4c6c126d5565ef41f7f1d45bf85feb26214caed5832d9578"
+    },
+    {
+      "id": "hydro-114",
+      "url": "https://docs.hydromancer.xyz/readme/rest-api/market-data/perptwapsnapshot.md",
+      "title": "perpTwapSnapshot",
+      "provider": "hydromancer",
+      "section": "rest-b",
+      "snapshot_date": "2026-09-14",
+      "snapshot_date_basis": "source-corpus directory date; exact page capture time unavailable",
+      "sha256": "94f6b517c00e5e4565a5f81b6bc8cf38c563f72eefd65fd4e0a048bb9d2f3ea5"
+    },
+    {
+      "id": "hydro-115",
+      "url": "https://docs.hydromancer.xyz/readme/rest-api/market-data/accountvaluesnapshot.md",
+      "title": "accountValueSnapshot",
+      "provider": "hydromancer",
+      "section": "rest-b",
+      "snapshot_date": "2026-09-14",
+      "snapshot_date_basis": "source-corpus directory date; exact page capture time unavailable",
+      "sha256": "38ceca8bda3219fa22973050e17ba5e7a2215f3fdc41414314384d4555420ba0"
+    },
+    {
+      "id": "hydro-116",
+      "url": "https://docs.hydromancer.xyz/readme/rest-api/market-data/spotsnapshot.md",
+      "title": "spotSnapshot",
+      "provider": "hydromancer",
+      "section": "rest-b",
+      "snapshot_date": "2026-09-14",
+      "snapshot_date_basis": "source-corpus directory date; exact page capture time unavailable",
+      "sha256": "bbb18a528c6d88046390c426e919740810ef11df294ff459c1e7add3b2e958df"
+    },
+    {
+      "id": "hydro-117",
+      "url": "https://docs.hydromancer.xyz/readme/rest-api/market-data/spottwapsnapshot.md",
+      "title": "spotTwapSnapshot",
+      "provider": "hydromancer",
+      "section": "rest-b",
+      "snapshot_date": "2026-09-14",
+      "snapshot_date_basis": "source-corpus directory date; exact page capture time unavailable",
+      "sha256": "00b536c5f93e172573ddbea87876aee93711b9ec0b8ceddc5901bd4abb1e0151"
+    },
+    {
+      "id": "hydro-118",
+      "url": "https://docs.hydromancer.xyz/readme/rest-api/market-data/l4book.md",
+      "title": "L4PerpBookSnapshot",
+      "provider": "hydromancer",
+      "section": "rest-b",
+      "snapshot_date": "2026-09-14",
+      "snapshot_date_basis": "source-corpus directory date; exact page capture time unavailable",
+      "sha256": "92615c1a4ebf6cab9b5813f149b05622157efd427c0c48da7c94f056f1843897"
+    },
+    {
+      "id": "hydro-119",
+      "url": "https://docs.hydromancer.xyz/readme/rest-api/market-data/l2book.md",
+      "title": "l2Book",
+      "provider": "hydromancer",
+      "section": "rest-b",
+      "snapshot_date": "2026-09-14",
+      "snapshot_date_basis": "source-corpus directory date; exact page capture time unavailable",
+      "sha256": "2dd205b4ddf4758ad44d85360c2fae5eae70b7dda083b958a4db664e7eecf36e"
+    },
+    {
+      "id": "hydro-120",
+      "url": "https://docs.hydromancer.xyz/readme/rest-api/market-data/l2bookdiffsnapshot.md",
+      "title": "l2BookDiffSnapshot",
+      "provider": "hydromancer",
+      "section": "rest-b",
+      "snapshot_date": "2026-09-14",
+      "snapshot_date_basis": "source-corpus directory date; exact page capture time unavailable",
+      "sha256": "4b669c5af4476dd49b4b571418dd3b0a743d48f9785a7b3d8cb375477ff99dc2"
+    },
+    {
+      "id": "hydro-121",
+      "url": "https://docs.hydromancer.xyz/readme/rest-api/market-data/tpslbook.md",
+      "title": "tpslBook",
+      "provider": "hydromancer",
+      "section": "rest-b",
+      "snapshot_date": "2026-09-14",
+      "snapshot_date_basis": "source-corpus directory date; exact page capture time unavailable",
+      "sha256": "5eba9a21f35299920e6d2f8e8c0d2d49581c4f8b61c967a24d992ef8e6b867de"
+    },
+    {
+      "id": "hydro-122",
+      "url": "https://docs.hydromancer.xyz/readme/rest-api/market-data/marketliquidity.md",
+      "title": "marketLiquidity",
+      "provider": "hydromancer",
+      "section": "rest-b",
+      "snapshot_date": "2026-09-14",
+      "snapshot_date_basis": "source-corpus directory date; exact page capture time unavailable",
+      "sha256": "9fb182a4bc187827da8a7a79fea6cb1806ab06bc2bef0b1ba75aecbbe3dbe564"
+    },
+    {
+      "id": "hydro-123",
+      "url": "https://docs.hydromancer.xyz/readme/rest-api/market-data/marketliquidityhistory.md",
+      "title": "marketLiquidityHistory",
+      "provider": "hydromancer",
+      "section": "rest-b",
+      "snapshot_date": "2026-09-14",
+      "snapshot_date_basis": "source-corpus directory date; exact page capture time unavailable",
+      "sha256": "07cae7eb1e9d15db318d61255a48752245f0596afa9f77995d09bb6460672524"
+    },
+    {
+      "id": "hydro-124",
+      "url": "https://docs.hydromancer.xyz/readme/rest-api/market-data/slippagehistory.md",
+      "title": "slippageHistory",
+      "provider": "hydromancer",
+      "section": "rest-b",
+      "snapshot_date": "2026-09-14",
+      "snapshot_date_basis": "source-corpus directory date; exact page capture time unavailable",
+      "sha256": "2502687577f83ff00a88ab22bac43b470cd402f33aa36095527757d1cf4903f3"
+    },
+    {
+      "id": "hydro-125",
+      "url": "https://docs.hydromancer.xyz/readme/rest-api/market-data/currentdepth.md",
+      "title": "currentDepth",
+      "provider": "hydromancer",
+      "section": "rest-b",
+      "snapshot_date": "2026-09-14",
+      "snapshot_date_basis": "source-corpus directory date; exact page capture time unavailable",
+      "sha256": "8cf9d98f1c682b5c153cbaaecdeacaac86651409e8695bc859cc599187bfaa3f"
+    },
+    {
+      "id": "hydro-126",
+      "url": "https://docs.hydromancer.xyz/readme/rest-api/market-data/fundingpayments.md",
+      "title": "fundingPayments",
+      "provider": "hydromancer",
+      "section": "rest-b",
+      "snapshot_date": "2026-09-14",
+      "snapshot_date_basis": "source-corpus directory date; exact page capture time unavailable",
+      "sha256": "cee967e51f2d742e8a7a2e4db7508d75ef5a8f16dac12ac01c29d43036681d5e"
+    },
+    {
+      "id": "hydro-127",
+      "url": "https://docs.hydromancer.xyz/readme/rest-api/market-data/maxmarketorderntls.md",
+      "title": "maxMarketOrderNtls",
+      "provider": "hydromancer",
+      "section": "rest-b",
+      "snapshot_date": "2026-09-14",
+      "snapshot_date_basis": "source-corpus directory date; exact page capture time unavailable",
+      "sha256": "a54bb0b4b73b00ccd0b2d177142671597955ca78dea143e33d348bb8c0ef16f4"
+    },
+    {
+      "id": "hydro-128",
+      "url": "https://docs.hydromancer.xyz/readme/rest-api/market-data/perpsatopeninterestcap.md",
+      "title": "perpsAtOpenInterestCap",
+      "provider": "hydromancer",
+      "section": "rest-b",
+      "snapshot_date": "2026-09-14",
+      "snapshot_date_basis": "source-corpus directory date; exact page capture time unavailable",
+      "sha256": "673f5236892cf84fe60413d2a9ff0f89aa08b7b68d0d1b9f03ebd8976ea32891"
+    },
+    {
+      "id": "hydro-129",
+      "url": "https://docs.hydromancer.xyz/readme/rest-api/market-data/liquidatable.md",
+      "title": "liquidatable",
+      "provider": "hydromancer",
+      "section": "rest-b",
+      "snapshot_date": "2026-09-14",
+      "snapshot_date_basis": "source-corpus directory date; exact page capture time unavailable",
+      "sha256": "014129cae2bbca6e9fa9a6c64ab716fc8b7cb59aab64a08e9d402793d9b3c8a5"
+    },
+    {
+      "id": "hydro-130",
+      "url": "https://docs.hydromancer.xyz/readme/websocket.md",
+      "title": "Websocket",
+      "provider": "hydromancer",
+      "section": "websocket",
+      "snapshot_date": "2026-09-14",
+      "snapshot_date_basis": "source-corpus directory date; exact page capture time unavailable",
+      "sha256": "a1c499f17b9071a9ac17a244477bacb9d785ccd71954b5c177ca95c79bddd85a"
+    },
+    {
+      "id": "hydro-131",
+      "url": "https://docs.hydromancer.xyz/readme/websocket/changelog.md",
+      "title": "WebSocket changelog",
+      "provider": "hydromancer",
+      "section": "websocket",
+      "snapshot_date": "2026-09-14",
+      "snapshot_date_basis": "source-corpus directory date; exact page capture time unavailable",
+      "sha256": "a7f2cf7b1d234a963a9404351ce8921982a4bd62800df3fd064b5bb5aaba1e25"
+    },
+    {
+      "id": "hydro-132",
+      "url": "https://docs.hydromancer.xyz/readme/websocket/session-management-and-reconnection.md",
+      "title": "Session Management and Reconnection",
+      "provider": "hydromancer",
+      "section": "websocket",
+      "snapshot_date": "2026-09-14",
+      "snapshot_date_basis": "source-corpus directory date; exact page capture time unavailable",
+      "sha256": "e9a0060701d77c4e7cda3cb56734bb27c874f75e27aa4b06eb6bda1efa6c8108"
+    },
+    {
+      "id": "hydro-133",
+      "url": "https://docs.hydromancer.xyz/readme/websocket/rate-limits-user-limits-and-heartbeats.md",
+      "title": "Rate limits, user limits and heartbeats",
+      "provider": "hydromancer",
+      "section": "websocket",
+      "snapshot_date": "2026-09-14",
+      "snapshot_date_basis": "source-corpus directory date; exact page capture time unavailable",
+      "sha256": "0ac64d2ffea3483ebccb1c4b684ee136af04daf51260810432555e664aafdd77"
+    },
+    {
+      "id": "hydro-134",
+      "url": "https://docs.hydromancer.xyz/readme/websocket/live-message-chunking.md",
+      "title": "Live Message Chunking",
+      "provider": "hydromancer",
+      "section": "websocket",
+      "snapshot_date": "2026-09-14",
+      "snapshot_date_basis": "source-corpus directory date; exact page capture time unavailable",
+      "sha256": "3b73dbe0877f14b295b5241b7e0a4ab205e67dadde0aea5b9065cd5eb6c41515"
+    },
+    {
+      "id": "hydro-135",
+      "url": "https://docs.hydromancer.xyz/readme/websocket/builder-data.md",
+      "title": "Builder data",
+      "provider": "hydromancer",
+      "section": "websocket",
+      "snapshot_date": "2026-09-14",
+      "snapshot_date_basis": "source-corpus directory date; exact page capture time unavailable",
+      "sha256": "9184d6c880bd286d5f169f3baaa0e848e82ad437286697213c796c50261a5591"
+    },
+    {
+      "id": "hydro-136",
+      "url": "https://docs.hydromancer.xyz/readme/websocket/builder-data/builderorderupdates.md",
+      "title": "builderOrderUpdates",
+      "provider": "hydromancer",
+      "section": "websocket",
+      "snapshot_date": "2026-09-14",
+      "snapshot_date_basis": "source-corpus directory date; exact page capture time unavailable",
+      "sha256": "e403567e3fa9aef9706ba139de7da069b346119129c09c8731e7da981ca47a3c"
+    },
+    {
+      "id": "hydro-137",
+      "url": "https://docs.hydromancer.xyz/readme/websocket/builder-data/builderfills.md",
+      "title": "builderFills",
+      "provider": "hydromancer",
+      "section": "websocket",
+      "snapshot_date": "2026-09-14",
+      "snapshot_date_basis": "source-corpus directory date; exact page capture time unavailable",
+      "sha256": "9cc01c03776bafb256cc77b97dabb9020a72aeb7e33ff33aea0d4871b67a6530"
+    },
+    {
+      "id": "hydro-138",
+      "url": "https://docs.hydromancer.xyz/readme/websocket/builder-data/builderapprovedfills.md",
+      "title": "builderApprovedFills",
+      "provider": "hydromancer",
+      "section": "websocket",
+      "snapshot_date": "2026-09-14",
+      "snapshot_date_basis": "source-corpus directory date; exact page capture time unavailable",
+      "sha256": "c5ba28d428a60e80f27e99e86a8c304a654fc06d12825fe1ba01fbca0694cdfa"
+    },
+    {
+      "id": "hydro-139",
+      "url": "https://docs.hydromancer.xyz/readme/websocket/builder-data/builderapprovedfundings.md",
+      "title": "builderApprovedFundings",
+      "provider": "hydromancer",
+      "section": "websocket",
+      "snapshot_date": "2026-09-14",
+      "snapshot_date_basis": "source-corpus directory date; exact page capture time unavailable",
+      "sha256": "dec4e739cf70e87c30a614fe3940174dbe7c8d91b9cc30a0aa439a9bf3a3999a"
+    },
+    {
+      "id": "hydro-140",
+      "url": "https://docs.hydromancer.xyz/readme/websocket/builder-data/builderapprovednonfundingledgerevents.md",
+      "title": "builderApprovedNonFundingLedgerEvents",
+      "provider": "hydromancer",
+      "section": "websocket",
+      "snapshot_date": "2026-09-14",
+      "snapshot_date_basis": "source-corpus directory date; exact page capture time unavailable",
+      "sha256": "bed378cc7c130fff5720d60018317faa0422b22b33eae1503fbe35d096f5cdf0"
+    },
+    {
+      "id": "hydro-141",
+      "url": "https://docs.hydromancer.xyz/readme/websocket/builder-data/builderliquidations.md",
+      "title": "builderLiquidations",
+      "provider": "hydromancer",
+      "section": "websocket",
+      "snapshot_date": "2026-09-14",
+      "snapshot_date_basis": "source-corpus directory date; exact page capture time unavailable",
+      "sha256": "d96ded157cf64ef407fd8daffcc4de747acdbbc800c4b73884b995c7931349fb"
+    },
+    {
+      "id": "hydro-142",
+      "url": "https://docs.hydromancer.xyz/readme/websocket/orderbook-streaming.md",
+      "title": "Orderbook streaming",
+      "provider": "hydromancer",
+      "section": "websocket",
+      "snapshot_date": "2026-09-14",
+      "snapshot_date_basis": "source-corpus directory date; exact page capture time unavailable",
+      "sha256": "717076996b712b4d7609967ea6acd44228e2657b2b82602d838b8e2c57e1f723"
+    },
+    {
+      "id": "hydro-143",
+      "url": "https://docs.hydromancer.xyz/readme/websocket/orderbook-streaming/bbo.md",
+      "title": "bbo",
+      "provider": "hydromancer",
+      "section": "websocket",
+      "snapshot_date": "2026-09-14",
+      "snapshot_date_basis": "source-corpus directory date; exact page capture time unavailable",
+      "sha256": "85d1c51eda88615e9989d040c43b8afad5eb72d96cc8b7cfa31b418a149987b9"
+    },
+    {
+      "id": "hydro-144",
+      "url": "https://docs.hydromancer.xyz/readme/websocket/orderbook-streaming/l2book.md",
+      "title": "l2Book",
+      "provider": "hydromancer",
+      "section": "websocket",
+      "snapshot_date": "2026-09-14",
+      "snapshot_date_basis": "source-corpus directory date; exact page capture time unavailable",
+      "sha256": "8ed4bd6086c4939ce9e7c6e106fd195f0181ed8d692b94f170a8b31c19be5719"
+    },
+    {
+      "id": "hydro-145",
+      "url": "https://docs.hydromancer.xyz/readme/websocket/orderbook-streaming/l2bookdiff.md",
+      "title": "l2BookDiff",
+      "provider": "hydromancer",
+      "section": "websocket",
+      "snapshot_date": "2026-09-14",
+      "snapshot_date_basis": "source-corpus directory date; exact page capture time unavailable",
+      "sha256": "cd948bb4a38d00642e199daef07c0b3c27d6ca87343ac3832449f5eb276be328"
+    },
+    {
+      "id": "hydro-146",
+      "url": "https://docs.hydromancer.xyz/readme/websocket/orderbook-streaming/l4bookupdates.md",
+      "title": "l4BookUpdates",
+      "provider": "hydromancer",
+      "section": "websocket",
+      "snapshot_date": "2026-09-14",
+      "snapshot_date_basis": "source-corpus directory date; exact page capture time unavailable",
+      "sha256": "6569782be63d5f7f65d0a46c0c70f0797a208cfcb7d2c9a0d430e6b3d339b330"
+    },
+    {
+      "id": "hydro-147",
+      "url": "https://docs.hydromancer.xyz/readme/websocket/tp-sl-streaming.md",
+      "title": "TP/SL streaming",
+      "provider": "hydromancer",
+      "section": "websocket",
+      "snapshot_date": "2026-09-14",
+      "snapshot_date_basis": "source-corpus directory date; exact page capture time unavailable",
+      "sha256": "9c857a59dc8125a4b74367726257927e3414b1b04ad1b139bff8284e5bd4dd2b"
+    },
+    {
+      "id": "hydro-148",
+      "url": "https://docs.hydromancer.xyz/readme/websocket/tp-sl-streaming/tpslupdates.md",
+      "title": "tpslUpdates",
+      "provider": "hydromancer",
+      "section": "websocket",
+      "snapshot_date": "2026-09-14",
+      "snapshot_date_basis": "source-corpus directory date; exact page capture time unavailable",
+      "sha256": "104e5969da8465a2861ecd07a52c0ba700d1347117b82c9863901076963549cc"
+    },
+    {
+      "id": "hydro-149",
+      "url": "https://docs.hydromancer.xyz/readme/websocket/candles.md",
+      "title": "Candles",
+      "provider": "hydromancer",
+      "section": "websocket",
+      "snapshot_date": "2026-09-14",
+      "snapshot_date_basis": "source-corpus directory date; exact page capture time unavailable",
+      "sha256": "7d830b63131def16130e4315fe4fa9cf396b815af476716ba963016eb25e8ee6"
+    },
+    {
+      "id": "hydro-150",
+      "url": "https://docs.hydromancer.xyz/readme/websocket/candles/candles.md",
+      "title": "candles",
+      "provider": "hydromancer",
+      "section": "websocket",
+      "snapshot_date": "2026-09-14",
+      "snapshot_date_basis": "source-corpus directory date; exact page capture time unavailable",
+      "sha256": "05dd3138cfe5fa33278d45e72637de9db07d595735bd9214a7b5c68b026453c1"
+    },
+    {
+      "id": "hydro-151",
+      "url": "https://docs.hydromancer.xyz/readme/websocket/candles/allcandles.md",
+      "title": "allCandles",
+      "provider": "hydromancer",
+      "section": "websocket",
+      "snapshot_date": "2026-09-14",
+      "snapshot_date_basis": "source-corpus directory date; exact page capture time unavailable",
+      "sha256": "47aa265da7a208688c40651981f4ac8c10508c2f1a19698be8942aba7f34ff61"
+    },
+    {
+      "id": "hydro-152",
+      "url": "https://docs.hydromancer.xyz/readme/websocket/trades-data.md",
+      "title": "Trades data",
+      "provider": "hydromancer",
+      "section": "websocket",
+      "snapshot_date": "2026-09-14",
+      "snapshot_date_basis": "source-corpus directory date; exact page capture time unavailable",
+      "sha256": "db3b31cab0d87a929663c76f27714cc885c8c77d85079d1bc3b1656a482f3a8c"
+    },
+    {
+      "id": "hydro-153",
+      "url": "https://docs.hydromancer.xyz/readme/websocket/trades-data/allfills.md",
+      "title": "allFills",
+      "provider": "hydromancer",
+      "section": "websocket",
+      "snapshot_date": "2026-09-14",
+      "snapshot_date_basis": "source-corpus directory date; exact page capture time unavailable",
+      "sha256": "2b7183f785fa022f7a5f3b3f8e8fa6db58da78aa8e105fc698f390945016fc62"
+    },
+    {
+      "id": "hydro-154",
+      "url": "https://docs.hydromancer.xyz/readme/websocket/trades-data/liquidationfills.md",
+      "title": "liquidationFills",
+      "provider": "hydromancer",
+      "section": "websocket",
+      "snapshot_date": "2026-09-14",
+      "snapshot_date_basis": "source-corpus directory date; exact page capture time unavailable",
+      "sha256": "046e9099a3a0810b209573ef2e850aa541db12be2661dddd102bab8db5f01d48"
+    },
+    {
+      "id": "hydro-155",
+      "url": "https://docs.hydromancer.xyz/readme/websocket/trades-data/trades.md",
+      "title": "trades",
+      "provider": "hydromancer",
+      "section": "websocket",
+      "snapshot_date": "2026-09-14",
+      "snapshot_date_basis": "source-corpus directory date; exact page capture time unavailable",
+      "sha256": "b8b7663a60277e6bac05ba0352f078823b03df7b5e2247c16e5947930fb6ad07"
+    },
+    {
+      "id": "hydro-156",
+      "url": "https://docs.hydromancer.xyz/readme/websocket/prices-data-and-asset-context.md",
+      "title": "Prices data and asset context",
+      "provider": "hydromancer",
+      "section": "websocket",
+      "snapshot_date": "2026-09-14",
+      "snapshot_date_basis": "source-corpus directory date; exact page capture time unavailable",
+      "sha256": "39679d711d10908f5e9fb9147d7b8500b70dd7aab6c7309505277141751e229e"
+    },
+    {
+      "id": "hydro-157",
+      "url": "https://docs.hydromancer.xyz/readme/websocket/prices-data-and-asset-context/activeassetctx.md",
+      "title": "activeAssetCtx",
+      "provider": "hydromancer",
+      "section": "websocket",
+      "snapshot_date": "2026-09-14",
+      "snapshot_date_basis": "source-corpus directory date; exact page capture time unavailable",
+      "sha256": "df92e08553e9fb1e42b370debb9b1cd86b6953f995372a91a72e12cef672eb95"
+    },
+    {
+      "id": "hydro-158",
+      "url": "https://docs.hydromancer.xyz/readme/websocket/prices-data-and-asset-context/allactiveassetctx.md",
+      "title": "allActiveAssetCtx",
+      "provider": "hydromancer",
+      "section": "websocket",
+      "snapshot_date": "2026-09-14",
+      "snapshot_date_basis": "source-corpus directory date; exact page capture time unavailable",
+      "sha256": "8a8b13116998e97f3eecde803a640d24e5431681d17d9daa6cd002558023b7ca"
+    },
+    {
+      "id": "hydro-159",
+      "url": "https://docs.hydromancer.xyz/readme/websocket/prices-data-and-asset-context/allmids.md",
+      "title": "allMids",
+      "provider": "hydromancer",
+      "section": "websocket",
+      "snapshot_date": "2026-09-14",
+      "snapshot_date_basis": "source-corpus directory date; exact page capture time unavailable",
+      "sha256": "b5097fd9357eade05a21227464c14722de749d308aa88aec66c56d45091ef0b4"
+    },
+    {
+      "id": "hydro-160",
+      "url": "https://docs.hydromancer.xyz/readme/websocket/prices-data-and-asset-context/perpprices.md",
+      "title": "perpPrices",
+      "provider": "hydromancer",
+      "section": "websocket",
+      "snapshot_date": "2026-09-14",
+      "snapshot_date_basis": "source-corpus directory date; exact page capture time unavailable",
+      "sha256": "542596abc04c09502cce3172e425847f011171e7b34e750e85735a06ce9e79e1"
+    },
+    {
+      "id": "hydro-161",
+      "url": "https://docs.hydromancer.xyz/readme/websocket/prices-data-and-asset-context/setoracleupdates.md",
+      "title": "setOracleUpdates",
+      "provider": "hydromancer",
+      "section": "websocket",
+      "snapshot_date": "2026-09-14",
+      "snapshot_date_basis": "source-corpus directory date; exact page capture time unavailable",
+      "sha256": "d9b3641dc4d29d81d2ab5bb9b737dd6d6c9e8bddf6804b224bd156d6054f4760"
+    },
+    {
+      "id": "hydro-162",
+      "url": "https://docs.hydromancer.xyz/readme/websocket/leverage-and-margin-updates.md",
+      "title": "Leverage and margin updates",
+      "provider": "hydromancer",
+      "section": "websocket",
+      "snapshot_date": "2026-09-14",
+      "snapshot_date_basis": "source-corpus directory date; exact page capture time unavailable",
+      "sha256": "769eeebdfd228ff6977ceb6f831532be2f9ff9796455161fff75987ac7adb779"
+    },
+    {
+      "id": "hydro-163",
+      "url": "https://docs.hydromancer.xyz/readme/websocket/leverage-and-margin-updates/userleverageupdates.md",
+      "title": "userLeverageUpdates",
+      "provider": "hydromancer",
+      "section": "websocket",
+      "snapshot_date": "2026-09-14",
+      "snapshot_date_basis": "source-corpus directory date; exact page capture time unavailable",
+      "sha256": "d332c8be801cd20979908db86ddda697250171fee52a707878d58dc7fe6e2e7b"
+    },
+    {
+      "id": "hydro-164",
+      "url": "https://docs.hydromancer.xyz/readme/websocket/leverage-and-margin-updates/allleverageupdates.md",
+      "title": "allLeverageUpdates",
+      "provider": "hydromancer",
+      "section": "websocket",
+      "snapshot_date": "2026-09-14",
+      "snapshot_date_basis": "source-corpus directory date; exact page capture time unavailable",
+      "sha256": "33cd9f4307154a659eb372ec9a83a1a524273b7d49d337c955ea8e878bd685a0"
+    },
+    {
+      "id": "hydro-165",
+      "url": "https://docs.hydromancer.xyz/readme/websocket/leverage-and-margin-updates/userisolatedmarginupdates.md",
+      "title": "userIsolatedMarginUpdates",
+      "provider": "hydromancer",
+      "section": "websocket",
+      "snapshot_date": "2026-09-14",
+      "snapshot_date_basis": "source-corpus directory date; exact page capture time unavailable",
+      "sha256": "11a86bbb997ed0f78d2a27a87d4eff9d34587a6694ef3f7e46287a46a31eb6e2"
+    },
+    {
+      "id": "hydro-166",
+      "url": "https://docs.hydromancer.xyz/readme/websocket/leverage-and-margin-updates/allisolatedmarginupdates.md",
+      "title": "allIsolatedMarginUpdates",
+      "provider": "hydromancer",
+      "section": "websocket",
+      "snapshot_date": "2026-09-14",
+      "snapshot_date_basis": "source-corpus directory date; exact page capture time unavailable",
+      "sha256": "322745b3701bb4875d650c78aa6bb3d4ec91fee2821d7303c15e6f2a04011b86"
+    },
+    {
+      "id": "hydro-167",
+      "url": "https://docs.hydromancer.xyz/readme/websocket/user-data.md",
+      "title": "User data",
+      "provider": "hydromancer",
+      "section": "websocket",
+      "snapshot_date": "2026-09-14",
+      "snapshot_date_basis": "source-corpus directory date; exact page capture time unavailable",
+      "sha256": "73a11b066b7cead4ad24d9cbeb5140060ef07ee31878823d56c6f98813573cc8"
+    },
+    {
+      "id": "hydro-168",
+      "url": "https://docs.hydromancer.xyz/readme/websocket/user-data/userfills.md",
+      "title": "userFills",
+      "provider": "hydromancer",
+      "section": "websocket",
+      "snapshot_date": "2026-09-14",
+      "snapshot_date_basis": "source-corpus directory date; exact page capture time unavailable",
+      "sha256": "7a3061c41270c314e6a8df25a6f3ceba718cfc5ba28d7fa53386e17e5191da46"
+    },
+    {
+      "id": "hydro-169",
+      "url": "https://docs.hydromancer.xyz/readme/websocket/user-data/userorderupdates.md",
+      "title": "userOrderUpdates",
+      "provider": "hydromancer",
+      "section": "websocket",
+      "snapshot_date": "2026-09-14",
+      "snapshot_date_basis": "source-corpus directory date; exact page capture time unavailable",
+      "sha256": "87b0a93cb8c7e00c6178864494207e93ab2294b73d355cfe8c3258b247757d6a"
+    },
+    {
+      "id": "hydro-170",
+      "url": "https://docs.hydromancer.xyz/readme/websocket/user-data/usertwapstatusupdates.md",
+      "title": "userTwapStatusUpdates",
+      "provider": "hydromancer",
+      "section": "websocket",
+      "snapshot_date": "2026-09-14",
+      "snapshot_date_basis": "source-corpus directory date; exact page capture time unavailable",
+      "sha256": "8a6f7cdaba8a07d1e7eef9fb5a518f195d2214ccd90d2e980c8063c2232899c0"
+    },
+    {
+      "id": "hydro-171",
+      "url": "https://docs.hydromancer.xyz/readme/websocket/user-data/usernonfundingledgerevents.md",
+      "title": "userNonFundingLedgerEvents",
+      "provider": "hydromancer",
+      "section": "websocket",
+      "snapshot_date": "2026-09-14",
+      "snapshot_date_basis": "source-corpus directory date; exact page capture time unavailable",
+      "sha256": "dd26c0a7e19a1400c58c2a18aa144e6d70d3e269f0c2b59696f93078e3ad0c8d"
+    },
+    {
+      "id": "hydro-172",
+      "url": "https://docs.hydromancer.xyz/readme/websocket/twap-data.md",
+      "title": "TWAP data",
+      "provider": "hydromancer",
+      "section": "websocket",
+      "snapshot_date": "2026-09-14",
+      "snapshot_date_basis": "source-corpus directory date; exact page capture time unavailable",
+      "sha256": "f2ceb20988cbada930d8b3adb92e99966b6818932898effd90d145be2686e80e"
+    },
+    {
+      "id": "hydro-173",
+      "url": "https://docs.hydromancer.xyz/readme/websocket/twap-data/alltwapstatusupdates.md",
+      "title": "allTwapStatusUpdates",
+      "provider": "hydromancer",
+      "section": "websocket",
+      "snapshot_date": "2026-09-14",
+      "snapshot_date_basis": "source-corpus directory date; exact page capture time unavailable",
+      "sha256": "0b5042133417725c0a9a2152b4b117d3285b6ba2a5f7d7dff086ec9c272fb273"
+    },
+    {
+      "id": "hydro-174",
+      "url": "https://docs.hydromancer.xyz/readme/websocket/funding-and-deposits-data.md",
+      "title": "Funding and deposits data",
+      "provider": "hydromancer",
+      "section": "websocket",
+      "snapshot_date": "2026-09-14",
+      "snapshot_date_basis": "source-corpus directory date; exact page capture time unavailable",
+      "sha256": "763eaf7f6afdc892d1a420b7ec0cd3b19630ea6a82096a97bb184b369a4c712c"
+    },
+    {
+      "id": "hydro-175",
+      "url": "https://docs.hydromancer.xyz/readme/websocket/funding-and-deposits-data/allusernonfundingledgerevents.md",
+      "title": "allUserNonFundingLedgerEvents",
+      "provider": "hydromancer",
+      "section": "websocket",
+      "snapshot_date": "2026-09-14",
+      "snapshot_date_basis": "source-corpus directory date; exact page capture time unavailable",
+      "sha256": "5126b7b9b680c7a0cd540bc201768681e34e211c0cccc4862d1ead607bf0ea69"
+    },
+    {
+      "id": "hydro-176",
+      "url": "https://docs.hydromancer.xyz/readme/websocket/funding-and-deposits-data/fundingrates.md",
+      "title": "fundingRates",
+      "provider": "hydromancer",
+      "section": "websocket",
+      "snapshot_date": "2026-09-14",
+      "snapshot_date_basis": "source-corpus directory date; exact page capture time unavailable",
+      "sha256": "23b818a49562aa04d0eb88de53969c67bf6cabe0244271c81d40768d9c480ca6"
+    },
+    {
+      "id": "hydro-177",
+      "url": "https://docs.hydromancer.xyz/readme/websocket/hip4marketevents.md",
+      "title": "hip4MarketEvents",
+      "provider": "hydromancer",
+      "section": "websocket",
+      "snapshot_date": "2026-09-14",
+      "snapshot_date_basis": "source-corpus directory date; exact page capture time unavailable",
+      "sha256": "940058581cdd4a121ae3656e3503023453a4226d726ca6603bff33d6da708a16"
+    },
+    {
+      "id": "hydro-178",
+      "url": "https://docs.hydromancer.xyz/readme/historical-data-exports.md",
+      "title": "Historical data exports",
+      "provider": "hydromancer",
+      "section": "platform",
+      "snapshot_date": "2026-09-14",
+      "snapshot_date_basis": "source-corpus directory date; exact page capture time unavailable",
+      "sha256": "aacfc716b244f4a1a52d2182510e816465d4bba957493ac224ab9d1f4ad23139"
+    },
+    {
+      "id": "hydro-179",
+      "url": "https://docs.hydromancer.xyz/readme/builder-guides.md",
+      "title": "Builder guides",
+      "provider": "hydromancer",
+      "section": "platform",
+      "snapshot_date": "2026-09-14",
+      "snapshot_date_basis": "source-corpus directory date; exact page capture time unavailable",
+      "sha256": "5898625dcaf35026159263cf8fef1bcd74c9eb183de4f8c45b77f543eb2ca3d2"
+    },
+    {
+      "id": "hydro-180",
+      "url": "https://docs.hydromancer.xyz/readme/builder-guides/copytrading-and-social-trading.md",
+      "title": "Copytrading and social trading",
+      "provider": "hydromancer",
+      "section": "platform",
+      "snapshot_date": "2026-09-14",
+      "snapshot_date_basis": "source-corpus directory date; exact page capture time unavailable",
+      "sha256": "26e1e34b5a1cd7ec979c78e159727dbe9314ccb138c6031256fca28978a9547f"
+    },
+    {
+      "id": "hydro-181",
+      "url": "https://docs.hydromancer.xyz/readme/builder-guides/quant-funds.md",
+      "title": "Market makers and quant funds",
+      "provider": "hydromancer",
+      "section": "platform",
+      "snapshot_date": "2026-09-14",
+      "snapshot_date_basis": "source-corpus directory date; exact page capture time unavailable",
+      "sha256": "1270279d1e17f1abeadcd018c5dc992ee375c4413d1fff7d54720f76a7fa5068"
+    },
+    {
+      "id": "hydro-182",
+      "url": "https://docs.hydromancer.xyz/readme/builder-guides/oracle-providers.md",
+      "title": "Oracle providers",
+      "provider": "hydromancer",
+      "section": "platform",
+      "snapshot_date": "2026-09-14",
+      "snapshot_date_basis": "source-corpus directory date; exact page capture time unavailable",
+      "sha256": "f8169110b41e6e25714eef7a3cd6623e88403a8cd4075ad1d8905d0a36caa4ba"
+    },
+    {
+      "id": "hydro-183",
+      "url": "https://docs.hydromancer.xyz/readme/builder-guides/data-and-information-tooling.md",
+      "title": "Data and information tooling",
+      "provider": "hydromancer",
+      "section": "platform",
+      "snapshot_date": "2026-09-14",
+      "snapshot_date_basis": "source-corpus directory date; exact page capture time unavailable",
+      "sha256": "4f1f1b57baf76757eab5b85fa7d017ed83dc824c880d7f6c588024dbb7f7547f"
+    },
+    {
+      "id": "hydro-184",
+      "url": "https://docs.hydromancer.xyz/readme/builder-guides/trading-frontend.md",
+      "title": "Trading frontend",
+      "provider": "hydromancer",
+      "section": "platform",
+      "snapshot_date": "2026-09-14",
+      "snapshot_date_basis": "source-corpus directory date; exact page capture time unavailable",
+      "sha256": "1418fee24aaefe7d151f9f4823866ef71fdb7911107c143c89690cb93172df60"
+    },
+    {
+      "id": "hydro-185",
+      "url": "https://docs.hydromancer.xyz/readme/builder-guides/tax-and-compliance-tools.md",
+      "title": "Tax and compliance tools",
+      "provider": "hydromancer",
+      "section": "platform",
+      "snapshot_date": "2026-09-14",
+      "snapshot_date_basis": "source-corpus directory date; exact page capture time unavailable",
+      "sha256": "981be7a72815049c9419af2a866cda1488d1b8acc5f216878fe5f47c44a9d683"
+    },
+    {
+      "id": "hydro-186",
+      "url": "https://docs.hydromancer.xyz/readme/builder-guides/hip-3-dex.md",
+      "title": "HIP-3 DEX",
+      "provider": "hydromancer",
+      "section": "platform",
+      "snapshot_date": "2026-09-14",
+      "snapshot_date_basis": "source-corpus directory date; exact page capture time unavailable",
+      "sha256": "f2ce826f0d4dbb6a1a261aca3050cea06723e3dfba381f6c330c6c5022c8faec"
+    },
+    {
+      "id": "hydro-187",
+      "url": "https://docs.hydromancer.xyz/readme/builder-guides/l4-orderbook-streaming.md",
+      "title": "L4 orderbook streaming",
+      "provider": "hydromancer",
+      "section": "platform",
+      "snapshot_date": "2026-09-14",
+      "snapshot_date_basis": "source-corpus directory date; exact page capture time unavailable",
+      "sha256": "a39fc6310cf684b062683f8ed13b29dba52cddd1a7e60167e3e36dd4fe9ae896"
+    },
+    {
+      "id": "hydro-188",
+      "url": "https://docs.hydromancer.xyz/readme/builder-guides/tpsl-heatmap-streaming.md",
+      "title": "TP/SL heatmap streaming",
+      "provider": "hydromancer",
+      "section": "platform",
+      "snapshot_date": "2026-09-14",
+      "snapshot_date_basis": "source-corpus directory date; exact page capture time unavailable",
+      "sha256": "4c939d871d51fbd8384cea9b28a265fe298bb7badd9d3cc452b3e5dfc30cabf5"
+    },
+    {
+      "id": "hydro-189",
+      "url": "https://docs.hydromancer.xyz/readme/get-api-keys.md",
+      "title": "Get API keys!",
+      "provider": "hydromancer",
+      "section": "platform",
+      "snapshot_date": "2026-09-14",
+      "snapshot_date_basis": "source-corpus directory date; exact page capture time unavailable",
+      "sha256": "622a858285986cf13629616bc80fc882822fd42062692563c26cbb9825d8fff6"
+    },
+    {
+      "id": "hydro-190",
+      "url": "https://docs.hydromancer.xyz/readme/contact-us.md",
+      "title": "Contact us",
+      "provider": "hydromancer",
+      "section": "platform",
+      "snapshot_date": "2026-09-14",
+      "snapshot_date_basis": "source-corpus directory date; exact page capture time unavailable",
+      "sha256": "53de10ce68a6e48a95e760f239723926f4c6e4dc5e087bdad2b546e663b53a96"
+    },
+    {
+      "id": "hydro-191",
+      "url": "https://docs.hydromancer.xyz/readme/pricing.md",
+      "title": "Pricing",
+      "provider": "hydromancer",
+      "section": "platform",
+      "snapshot_date": "2026-09-14",
+      "snapshot_date_basis": "source-corpus directory date; exact page capture time unavailable",
+      "sha256": "cd11e7be9de30cea80839e3d379c9586f2e7f7cd45c2599d160080dd4c6c67d0"
+    },
+    {
+      "id": "hydro-192",
+      "url": "https://docs.hydromancer.xyz/readme/hydromancer-for-early-stage-teams.md",
+      "title": "Hydromancer for early-stage teams",
+      "provider": "hydromancer",
+      "section": "platform",
+      "snapshot_date": "2026-09-14",
+      "snapshot_date_basis": "source-corpus directory date; exact page capture time unavailable",
+      "sha256": "b57e120d0790cd598ca734dd1fe66f8cb4c97c0ed72fb678db9dd6ec1fb8a9bc"
+    },
+    {
+      "id": "hydro-193",
+      "url": "https://docs.hydromancer.xyz/readme/why-hydromancer.md",
+      "title": "Why Hydromancer?💧🔮",
+      "provider": "hydromancer",
+      "section": "platform",
+      "snapshot_date": "2026-09-14",
+      "snapshot_date_basis": "source-corpus directory date; exact page capture time unavailable",
+      "sha256": "d321306e6f5020e109b5fb6864931460ddbd068a3f116b2400f2d7813b19784c"
+    },
+    {
+      "id": "hydro-194",
+      "url": "https://docs.hydromancer.xyz/readme/hyena.md",
+      "title": "HyENA",
+      "provider": "hydromancer",
+      "section": "platform",
+      "snapshot_date": "2026-09-14",
+      "snapshot_date_basis": "source-corpus directory date; exact page capture time unavailable",
+      "sha256": "f7588a7856a37531514f33842b2aeaad6269253c98557b07bfa4a4883703add5"
+    },
+    {
+      "id": "hydro-195",
+      "url": "https://docs.hydromancer.xyz/readme/hyena/quickstart.md",
+      "title": "Quickstart",
+      "provider": "hydromancer",
+      "section": "platform",
+      "snapshot_date": "2026-09-14",
+      "snapshot_date_basis": "source-corpus directory date; exact page capture time unavailable",
+      "sha256": "5ad4e417af8c199b30087cc40384c387510e9100d1a424d1091171e7d84dac5e"
+    },
+    {
+      "id": "hydro-196",
+      "url": "https://docs.hydromancer.xyz/readme/hyena/data-export-overview.md",
+      "title": "Data export overview",
+      "provider": "hydromancer",
+      "section": "platform",
+      "snapshot_date": "2026-09-14",
+      "snapshot_date_basis": "source-corpus directory date; exact page capture time unavailable",
+      "sha256": "b1adfa4f67902ac1f277814f6c59e72308c8a00161e451e04cceeef85046313e"
+    },
+    {
+      "id": "hydro-197",
+      "url": "https://docs.hydromancer.xyz/readme/hyena/data-export-overview/hourly-exports.md",
+      "title": "Hourly Exports",
+      "provider": "hydromancer",
+      "section": "platform",
+      "snapshot_date": "2026-09-14",
+      "snapshot_date_basis": "source-corpus directory date; exact page capture time unavailable",
+      "sha256": "7d221ab79ba00a356d209da7b5e4383225dbb75f076814fb7851f6ccced4afe9"
+    },
+    {
+      "id": "hydro-198",
+      "url": "https://docs.hydromancer.xyz/readme/hyena/data-export-overview/daily-exports.md",
+      "title": "Daily exports",
+      "provider": "hydromancer",
+      "section": "platform",
+      "snapshot_date": "2026-09-14",
+      "snapshot_date_basis": "source-corpus directory date; exact page capture time unavailable",
+      "sha256": "0d9a20c3b52f668c3d27e99590a7b23f94b0d9904b272056442051e007468c85"
+    },
+    {
+      "id": "hydro-199",
+      "url": "https://docs.hydromancer.xyz/readme/outcome-analytics.md",
+      "title": "Outcome Analytics",
+      "provider": "hydromancer",
+      "section": "platform",
+      "snapshot_date": "2026-09-14",
+      "snapshot_date_basis": "source-corpus directory date; exact page capture time unavailable",
+      "sha256": "2609e6bc15d973eeef9cabe763310f497ffcfd4089dd392ea77bc4c53cb28178"
+    },
+    {
+      "id": "hydro-200",
+      "url": "https://docs.hydromancer.xyz/readme/outcome-analytics/outcome-builder-dashboard.md",
+      "title": "Outcome Builder Analytics",
+      "provider": "hydromancer",
+      "section": "platform",
+      "snapshot_date": "2026-09-14",
+      "snapshot_date_basis": "source-corpus directory date; exact page capture time unavailable",
+      "sha256": "f29fa7f39eb7944b7db8fd944efb44dbb386563d9764ad529502ddcf3d58ba09"
+    },
+    {
+      "id": "hydro-201",
+      "url": "https://docs.hydromancer.xyz/readme/builder-analytics.md",
+      "title": "Builder Analytics",
+      "provider": "hydromancer",
+      "section": "platform",
+      "snapshot_date": "2026-09-14",
+      "snapshot_date_basis": "source-corpus directory date; exact page capture time unavailable",
+      "sha256": "8848989f6dbe8e3d4676675dce96dfd351c1e8ee379a7a192bace6aca33e6015"
+    },
+    {
+      "id": "hydro-202",
+      "url": "https://docs.hydromancer.xyz/readme/builder-analytics/builder-dashboard.md",
+      "title": "Builder Dashboard",
+      "provider": "hydromancer",
+      "section": "platform",
+      "snapshot_date": "2026-09-14",
+      "snapshot_date_basis": "source-corpus directory date; exact page capture time unavailable",
+      "sha256": "9c2f790b8c2df4d49d8057fe9a9275a2539c841130e31236d5745c3f83188084"
+    },
+    {
+      "id": "hydro-203",
+      "url": "https://docs.hydromancer.xyz/readme/incidents.md",
+      "title": "Incidents",
+      "provider": "hydromancer",
+      "section": "platform",
+      "snapshot_date": "2026-09-14",
+      "snapshot_date_basis": "source-corpus directory date; exact page capture time unavailable",
+      "sha256": "841e403d0d98ac14effa8454be7033350b411e73674e1c41aa817db0fb119b55"
+    },
+    {
+      "id": "hydro-204",
+      "url": "https://docs.hydromancer.xyz/readme/incidents/2026-08-22.md",
+      "title": "2026-08-22",
+      "provider": "hydromancer",
+      "section": "platform",
+      "snapshot_date": "2026-09-14",
+      "snapshot_date_basis": "source-corpus directory date; exact page capture time unavailable",
+      "sha256": "4a41fb3311373e1bdfdac75e1f977ce8e99d8a690d8528f8a11c82cf6cf5ce3d"
+    },
+    {
+      "id": "hydro-205",
+      "url": "https://docs.hydromancer.xyz/reservoir.md",
+      "title": "Reservoir",
+      "provider": "hydromancer",
+      "section": "platform",
+      "snapshot_date": "2026-09-14",
+      "snapshot_date_basis": "source-corpus directory date; exact page capture time unavailable",
+      "sha256": "419640ee5c940d77d148882b042e4fdd9326f01c1b2b9798e6ea56e8f2c70e35"
+    },
+    {
+      "id": "hydro-206",
+      "url": "https://docs.hydromancer.xyz/reservoir/hyperliquid.md",
+      "title": "Hyperliquid",
+      "provider": "hydromancer",
+      "section": "platform",
+      "snapshot_date": "2026-09-14",
+      "snapshot_date_basis": "source-corpus directory date; exact page capture time unavailable",
+      "sha256": "f43428ef55576155a448d273c4f7ef2fc199b6f372a9881d4943933e79f1676d"
+    },
+    {
+      "id": "hydro-207",
+      "url": "https://docs.hydromancer.xyz/reservoir/tradexyz.md",
+      "title": "Trade\\[XYZ\\]",
+      "provider": "hydromancer",
+      "section": "platform",
+      "snapshot_date": "2026-09-14",
+      "snapshot_date_basis": "source-corpus directory date; exact page capture time unavailable",
+      "sha256": "e105683970f7aeb95657d5ee1ae3111086719b8ef11def93cbb7e90db0c9fac6"
+    },
+    {
+      "id": "hydro-208",
+      "url": "https://docs.hydromancer.xyz/reservoir/ventuals.md",
+      "title": "Ventuals",
+      "provider": "hydromancer",
+      "section": "platform",
+      "snapshot_date": "2026-09-14",
+      "snapshot_date_basis": "source-corpus directory date; exact page capture time unavailable",
+      "sha256": "9b5a298c4a5a08b7b5845bc50ccd250fdafe3a6c8c85cf05666ae38155c9faa2"
+    },
+    {
+      "id": "hydro-209",
+      "url": "https://docs.hydromancer.xyz/reservoir/felix.md",
+      "title": "Felix",
+      "provider": "hydromancer",
+      "section": "platform",
+      "snapshot_date": "2026-09-14",
+      "snapshot_date_basis": "source-corpus directory date; exact page capture time unavailable",
+      "sha256": "41c86fe5f32d87fe0e12b2e108ee0947125bf14ad46af6c818fa973afdac8ec4"
+    },
+    {
+      "id": "hydro-210",
+      "url": "https://docs.hydromancer.xyz/reservoir/markets.xyz.md",
+      "title": "Markets.xyz",
+      "provider": "hydromancer",
+      "section": "platform",
+      "snapshot_date": "2026-09-14",
+      "snapshot_date_basis": "source-corpus directory date; exact page capture time unavailable",
+      "sha256": "acdddd7e8822e0b7856e1cc4dbb2c2d48c79642f2d613937577e9224eb8d30e6"
+    },
+    {
+      "id": "hydro-211",
+      "url": "https://docs.hydromancer.xyz/reservoir/entropy.md",
+      "title": "Entropy",
+      "provider": "hydromancer",
+      "section": "platform",
+      "snapshot_date": "2026-09-14",
+      "snapshot_date_basis": "source-corpus directory date; exact page capture time unavailable",
+      "sha256": "161b81465f4249bae8d69137910a4608ffd3c8d5480a17b4b94d8346344cb830"
+    },
+    {
+      "id": "hydro-212",
+      "url": "https://docs.hydromancer.xyz/reservoir/dreamcash.md",
+      "title": "Dreamcash",
+      "provider": "hydromancer",
+      "section": "platform",
+      "snapshot_date": "2026-09-14",
+      "snapshot_date_basis": "source-corpus directory date; exact page capture time unavailable",
+      "sha256": "bfe61c52bec72a4450ea1404d948f77e07920a1b83c56eff2e2d8760749930ab"
+    },
+    {
+      "id": "hydro-213",
+      "url": "https://docs.hydromancer.xyz/reservoir/hyena.md",
+      "title": "HyENA",
+      "provider": "hydromancer",
+      "section": "platform",
+      "snapshot_date": "2026-09-14",
+      "snapshot_date_basis": "source-corpus directory date; exact page capture time unavailable",
+      "sha256": "fab84abda220d8ee6533c4f6e36f5044956f3c12db38e5fd70294b4d1f0a4267"
+    },
+    {
+      "id": "hydro-214",
+      "url": "https://docs.hydromancer.xyz/reservoir/paragon.md",
+      "title": "Paragon",
+      "provider": "hydromancer",
+      "section": "platform",
+      "snapshot_date": "2026-09-14",
+      "snapshot_date_basis": "source-corpus directory date; exact page capture time unavailable",
+      "sha256": "e6de09143b8f9d5edeb0cc5fc80be5a41bd478fb679dcc4059fe57bba45e1a38"
+    },
+    {
+      "id": "hydro-215",
+      "url": "https://docs.hydromancer.xyz/reservoir/schema-reference.md",
+      "title": "Schema reference",
+      "provider": "hydromancer",
+      "section": "platform",
+      "snapshot_date": "2026-09-14",
+      "snapshot_date_basis": "source-corpus directory date; exact page capture time unavailable",
+      "sha256": "64a72a2e6b99b6f6a55a312979717a102a9bada49e68c65e10652bc9bb7555c2"
+    },
+    {
+      "id": "hydro-216",
+      "url": "https://docs.hydromancer.xyz/reservoir/schema-reference/fills.md",
+      "title": "Fills",
+      "provider": "hydromancer",
+      "section": "platform",
+      "snapshot_date": "2026-09-14",
+      "snapshot_date_basis": "source-corpus directory date; exact page capture time unavailable",
+      "sha256": "521e919a1bbbf90a7e557bd924f6784fa285e51c0c0b801962054345eeacbb32"
+    },
+    {
+      "id": "hydro-217",
+      "url": "https://docs.hydromancer.xyz/reservoir/schema-reference/candles.md",
+      "title": "Candles",
+      "provider": "hydromancer",
+      "section": "platform",
+      "snapshot_date": "2026-09-14",
+      "snapshot_date_basis": "source-corpus directory date; exact page capture time unavailable",
+      "sha256": "36107df6ea30d49042cf76cbc568cabe1bd743dee896424bc6fe7b8fd62e4b8d"
+    },
+    {
+      "id": "hydro-218",
+      "url": "https://docs.hydromancer.xyz/reservoir/schema-reference/snapshots.md",
+      "title": "Snapshots",
+      "provider": "hydromancer",
+      "section": "platform",
+      "snapshot_date": "2026-09-14",
+      "snapshot_date_basis": "source-corpus directory date; exact page capture time unavailable",
+      "sha256": "b8384a2cf529c80849af09a614b8d755e66aff6c70b422ceab79154c0a0b5ced"
+    },
+    {
+      "id": "hydro-219",
+      "url": "https://docs.hydromancer.xyz/reservoir/schema-reference/orderbook.md",
+      "title": "Orderbook",
+      "provider": "hydromancer",
+      "section": "platform",
+      "snapshot_date": "2026-09-14",
+      "snapshot_date_basis": "source-corpus directory date; exact page capture time unavailable",
+      "sha256": "a6a593055ea3516b2dd5af36e7af21510fa1091707d3ca29f002eac5da89c1db"
+    },
+    {
+      "id": "hydro-220",
+      "url": "https://docs.hydromancer.xyz/peering.md",
+      "title": "Peering",
+      "provider": "hydromancer",
+      "section": "platform",
+      "snapshot_date": "2026-09-14",
+      "snapshot_date_basis": "source-corpus directory date; exact page capture time unavailable",
+      "sha256": "c29ddf5f8330fea1130399e55636eb2014d5984d4053c1813a13e1bfaa1e46ec"
+    },
+    {
+      "id": "hydro-221",
+      "url": "https://docs.hydromancer.xyz/get-started.md",
+      "title": "Get started",
+      "provider": "hydromancer",
+      "section": "platform",
+      "snapshot_date": "2026-09-14",
+      "snapshot_date_basis": "source-corpus directory date; exact page capture time unavailable",
+      "sha256": "e48b096f1ee58042414716a97d003c2573844a4a4beec3274d3a35fc05942b4f"
+    },
+    {
+      "id": "hydro-222",
+      "url": "https://docs.hydromancer.xyz/agents.md",
+      "title": "Agents",
+      "provider": "hydromancer",
+      "section": "platform",
+      "snapshot_date": "2026-09-14",
+      "snapshot_date_basis": "source-corpus directory date; exact page capture time unavailable",
+      "sha256": "6b9b9ed75fc09f8b26b18154100426289969b38bc6df4ecc5a50f5bb23ceb65a"
+    },
+    {
+      "id": "native-1",
+      "url": "https://hyperliquid.gitbook.io/hyperliquid-docs/for-developers/api/info-endpoint",
+      "title": "Info endpoint | Hyperliquid Docs",
+      "provider": "native",
+      "section": "native",
+      "snapshot_date": "2026-09-15T03:48:52.087888+00:00",
+      "snapshot_date_basis": "retrieved_at",
+      "sha256": "c425fd4b5c26683ef29637af6f900976ff8a6391cfa77fb7cf5c1ea33a2107e1"
+    },
+    {
+      "id": "native-2",
+      "url": "https://hyperliquid.gitbook.io/hyperliquid-docs/for-developers/api/websocket",
+      "title": "Websocket | Hyperliquid Docs",
+      "provider": "native",
+      "section": "native",
+      "snapshot_date": "2026-09-15T03:48:51.763293+00:00",
+      "snapshot_date_basis": "retrieved_at",
+      "sha256": "c5f61b8128e89e7df82a1f60e3a6838b90b80bd67d15bdb52f59849e592f0b4d"
+    },
+    {
+      "id": "native-3",
+      "url": "https://hyperliquid.gitbook.io/hyperliquid-docs/historical-data",
+      "title": "Historical data | Hyperliquid Docs",
+      "provider": "native",
+      "section": "native",
+      "snapshot_date": "2026-09-15T03:48:51.799645+00:00",
+      "snapshot_date_basis": "retrieved_at",
+      "sha256": "d44fd08ad08de03aff38376b3fc3ad1fb2c03ffdf2a40781b7563ea94dd46c71"
+    },
+    {
+      "id": "native-13",
+      "url": "https://hyperliquid.gitbook.io/hyperliquid-docs/for-developers/api/optimizing-latency",
+      "title": "Optimizing latency | Hyperliquid Docs",
+      "provider": "native",
+      "section": "native",
+      "snapshot_date": "2026-09-15T03:49:15.738321+00:00",
+      "snapshot_date_basis": "retrieved_at",
+      "sha256": "0f2c252166f787fb5f0f416a51e937a0692ef694b8cff861a0ad93f3332d3960"
+    },
+    {
+      "id": "native-14",
+      "url": "https://hyperliquid.gitbook.io/hyperliquid-docs/for-developers/api/rate-limits-and-user-limits",
+      "title": "Rate limits and user limits | Hyperliquid Docs",
+      "provider": "native",
+      "section": "native",
+      "snapshot_date": "2026-09-15T03:49:15.682274+00:00",
+      "snapshot_date_basis": "retrieved_at",
+      "sha256": "8e4a384b283595245cdf98c32a96cea3318c669429614d3e6f9cf050d04bbe00"
+    }
+  ]
+}

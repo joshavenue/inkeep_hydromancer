@@ -1,0 +1,33 @@
+import { test } from 'node:test';
+import assert from 'node:assert/strict';
+import fs from 'node:fs';
+import { liveConfig } from './live-config.mjs';
+import { isStreamError } from './sse-errors.mjs';
+import crypto from 'node:crypto';
+
+const origin = 'http://127.0.0.1:18580';
+test('native anonymous chat searches public docs and answers with citations', { timeout: 180000 }, async (t) => {
+  const cfg = await liveConfig(t, { model: true });
+  if (!cfg) return;
+  const sessionResponse=await fetch(`${cfg.apiRoot}/run/auth/apps/${cfg.appId}/anonymous-session`,{method:'POST',headers:{Origin:origin,'Content-Type':'application/json'},body:'{}'});
+  assert.equal(sessionResponse.status,200);
+  const {token}=await sessionResponse.json();
+  const conversationId=`hydro-verified-${crypto.randomUUID()}`;
+  const response=await fetch(`${cfg.apiRoot}/run/api/chat`,{method:'POST',headers:{Origin:origin,'Content-Type':'application/json','x-inkeep-app-id':cfg.appId,Authorization:`Bearer ${token}`},body:JSON.stringify({conversationId,messages:[{id:crypto.randomUUID(),role:'user',parts:[{type:'text',text:'I want to monitor live fills for 500 wallets. Is Hydromancer a good fit? Explain the native Hyperliquid pain and the exact useful Hydro API. Cite public docs.'}]}]}),signal:AbortSignal.timeout(170000)});
+  assert.equal(response.status,200);
+  const text=await response.text();
+  fs.writeFileSync('logs/verified-chat.sse',text);
+  const events=text.split('\n').filter(line=>line.startsWith('data: ') && line.slice(6)!=='[DONE]').map(line=>JSON.parse(line.slice(6)));
+  const errors=events.filter(isStreamError);
+  assert.deepEqual(errors,[]);
+  const calls=events.filter(event=>event.type==='tool-input-available'&&event.toolName==='search_hydromancer_docs');
+  assert.ok(calls.length>=1&&calls.length<=2,`expected 1-2 public searches, got ${calls.length}`);
+  const answer=events.filter(event=>event.type==='text-delta').map(event=>event.delta).join('');
+  fs.writeFileSync('logs/verified-chat-answer.md',answer);
+  assert.match(answer,/userFills/);
+  assert.match(answer,/https:\/\/docs\.hydromancer\.xyz\//);
+  assert.match(answer,/https:\/\/hyperliquid\.gitbook\.io\//);
+  assert.ok(answer.length>300);
+  fs.writeFileSync('logs/verified-chat-metadata.json',JSON.stringify({conversationId,searchCalls:calls.length,answerChars:answer.length,status:response.status},null,2));
+  console.log(answer);
+});

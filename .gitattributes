@@ -1,0 +1,4 @@
+# Preserve the pinned, unmodified upstream browser bundle.
+frontend/public/embed.js -text -whitespace linguist-vendored
+runtime/pnpm-lock.yaml linguist-generated
+knowledge/public-source-catalog.json linguist-generated
