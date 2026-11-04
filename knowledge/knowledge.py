@@ -20,6 +20,19 @@ NATIVE = Path(os.environ.get('HYPERLIQUID_SNAPSHOT_ROOT', ROOT / 'snapshots/nati
 SITE = Path(os.environ.get('HYDROMANCER_SITE_SNAPSHOT_ROOT', ROOT / 'snapshots/site')).expanduser().resolve()
 DB = Path(os.environ.get('HYDROMANCER_KNOWLEDGE_DB', ROOT / 'public-docs.sqlite')).expanduser().resolve()
 MAX_PASSAGE = 4200
+SEARCH_EXCERPT = 1800   # chars of each passage returned by search (fetch has the rest)
+SEARCH_CONTEXT = 300    # chars of the page opening returned alongside a mid-page excerpt
+
+
+def clip(text, limit):
+    """Cut at a paragraph or sentence boundary at or before limit."""
+    if len(text) <= limit:
+        return text
+    cut = text.rfind('\n\n', limit // 2, limit)
+    if cut < 0:
+        cut = text.rfind('. ', limit // 2, limit)
+        cut = cut + 1 if cut > 0 else limit
+    return text[:cut].rstrip()
 
 
 def snapshot_root(provider):
@@ -211,6 +224,12 @@ def query_plan(query):
         extra += ['userFillsByTime', 'history', 'historical', 'exports']
         boosts.setdefault('userFillsByTime', 95)
         boosts.setdefault('Historical data | Hyperliquid Docs', 60)
+    if re.search(r'api.?key|sign.?up|signup|onboard|get started|register|contact|sales|talk to', lower):
+        extra += ['keys', 'onboarded', 'contact', 'plan']
+        boosts.update({'Get API keys!': 130, 'Contact': 90, 'Pricing': 70})
+    if re.search(r'free|grant|early.?stage|public good|startup|student', lower):
+        extra += ['free', 'early-stage', 'teams', 'reservoir']
+        boosts.update({'Hydromancer for early-stage teams': 125, 'Reservoir': 70})
     if re.search(r'price|pricing|cost|plan|free|expensive', lower):
         extra += ['pricing', 'tokens', 'plans']
         boosts['Pricing'] = 120
@@ -239,7 +258,7 @@ def search(query, limit=6, *, db=DB):
     if type(limit) is not int or not 1 <= limit <= 8:
         raise ValueError('limit must be an integer between 1 and 8')
     terms, boosts = query_plan(query)
-    result = {'query': query, 'expanded_terms': terms, 'evidence_policy': EVIDENCE_POLICY, 'results': []}
+    result = {'query': query, 'results': []}
     if not terms:
         return result
     expression = ' OR '.join('"' + t.replace('"', '""') + '"' for t in terms)
@@ -278,10 +297,13 @@ def search(query, limit=6, *, db=DB):
             if len(result['results']) >= limit:
                 continue
             body = conn.execute('SELECT body FROM documents WHERE id=?', (row['id'],)).fetchone()['body']
-            item = metadata(row)
-            item.update(heading=row['heading'], excerpt=row['excerpt'],
-                        context_excerpt=body[:1000], start_offset=row['start_offset'],
-                        end_offset=row['end_offset'], document_chars=len(body), also_matches=[])
+            item = {k: row[k] for k in ('id', 'url', 'title', 'snapshot_date', 'provider', 'section')}
+            # Compact result: the model reads the first paragraphs of an excerpt and the
+            # page opening; everything it needs for a deeper read is in fetch.
+            item.update(heading=row['heading'], excerpt=clip(row['excerpt'], SEARCH_EXCERPT),
+                        context_excerpt=clip(body, SEARCH_CONTEXT) if row['start_offset'] else '',
+                        start_offset=row['start_offset'], end_offset=row['end_offset'],
+                        document_chars=len(body), also_matches=[])
             seen[row['id']] = item
             result['results'].append(item)
     return result

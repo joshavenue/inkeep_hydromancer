@@ -77,9 +77,10 @@ def test_search_exact_endpoints_and_natural_fit(tmp_path):
     for h in hits:
         assert h['excerpt'] in source[h['id']]
         assert h['context_excerpt'] in source[h['id']]
-        assert h['title'] and h['heading'] and h['url'] and h['sha256'] and h['snapshot_date'] and h['section']
-        assert len(h['excerpt']) <= 4200 and len(h['context_excerpt']) <= 1000
-        assert 'source_path' not in h and 'body' not in h
+        assert h['title'] and h['heading'] and h['url'] and h['snapshot_date'] and h['section']
+        assert len(h['excerpt']) <= k.SEARCH_EXCERPT and len(h['context_excerpt']) <= k.SEARCH_CONTEXT
+        assert 'source_path' not in h and 'body' not in h and 'sha256' not in h
+        assert len(json.dumps(h)) < 2600, 'search results stay compact; fetch carries the full page'
 
 
 def test_native_endpoint_passages_keep_associated_headings(tmp_path):

@@ -1,6 +1,7 @@
 import http from 'node:http';
 import { readFileSync } from 'node:fs';
 import { randomBytes, randomUUID, timingSafeEqual } from 'node:crypto';
+import { createAnswerFilter } from './answer-filter.mjs';
 
 function json(res, status, body) {
   res.writeHead(status, { 'Content-Type': 'application/json; charset=utf-8' });
@@ -122,7 +123,8 @@ export function createPreviewServer(config) {
         if (upstream.headers.has(name)) outHeaders[name] = upstream.headers.get(name);
       }
       res.writeHead(upstream.status, outHeaders);
-      if (upstream.body) for await (const chunk of upstream.body) {
+      const stream = isChat && upstream.body ? upstream.body.pipeThrough(createAnswerFilter()) : upstream.body;
+      if (stream) for await (const chunk of stream) {
         if (res.destroyed) break;
         res.write(chunk);
       }
