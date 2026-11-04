@@ -30,6 +30,8 @@ allowed hosts.
 
 Alternatives, all set through `MODEL` in `.env`:
 
+- `anthropic/claude-haiku-5-5` ($0.10 / $0.50 for prompts under 100k tokens) with
+  `ANTHROPIC_API_KEY`: same rate as Luna; useful when the team has Anthropic credit.
 - `openrouter/openai/gpt-5.4-nano` ($0.20 / $1.25): newer nano model, roughly double the cost.
 - `openrouter/google/gemini-2.5-flash-lite` ($0.10 / $0.40): slightly cheaper output;
   Google recommends 3.5 Flash-Lite ($0.30 / $2.50) for new projects.

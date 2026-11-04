@@ -28,7 +28,17 @@ test('default model is gpt-6-luna through OpenRouter with reasoning off and a sm
   assert.equal(modelConfig({ ...env, MODEL: 'openrouter/google/gemini-2.5-flash-lite' }).model, 'openrouter/google/gemini-2.5-flash-lite');
   assert.throws(() => modelConfig({ ...env, MODEL: 'gpt-6-luna' }), /provider\/model-id/);
   assert.throws(() => modelConfig({ ...env, MODEL: 'openrouter/../secret' }), /provider\/model-id/);
-  assert.throws(() => modelConfig({ ...env, MODEL: 'anthropic/claude-haiku-4-5' }), /provider must be/);
+  assert.throws(() => modelConfig({ ...env, MODEL: 'mistral/mistral-small' }), /provider must be/);
+});
+test('Anthropic provider needs its own key and sends no thinking options', async () => {
+  const { modelConfig, MAX_OUTPUT_TOKENS } = await import('./config.mjs');
+  assert.throws(() => modelConfig({ MODEL: 'anthropic/claude-haiku-5-5' }), /ANTHROPIC_API_KEY/);
+  const env = { MODEL: 'anthropic/claude-haiku-5-5', ANTHROPIC_API_KEY: 'synthetic-offline-test-key' };
+  assert.deepEqual(modelConfig(env), {
+    model: 'anthropic/claude-haiku-5-5',
+    providerOptions: { contextWindowSize: 1_000_000, maxOutputTokens: MAX_OUTPUT_TOKENS },
+  });
+  assert.ok(!JSON.stringify(modelConfig(env)).includes(env.ANTHROPIC_API_KEY));
 });
 test('direct OpenAI provider keeps reasoning off and low verbosity', async () => {
   const { modelConfig, MAX_OUTPUT_TOKENS } = await import('./config.mjs');

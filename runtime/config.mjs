@@ -32,6 +32,13 @@ export function modelConfig(env = process.env) {
     providerOptions.openrouter = { reasoning: { effort: 'none' } };
     return { model: `openrouter/${id}`, providerOptions };
   }
+  if (provider === 'anthropic') {
+    if (!env.ANTHROPIC_API_KEY?.trim()) throw new Error('Set server-only ANTHROPIC_API_KEY for the anthropic/ provider.');
+    // Claude Haiku 5.5: $0.10 / 1M input, $0.50 / 1M output for prompts under 100k
+    // tokens (Anthropic list price, 4 Nov 2026), the same rate as gpt-6-luna.
+    // Extended thinking stays off; Inkeep adds prompt caching for Anthropic itself.
+    return { model: `anthropic/${id}`, providerOptions };
+  }
   if (provider === 'openai') {
     if (!env.OPENAI_API_KEY?.trim()) throw new Error('Set server-only OPENAI_API_KEY for the openai/ provider.');
     // Inkeep forwards object-valued provider options per call. GPT-6 Luna accepts
@@ -44,7 +51,7 @@ export function modelConfig(env = process.env) {
     providerOptions.google = { thinkingConfig: { thinkingBudget: 0 } };
     return { model: `google/${id}`, providerOptions };
   }
-  if (provider !== 'custom') throw new Error('MODEL provider must be openrouter, openai, google or custom (OpenAI-compatible endpoint).');
+  if (provider !== 'custom') throw new Error('MODEL provider must be openrouter, anthropic, openai, google or custom (OpenAI-compatible endpoint).');
   let url;
   try { url = new URL(env.MODEL_BASE_URL); }
   catch { throw new Error('Set MODEL_BASE_URL explicitly to an OpenAI-compatible Chat Completions endpoint for the custom/ provider.'); }
