@@ -70,3 +70,33 @@ test('App creation writes only verified fresh metadata, keeps secrets server-sid
     assert.equal(calls.length, 2);
   } finally { rmSync(root, { recursive: true, force: true }); }
 });
+
+test('readback accepts the released API shape without tenantId and adopt verifies an existing App', async () => {
+  const { createLocalApp, adoptLocalApp } = await import('./scripts/create-local-app.mjs');
+  const root = mkdtempSync(join(tmpdir(), 'inkeep-app-adopt-'));
+  const env = { INKEEP_AGENTS_MANAGE_API_BYPASS_SECRET: 'test-only' };
+  const existing = {
+    id: 'app_existingfixture', projectId: 'hydromancer-public', type: 'web_client', enabled: true,
+    defaultAgentId: 'hydromancer-assistant', defaultProjectId: 'hydromancer-public',
+    config: { type: 'web_client', webClient: { allowAnonymous: true, allowedDomains: ['localhost:18580', '127.0.0.1:18580'] } },
+  };
+  try {
+    const calls = [];
+    const fetchImpl = async (url, options) => {
+      calls.push(options.method);
+      if (options.method === 'POST') return Response.json({ data: { app: { id: 'app_existingfixture' } } }, { status: 201 });
+      assert.ok(url.endsWith('/apps/app_existingfixture'));
+      return Response.json({ data: existing });
+    };
+    const created = await createLocalApp({ clientFile: join(root, 'a.json'), fetchImpl, env });
+    assert.equal(created.appId, 'app_existingfixture');
+    const adopted = await adoptLocalApp('app_existingfixture', { clientFile: join(root, 'b.json'), fetchImpl, env });
+    assert.deepEqual(calls, ['POST', 'GET', 'GET'], 'adopt must not POST');
+    assert.equal(adopted.appId, 'app_existingfixture');
+    assert.equal(JSON.parse(readFileSync(join(root, 'b.json'), 'utf8')).agentId, 'hydromancer-assistant');
+    await assert.rejects(adoptLocalApp('not-an-app', { clientFile: join(root, 'c.json'), fetchImpl, env }), /App ID/);
+    const disabled = { ...existing, enabled: false };
+    await assert.rejects(adoptLocalApp('app_existingfixture', { clientFile: join(root, 'd.json'), env, fetchImpl: async () => Response.json({ data: disabled }) }));
+    assert.equal(existsSync(join(root, 'd.json')), false);
+  } finally { rmSync(root, { recursive: true, force: true }); }
+});
