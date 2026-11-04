@@ -13,9 +13,11 @@ from http.cookiejar import CookieJar
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-GATEWAY = 'http://127.0.0.1:18580'
 ALLOWED = {'docs.hydromancer.xyz', 'hydromancer.xyz', 'www.hydromancer.xyz', 'hyperliquid.gitbook.io'}
 state = json.loads((ROOT / 'frontend/state.json').read_text())
+# The gateway sets a Secure session cookie, so go through the published HTTPS origin
+# (the tunnel), exactly as a visitor's browser does.
+GATEWAY = state.get('publishedOrigin') or sys.exit('frontend/state.json has no publishedOrigin; start the tunnel first')
 app_id = json.loads((ROOT / 'runtime/preview-client.json').read_text())['appId']
 questions = [q.strip() for q in (ROOT / 'deploy/qa-questions.txt').read_text().splitlines() if q.strip() and not q.startswith('#')]
 out = Path(sys.argv[1] if len(sys.argv) > 1 else ROOT / 'deploy/qa-results.jsonl')
