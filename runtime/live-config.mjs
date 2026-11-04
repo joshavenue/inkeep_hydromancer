@@ -31,6 +31,7 @@ export async function liveConfig(t, {
       if (!docs.ok) { t.skip('Public-docs MCP not healthy.'); return null; }
       // GET /models is a reachability/auth preflight, not an inference request.
       const endpoints = {
+        openrouter: ['https://openrouter.ai/api/v1', env.OPENROUTER_API_KEY],
         openai: ['https://api.openai.com/v1', env.OPENAI_API_KEY],
         google: ['https://generativelanguage.googleapis.com/v1beta', env.GOOGLE_GENERATIVE_AI_API_KEY],
         custom: [selectedModel.providerOptions.baseURL, env.CUSTOM_LLM_API_KEY],

@@ -37,7 +37,7 @@ Browser: official Inkeep chat button
 Gateway / Vercel bridge                 only explicitly allowed widget routes
     ▼
 Inkeep Agents API                       127.0.0.1:18502
-    ├── Model: openai/gpt-6-luna (reasoning off, 700-token answers)
+    ├── Model: gpt-6-luna via OpenRouter (reasoning off, 700-token answers)
     ├── Public knowledge MCP             127.0.0.1:18581/mcp  (docs + site + Hyperliquid docs)
     └── Dedicated Doltgres / Postgres / SpiceDB
 ```
@@ -47,7 +47,7 @@ Database, model, MCP and management endpoints stay private.
 
 ## Cost
 
-The model is the main running cost. With `openai/gpt-6-luna` ($0.10 per 1M input
+The model is the main running cost. With `openrouter/openai/gpt-6-luna` ($0.10 per 1M input
 tokens, $0.50 per 1M output), reasoning switched off and answers capped at 700
 tokens, a typical question costs **about $0.001** (measured over eight typical
 questions on 4 November 2026: one search each, about 10,000 input and 190 output
@@ -57,12 +57,12 @@ the gateway's per-session and global limits are abuse protection, not billing co
 
 ## Setup
 
-**Prerequisites:** Node 24, pnpm 10, Python 3.11+, an OpenAI API key, and
+**Prerequisites:** Node 24, pnpm 10, Python 3.11+, an OpenRouter API key, and
 dedicated database services.
 
 1. `knowledge/README.md`: create the Python environment, run `refresh.py` to
    capture all three sources and build the index, start the MCP server.
-2. `runtime/README.md`: generate `.env`, set `OPENAI_API_KEY`, prepare the
+2. `runtime/README.md`: generate `.env`, set `OPENROUTER_API_KEY`, prepare the
    dedicated databases and migrations, start the Inkeep API, run `project.mjs` to
    push the assistant configuration, create the Web Client App.
 3. Start the gateway from the repository root:

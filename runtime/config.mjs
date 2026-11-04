@@ -5,25 +5,33 @@ export const AGENT_ID = 'hydromancer-assistant';
 export const DOCS_URL = 'http://127.0.0.1:18581/mcp';
 export const LOCAL_DOMAINS = ['127.0.0.1:18580', 'localhost:18580'];
 
-// Cheapest model that still handles tool calls and citations reliably.
-// gpt-6-luna list price (standard tier): $0.10 per 1M input, $0.50 per 1M output;
-// cached input $0.01. Reasoning is switched off and output is capped, so one
-// answered question costs well under a cent. See runtime/README.md for alternatives.
-export const DEFAULT_MODEL = 'openai/gpt-6-luna';
+// Cheapest model that still handles tool calls and citations reliably, billed
+// through the team's OpenRouter account: gpt-6-luna at $0.10 per 1M input and
+// $0.50 per 1M output (OpenRouter passes OpenAI's list price through). Reasoning
+// is switched off and output is capped, so one answered question costs about a
+// tenth of a cent. See runtime/README.md for alternatives.
+export const DEFAULT_MODEL = 'openrouter/openai/gpt-6-luna';
 export const MAX_OUTPUT_TOKENS = 700;
 export const CONTEXT_WINDOW = 1_000_000;
 
-const MODEL_ID = /^[a-z0-9][a-z0-9._-]{0,80}$/i;
+const MODEL_ID = /^[a-z0-9][a-z0-9._-]{0,80}(\/[a-z0-9][a-z0-9._-]{0,80})?$/i;
 
 function parseModel(value) {
   const match = /^([a-z]+)\/(.+)$/.exec((value ?? '').trim());
-  if (!match || !MODEL_ID.test(match[2])) throw new Error('MODEL must look like provider/model-id, for example openai/gpt-6-luna.');
+  if (!match || !MODEL_ID.test(match[2])) throw new Error('MODEL must look like provider/model-id, for example openrouter/openai/gpt-6-luna.');
   return { provider: match[1], id: match[2] };
 }
 
 export function modelConfig(env = process.env) {
   const { provider, id } = parseModel(env.MODEL || DEFAULT_MODEL);
   const providerOptions = { contextWindowSize: CONTEXT_WINDOW, maxOutputTokens: MAX_OUTPUT_TOKENS };
+  if (provider === 'openrouter') {
+    if (!env.OPENROUTER_API_KEY?.trim()) throw new Error('Set server-only OPENROUTER_API_KEY for the openrouter/ provider.');
+    // OpenRouter forwards reasoning settings to the underlying model; "none" keeps
+    // gpt-6-luna from billing reasoning tokens (verified 4 Nov 2026: 0 reasoning tokens).
+    providerOptions.openrouter = { reasoning: { effort: 'none' } };
+    return { model: `openrouter/${id}`, providerOptions };
+  }
   if (provider === 'openai') {
     if (!env.OPENAI_API_KEY?.trim()) throw new Error('Set server-only OPENAI_API_KEY for the openai/ provider.');
     // Inkeep forwards object-valued provider options per call. GPT-6 Luna accepts
@@ -36,7 +44,7 @@ export function modelConfig(env = process.env) {
     providerOptions.google = { thinkingConfig: { thinkingBudget: 0 } };
     return { model: `google/${id}`, providerOptions };
   }
-  if (provider !== 'custom') throw new Error('MODEL provider must be openai, google or custom (OpenAI-compatible endpoint).');
+  if (provider !== 'custom') throw new Error('MODEL provider must be openrouter, openai, google or custom (OpenAI-compatible endpoint).');
   let url;
   try { url = new URL(env.MODEL_BASE_URL); }
   catch { throw new Error('Set MODEL_BASE_URL explicitly to an OpenAI-compatible Chat Completions endpoint for the custom/ provider.'); }

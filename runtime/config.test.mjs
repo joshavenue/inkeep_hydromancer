@@ -10,16 +10,30 @@ const setup = new URL('./scripts/setup-local.mjs', import.meta.url);
 test('server refuses to start without model credentials before loading Inkeep or opening ports', () => {
   const run = spawnSync(process.execPath, [new URL('./server.mjs', import.meta.url).pathname], { env: {}, encoding: 'utf8', timeout: 5000 });
   assert.notEqual(run.status, 0);
-  assert.match(run.stderr, /OPENAI_API_KEY/);
+  assert.match(run.stderr, /OPENROUTER_API_KEY/);
   assert.doesNotMatch(run.stderr, /ERR_MODULE_NOT_FOUND/);
 });
-test('default model is the cheapest OpenAI model with reasoning off and a small output cap', async () => {
+test('default model is gpt-6-luna through OpenRouter with reasoning off and a small output cap', async () => {
   assert.ok(existsSync(new URL('./config.mjs', import.meta.url)), 'validated configuration module must exist');
   const { modelConfig, DEFAULT_MODEL, MAX_OUTPUT_TOKENS } = await import('./config.mjs');
-  assert.equal(DEFAULT_MODEL, 'openai/gpt-6-luna');
+  assert.equal(DEFAULT_MODEL, 'openrouter/openai/gpt-6-luna');
   assert.ok(MAX_OUTPUT_TOKENS <= 800, 'answers stay short to keep output cost low');
-  assert.throws(() => modelConfig({}), /OPENAI_API_KEY/);
-  const env = { OPENAI_API_KEY: 'synthetic-offline-test-key' };
+  assert.throws(() => modelConfig({}), /OPENROUTER_API_KEY/);
+  const env = { OPENROUTER_API_KEY: 'synthetic-offline-test-key' };
+  assert.deepEqual(modelConfig(env), {
+    model: 'openrouter/openai/gpt-6-luna',
+    providerOptions: { contextWindowSize: 1_000_000, maxOutputTokens: MAX_OUTPUT_TOKENS, openrouter: { reasoning: { effort: 'none' } } },
+  });
+  assert.ok(!JSON.stringify(modelConfig(env)).includes(env.OPENROUTER_API_KEY));
+  assert.equal(modelConfig({ ...env, MODEL: 'openrouter/google/gemini-2.5-flash-lite' }).model, 'openrouter/google/gemini-2.5-flash-lite');
+  assert.throws(() => modelConfig({ ...env, MODEL: 'gpt-6-luna' }), /provider\/model-id/);
+  assert.throws(() => modelConfig({ ...env, MODEL: 'openrouter/../secret' }), /provider\/model-id/);
+  assert.throws(() => modelConfig({ ...env, MODEL: 'anthropic/claude-haiku-4-5' }), /provider must be/);
+});
+test('direct OpenAI provider keeps reasoning off and low verbosity', async () => {
+  const { modelConfig, MAX_OUTPUT_TOKENS } = await import('./config.mjs');
+  assert.throws(() => modelConfig({ MODEL: 'openai/gpt-6-luna' }), /OPENAI_API_KEY/);
+  const env = { MODEL: 'openai/gpt-6-luna', OPENAI_API_KEY: 'synthetic-offline-test-key' };
   assert.deepEqual(modelConfig(env), {
     model: 'openai/gpt-6-luna',
     providerOptions: {
@@ -28,10 +42,6 @@ test('default model is the cheapest OpenAI model with reasoning off and a small 
     },
   });
   assert.ok(!JSON.stringify(modelConfig(env)).includes(env.OPENAI_API_KEY));
-  assert.equal(modelConfig({ ...env, MODEL: 'openai/gpt-5.4-nano' }).model, 'openai/gpt-5.4-nano');
-  assert.throws(() => modelConfig({ ...env, MODEL: 'gpt-6-luna' }), /provider\/model-id/);
-  assert.throws(() => modelConfig({ ...env, MODEL: 'openai/../secret' }), /provider\/model-id/);
-  assert.throws(() => modelConfig({ ...env, MODEL: 'anthropic/claude-haiku-4-5' }), /provider must be/);
 });
 test('google provider disables thinking; custom provider keeps the strict endpoint rules', async () => {
   const { modelConfig } = await import('./config.mjs');
@@ -66,8 +76,9 @@ test('local setup generates private unique secrets, no App ID, and will not over
     assert.ok(secrets.every(value => value?.length >= 32));
     assert.equal(new Set(secrets).size, names.length);
     for (const value of secrets) assert.ok(!`${result.stdout}${result.stderr}`.includes(value));
-    assert.equal(env.MODEL, 'openai/gpt-6-luna');
-    assert.equal(env.OPENAI_API_KEY, '', 'no credential is generated or assumed');
+    assert.equal(env.MODEL, 'openrouter/openai/gpt-6-luna');
+    assert.equal(env.OPENROUTER_API_KEY, '', 'no credential is generated or assumed');
+    assert.equal(env.OPENAI_API_KEY, '');
     assert.equal(env.MODEL_BASE_URL, '', 'no implicit external endpoint or old local proxy');
     assert.equal(env.CUSTOM_LLM_API_KEY, '');
     assert.equal(env.TENANT_ID, 'hydromancer-preview');

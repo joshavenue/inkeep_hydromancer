@@ -17,7 +17,7 @@ calls and citations reliably:
 
 | Setting | Value | Why |
 | --- | --- | --- |
-| `MODEL` | `openai/gpt-6-luna` | $0.10 per 1M input tokens, $0.50 per 1M output, $0.01 cached input (OpenAI list price, standard tier) |
+| `MODEL` | `openrouter/openai/gpt-6-luna` | GPT-6 Luna through the team's OpenRouter account: $0.10 per 1M input tokens, $0.50 per 1M output (OpenRouter passes OpenAI's list price through) |
 | reasoning | off (`reasoningEffort: 'none'`) | reasoning tokens are billed as output; a docs assistant does not need them |
 | `maxOutputTokens` | 700 | the prompt asks for answers under 200 words; the cap stops runaway output |
 | `stepCountIs` | 4 | at most one or two searches plus the answer per question |
@@ -30,16 +30,15 @@ allowed hosts.
 
 Alternatives, all set through `MODEL` in `.env`:
 
-- `openai/gpt-5.4-nano` ($0.20 / $1.25): newer nano model, roughly double the cost.
-- `google/gemini-2.5-flash-lite` ($0.10 / $0.40) with `GOOGLE_GENERATIVE_AI_API_KEY`:
-  slightly cheaper output, but Google limits 2.5 models to accounts that already used
-  them and recommends 3.5 Flash-Lite ($0.30 / $2.50) for new projects.
+- `openrouter/openai/gpt-5.4-nano` ($0.20 / $1.25): newer nano model, roughly double the cost.
+- `openrouter/google/gemini-2.5-flash-lite` ($0.10 / $0.40): slightly cheaper output;
+  Google recommends 3.5 Flash-Lite ($0.30 / $2.50) for new projects.
 - `custom/<id>` with `MODEL_BASE_URL` and `CUSTOM_LLM_API_KEY`: any OpenAI-compatible
   Chat Completions endpoint, for example the previous `grok-4.6` demo setup
   ($2 / $6, about 15 times the cost of Luna).
 
-Inkeep enables prompt caching automatically for Anthropic; for OpenAI the cached-input
-rate applies when the provider recognises the repeated prompt prefix.
+Set a monthly credit limit on the OpenRouter key; the gateway's request limits are abuse
+protection, not billing control.
 
 ## 1. Offline checks and local configuration
 
@@ -60,12 +59,14 @@ values and **refuses to overwrite an existing file**. Keep `.env` private;
 
 Edit the generated `.env` in a local editor:
 
-- Set **`OPENAI_API_KEY`** server-side only (or the key for the provider you select
+- Set **`OPENROUTER_API_KEY`** server-side only (or the key for the provider you select
   through `MODEL`). Keys are never put in project provider options, App metadata or
   browser configuration. Set a monthly spending limit on the key in the provider
   dashboard; the gateway's request limits are a second line of defence, not billing
   control.
-- Leave `MODEL=openai/gpt-6-luna` unless you have a reason to change it. The
+- Leave `MODEL=openrouter/openai/gpt-6-luna` unless you have a reason to change it.
+  Any OpenRouter model works as `openrouter/<vendor>/<model>`; `openai/` and
+  `google/` call those vendors directly with their own keys. The
   `custom/` provider additionally requires `MODEL_BASE_URL` (HTTPS, or loopback HTTP
   with `MODEL_ALLOW_UNAUTHENTICATED_LOOPBACK=1` for a keyless local proxy); URLs with
   credentials, query strings or fragments are rejected.

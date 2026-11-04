@@ -12,5 +12,7 @@ test('deployed project uses the configured light model with a small output cap a
   const body = await response.json();
   assert.equal(body.data.models.base.model, process.env.MODEL || DEFAULT_MODEL);
   assert.equal(body.data.models.base.providerOptions.maxOutputTokens, MAX_OUTPUT_TOKENS);
-  if (body.data.models.base.model.startsWith('openai/')) assert.equal(body.data.models.base.providerOptions.openai.reasoningEffort, 'none');
+  const options = body.data.models.base.providerOptions;
+  if (body.data.models.base.model.startsWith('openrouter/')) assert.equal(options.openrouter.reasoning.effort, 'none');
+  if (body.data.models.base.model.startsWith('openai/')) assert.equal(options.openai.reasoningEffort, 'none');
 });
