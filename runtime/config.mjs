@@ -36,7 +36,11 @@ export function modelConfig(env = process.env) {
     if (!env.ANTHROPIC_API_KEY?.trim()) throw new Error('Set server-only ANTHROPIC_API_KEY for the anthropic/ provider.');
     // Claude Haiku 5.5: $0.10 / 1M input, $0.50 / 1M output for prompts under 100k
     // tokens (Anthropic list price, 4 Nov 2026), the same rate as gpt-6-luna.
-    // Extended thinking stays off; Inkeep adds prompt caching for Anthropic itself.
+    // Haiku 5.5 enables adaptive thinking by default once a tool result is in the
+    // conversation; measured 4 Nov 2026, it then spent 230-300 thinking tokens and
+    // re-searched instead of answering, leaving 1 in 4 answers empty. Disabling it
+    // makes the model answer in one step and removes billed thinking tokens.
+    providerOptions.anthropic = { thinking: { type: 'disabled' } };
     return { model: `anthropic/${id}`, providerOptions };
   }
   if (provider === 'openai') {
