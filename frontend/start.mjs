@@ -60,7 +60,14 @@ const config = {
 };
 const server = createPreviewServer(config);
 server.listen(18580, '127.0.0.1', () => console.log(JSON.stringify({ service: 'hydromancer-inkeep-preview', bind: '127.0.0.1:18580', expiresAt: new Date(state.expiresAt).toISOString() })));
-setTimeout(() => {
-  server.closeAllConnections();
-  server.close(() => process.exit(0));
-}, Math.max(1, state.expiresAt - Date.now()));
+// Node timers overflow above 2^31-1 ms (about 24.8 days), so re-arm until expiry.
+const MAX_TIMER_MS = 2_147_483_647;
+const scheduleShutdown = () => {
+  const remaining = state.expiresAt - Date.now();
+  if (remaining > MAX_TIMER_MS) { setTimeout(scheduleShutdown, MAX_TIMER_MS); return; }
+  setTimeout(() => {
+    server.closeAllConnections();
+    server.close(() => process.exit(0));
+  }, Math.max(1, remaining));
+};
+scheduleShutdown();
