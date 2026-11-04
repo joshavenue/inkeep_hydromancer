@@ -12,6 +12,7 @@ export const LOCAL_DOMAINS = ['127.0.0.1:18580', 'localhost:18580'];
 // tenth of a cent. See runtime/README.md for alternatives.
 export const DEFAULT_MODEL = 'openrouter/openai/gpt-6-luna';
 export const MAX_OUTPUT_TOKENS = 700;
+export const EFFORT_OUTPUT_TOKENS = 4000; // room for thinking when ANTHROPIC_EFFORT is set
 export const CONTEXT_WINDOW = 1_000_000;
 
 const MODEL_ID = /^[a-z0-9][a-z0-9._-]{0,80}(\/[a-z0-9][a-z0-9._-]{0,80})?$/i;
@@ -40,7 +41,17 @@ export function modelConfig(env = process.env) {
     // conversation; measured 4 Nov 2026, it then spent 230-300 thinking tokens and
     // re-searched instead of answering, leaving 1 in 4 answers empty. Disabling it
     // makes the model answer in one step and removes billed thinking tokens.
-    providerOptions.anthropic = { thinking: { type: 'disabled' } };
+    // ANTHROPIC_EFFORT=high|medium|low turns adaptive thinking back on at that
+    // effort (Anthropic output_config.effort, beta header). Thinking tokens are
+    // billed as output and count against the output cap, so the cap rises with it.
+    const effort = (env.ANTHROPIC_EFFORT ?? '').trim().toLowerCase();
+    if (effort) {
+      if (!['low', 'medium', 'high'].includes(effort)) throw new Error('ANTHROPIC_EFFORT must be low, medium or high.');
+      providerOptions.maxOutputTokens = EFFORT_OUTPUT_TOKENS;
+      providerOptions.anthropic = { effort };
+    } else {
+      providerOptions.anthropic = { thinking: { type: 'disabled' } };
+    }
     return { model: `anthropic/${id}`, providerOptions };
   }
   if (provider === 'openai') {
