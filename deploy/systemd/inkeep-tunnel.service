@@ -1,0 +1,14 @@
+[Unit]
+Description=Cloudflare quick tunnel for the Inkeep preview gateway
+After=inkeep-gateway.service
+
+[Service]
+ExecStart=/usr/bin/cloudflared tunnel --url http://127.0.0.1:18580 --no-autoupdate --metrics 127.0.0.1:18599
+# A quick tunnel gets a new hostname on every start; sync it into the gateway state
+# and the Inkeep App allowlist once the tunnel reports it.
+ExecStartPost=/bin/sh -c 'sleep 15; %h/inkeep/deploy/tunnel-sync.sh'
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=default.target
