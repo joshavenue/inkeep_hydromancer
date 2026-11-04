@@ -210,7 +210,22 @@ def query_plan(query):
                        'batchClearinghouseStates': 80, 'userFillsByTime': 75,
                        'Rate limits and user limits | Hyperliquid Docs': 70,
                        'Session Management and Reconnection': 65, 'Pricing': 60})
-    if re.search(r'native|hyperliquid|small bot|rate.?limit', lower):
+    if re.search(r'market.?mak|\bmm\b|quot(e|ing) both sides|spread capture|quant fund|hft|high.frequency', lower):
+        extra += ['market', 'makers', 'quant', 'l4', 'orderbook', 'latency']
+        boosts.update({'Market makers and quant funds': 130, 'L4 orderbook streaming': 100,
+                       'Hyperliquid API Latency by Region': 70})
+    if re.search(r'arbitrage|\barb\b|delta.?neutral|basis trade|cash.and.carry|cross.exchange|binance|bybit|okx', lower):
+        extra += ['arbitrage', 'funding', 'delta-neutral', 'hedge']
+        boosts.update({'How to Build a Hyperliquid Funding Rate Arbitrage Tool': 125,
+                       'How to Build a Delta-Neutral Bot on Hyperliquid': 120,
+                       'Hyperliquid Funding Rates: How They Work and its History': 80})
+    if re.search(r'\b(build|building|make|making|create|creating|develop|start|idea|project)\b.*\b(bot|app|tool|dashboard|tracker|terminal|alert|monitor|journal|competition|heatmap|something|anything)\b|what (can|could|should) i build|project ideas', lower):
+        extra += ['build', 'guide', 'builder']
+        boosts.setdefault('Builder guides', 90)
+        boosts.setdefault('How to Build a Hyperliquid Trading Bot', 60)
+    # Only the native API's own limits when the visitor asks about them; bare
+    # "Hyperliquid" appears in most questions and must not outrank build guides.
+    if re.search(r'native|official api|hyperliquid.s own|small bot|rate.?limit|weight|per ip', lower):
         extra += ['limits', 'rate', 'websocket', 'pricing']
         boosts.update({'Rate limits and user limits | Hyperliquid Docs': 110,
                        'Rate limits, user limits and heartbeats': 60, 'Pricing': 50})

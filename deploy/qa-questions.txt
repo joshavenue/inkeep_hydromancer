@@ -47,3 +47,9 @@ I tried querying Reservoir and got a 403 error, I'm about to give up.
 Can a solo builder realistically build a Hyperliquid analytics app with this?
 I only know a bit of Python. Where do I even start?
 I want to build something on Hyperliquid but I have no idea what. Any ideas?
+# build intents
+I want to build a market making bot on Hyperliquid. Can Hydromancer help?
+Can I build a funding rate arbitrage tool between Hyperliquid and Binance?
+I want to backtest a strategy on a year of BTC data. Where do I start?
+How would I build a HIP-4 prediction markets dashboard?
+I want to build a whale alert bot for Telegram.
