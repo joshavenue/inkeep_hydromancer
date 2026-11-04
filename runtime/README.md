@@ -32,6 +32,13 @@ Alternatives, all set through `MODEL` in `.env`:
 
 - `anthropic/claude-haiku-5-5` ($0.10 / $0.50 for prompts under 100k tokens) with
   `ANTHROPIC_API_KEY`: same rate as Luna; useful when the team has Anthropic credit.
+  Haiku 5.5 turns on adaptive thinking by default once a tool result is in the
+  conversation; measured on 4 November 2026 it then spent 230-300 billed thinking
+  tokens and searched again instead of answering, leaving about one answer in four
+  empty. `config.mjs` sends `thinking: { type: 'disabled' }`, and
+  `patches/@ai-sdk__anthropic@3.0.7.patch` (applied by pnpm on install) makes the
+  pinned provider forward that value, which it otherwise drops. Remove the patch when
+  the Inkeep release moves to `@ai-sdk/anthropic` 3.0.138 or later.
 - `openrouter/openai/gpt-5.4-nano` ($0.20 / $1.25): newer nano model, roughly double the cost.
 - `openrouter/google/gemini-2.5-flash-lite` ($0.10 / $0.40): slightly cheaper output;
   Google recommends 3.5 Flash-Lite ($0.30 / $2.50) for new projects.

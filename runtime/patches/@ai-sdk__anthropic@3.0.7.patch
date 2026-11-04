@@ -1,0 +1,28 @@
+diff --git a/dist/index.js b/dist/index.js
+index 492d864c7ceec6057867c4c56187eac3dd4f070a..dc0711391e75093803eea7cd33efbe0b946cc266 100644
+--- a/dist/index.js
++++ b/dist/index.js
+@@ -2465,6 +2465,9 @@ var AnthropicMessagesLanguageModel = class {
+       ...isThinking && {
+         thinking: { type: "enabled", budget_tokens: thinkingBudget }
+       },
++      ...(anthropicOptions && anthropicOptions.thinking && anthropicOptions.thinking.type === "disabled") && {
++        thinking: { type: "disabled" }
++      },
+       ...(anthropicOptions == null ? void 0 : anthropicOptions.effort) && {
+         output_config: { effort: anthropicOptions.effort }
+       },
+diff --git a/dist/index.mjs b/dist/index.mjs
+index 0d13d6f806f846e9ee14ce1470152927bd5e4b60..ae276e01c68461d40f049c31d27de546a3d009b8 100644
+--- a/dist/index.mjs
++++ b/dist/index.mjs
+@@ -2488,6 +2488,9 @@ var AnthropicMessagesLanguageModel = class {
+       ...isThinking && {
+         thinking: { type: "enabled", budget_tokens: thinkingBudget }
+       },
++      ...(anthropicOptions && anthropicOptions.thinking && anthropicOptions.thinking.type === "disabled") && {
++        thinking: { type: "disabled" }
++      },
+       ...(anthropicOptions == null ? void 0 : anthropicOptions.effort) && {
+         output_config: { effort: anthropicOptions.effort }
+       },
