@@ -265,19 +265,25 @@ def search(query, limit=6, *, db=DB):
             (0 if r['start_offset'] == 0 else 1) if (
                 r['title'] in boosts or r['title'].lower() in originals) else 0,
             r['rank'], r['id'], r['start_offset']))
-        seen = set()
+        seen = {}
         for row in rows:
             if row['id'] in seen:
+                # Long pages (guides, blog posts) match in several sections. Name the
+                # other matching headings and their offsets so the caller can fetch the
+                # right section instead of concluding the page does not cover it.
+                also = seen[row['id']]['also_matches']
+                if len(also) < 4 and row['heading'] != seen[row['id']]['heading']:
+                    also.append({'heading': row['heading'], 'offset': row['start_offset']})
                 continue
-            seen.add(row['id'])
+            if len(result['results']) >= limit:
+                continue
             body = conn.execute('SELECT body FROM documents WHERE id=?', (row['id'],)).fetchone()['body']
             item = metadata(row)
             item.update(heading=row['heading'], excerpt=row['excerpt'],
                         context_excerpt=body[:1000], start_offset=row['start_offset'],
-                        end_offset=row['end_offset'], document_chars=len(body))
+                        end_offset=row['end_offset'], document_chars=len(body), also_matches=[])
+            seen[row['id']] = item
             result['results'].append(item)
-            if len(result['results']) >= limit:
-                break
     return result
 
 
