@@ -24,7 +24,7 @@ test('assistant is grounded in the three public sources and never answers from m
 test('prompt and tool description stay compact because they are billed on every question', () => {
   assert.ok(prompt.length < 3600, `prompt is ${prompt.length} characters`);
   assert.match(prompt, /under 200 words/);
-  assert.match(source, /stepCountIs: 4/);
+  assert.match(source, /stepCountIs: 5/);
   assert.match(source, /transferCountIs: 1/);
   assert.doesNotMatch(source, /custom\/grok/);
   const description = /description: '([^']+)',\n\s+serverUrl/.exec(source)[1];
