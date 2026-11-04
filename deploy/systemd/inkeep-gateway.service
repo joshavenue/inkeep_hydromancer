@@ -1,0 +1,15 @@
+[Unit]
+Description=Inkeep preview gateway (widget host + proxy)
+After=inkeep-api.service
+
+[Service]
+WorkingDirectory=%h/inkeep
+# One-month test environment: 35 days, 5,000 questions (about $5 at the measured rate).
+Environment=PREVIEW_TTL_HOURS=840
+Environment=PREVIEW_MAX_REQUESTS=5000
+ExecStart=/usr/bin/node frontend/start.mjs
+Restart=always
+RestartSec=3
+
+[Install]
+WantedBy=default.target

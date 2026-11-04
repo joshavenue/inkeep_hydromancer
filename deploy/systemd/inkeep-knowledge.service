@@ -1,0 +1,13 @@
+[Unit]
+Description=Hydromancer public-docs MCP (knowledge index)
+After=network-online.target
+
+[Service]
+WorkingDirectory=%h/inkeep/knowledge
+Environment=HYDROMANCER_KNOWLEDGE_DB=%h/inkeep/knowledge/data/public-docs.sqlite
+ExecStart=%h/inkeep/knowledge/.venv/bin/python server.py
+Restart=always
+RestartSec=3
+
+[Install]
+WantedBy=default.target
