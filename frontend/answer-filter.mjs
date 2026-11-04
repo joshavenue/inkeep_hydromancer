@@ -22,6 +22,9 @@ export function createAnswerFilter({ holdChars = HOLD_CHARS } = {}) {
     try { event = JSON.parse(line.slice(5).trim()); } catch { return holding ? (pending += line + '\n', '') : line + '\n'; }
     const type = event?.type;
     if (type === 'text-start') {
+      // Inkeep wraps every delta in its own text-start/text-end pair, so a new
+      // text-start while holding continues the same undecided run of text.
+      if (holding) { pending += line + '\n'; return ''; }
       holding = true; released = false; pending = line + '\n'; pendingChars = 0;
       return '';
     }

@@ -34,6 +34,31 @@ test('narration before a tool call is dropped; the answer after it is kept verba
   assert.ok(out.find(e => e.type === 'text-delta').delta.startsWith('Yes, Hydromancer'));
 });
 
+// Inkeep 0.80.6 emits one text-start/text-end pair around every delta.
+const wrapped = (id, delta) => line({ type: 'text-start', id }) + text(id, delta) + line({ type: 'text-end', id });
+
+test('per-delta text-start/text-end wrapping: narration dropped, full answer kept', async () => {
+  const words = 'Reservoir is a free archive of Hyperliquid historical data delivered as daily Parquet files. '.split(' ');
+  let answer = '';
+  for (let i = 0; i < 12; i++) for (const w of words) answer += wrapped('b', w + ' ');
+  const input = line({ type: 'start', messageId: 'm' })
+    + wrapped('a', "I'll") + wrapped('a', ' look') + wrapped('a', ' this up.')
+    + line({ type: 'tool-input-start', toolCallId: 't1', toolName: 'search_hydromancer_docs' })
+    + line({ type: 'tool-input-available', toolCallId: 't1', toolName: 'search_hydromancer_docs', input: { query: 'x' } })
+    + line({ type: 'tool-output-available', toolCallId: 't1', output: {} })
+    + answer + line({ type: 'data-operation', data: { type: 'completion' } }) + 'data: [DONE]\n\n';
+  const out = await run(input, 11);
+  const deltas = events(out).filter(e => e.type === 'text-delta').map(e => e.delta).join('');
+  assert.ok(!deltas.includes("I'll"));
+  assert.equal(deltas, words.join(' ').concat(' ').repeat(12), 'every answer delta survives in order');
+  assert.equal(events(out).filter(e => e.type === 'text-start').length, 12 * words.length);
+});
+
+test('per-delta wrapping with a short final answer and no tool call is kept whole', async () => {
+  const input = wrapped('a', 'No.') + wrapped('a', ' Hydromancer is read-only.') + line({ type: 'data-operation', data: { type: 'completion' } });
+  assert.equal(await run(input, 5), input);
+});
+
 test('a short answer with no tool call is released untouched at stream end', async () => {
   const input = line({ type: 'text-start', id: 'a' }) + text('a', "I can't help with weather.") + line({ type: 'text-end', id: 'a' }) + line({ type: 'finish' });
   const out = await run(input);
