@@ -40,3 +40,10 @@ Write me Python code to trade on Binance.
 What is the price of HYPE right now?
 Who founded Hydromancer?
 Which regions is Hydromancer hosted in?
+# discouraged or non-technical visitors
+I'm not a developer. Is Hydromancer even for me?
+This looks complicated. Should I just give up and use the free Hyperliquid API?
+I tried querying Reservoir and got a 403 error, I'm about to give up.
+Can a solo builder realistically build a Hyperliquid analytics app with this?
+I only know a bit of Python. Where do I even start?
+I want to build something on Hyperliquid but I have no idea what. Any ideas?

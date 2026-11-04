@@ -22,7 +22,9 @@ test('assistant is grounded in the three public sources and never answers from m
 });
 
 test('prompt and tool description stay compact because they are billed on every question', () => {
-  assert.ok(prompt.length < 3600, `prompt is ${prompt.length} characters`);
+  // About 1,000 tokens per question; raised from 3,600 for the COACHING section.
+  assert.ok(prompt.length < 4200, `prompt is ${prompt.length} characters`);
+  assert.match(prompt, /COACHING/);
   assert.match(prompt, /under 200 words/);
   assert.match(source, /stepCountIs: 5/);
   assert.match(source, /transferCountIs: 1/);
