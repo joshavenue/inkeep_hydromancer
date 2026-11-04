@@ -49,7 +49,7 @@ def test_import_rejects_invalid_catalog_shape(import_inputs, case):
     if case == 'empty':
         sources = []
     elif case == 'too_many':
-        sources *= 225
+        sources = [dict(source, id=f'hydro-{i}', url=f'{source["url"]}/{i}') for i in range(1001)]
     elif case == 'duplicate_id':
         sources.append(dict(source, url='https://docs.hydromancer.xyz/other'))
     elif case == 'duplicate_url':

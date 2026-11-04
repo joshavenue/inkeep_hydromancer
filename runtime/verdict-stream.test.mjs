@@ -48,7 +48,7 @@ function runSyntheticVerdicts(t, errorEvent) {
     '--import', pathToFileURL(mockFile).href, '--test', '--test-reporter=tap', '--test-name-pattern=^live verdict:', 'verdict-live.test.mjs',
   ], {
     cwd: root, env: {
-      INKEEP_LIVE_TESTS: '1', INKEEP_MODEL_TESTS: '1', MODEL_BASE_URL: 'https://synthetic-model.invalid/v1', CUSTOM_LLM_API_KEY: 'synthetic-offline-key',
+      INKEEP_LIVE_TESTS: '1', INKEEP_MODEL_TESTS: '1', MODEL: 'custom/synthetic-model', MODEL_BASE_URL: 'https://synthetic-model.invalid/v1', CUSTOM_LLM_API_KEY: 'synthetic-offline-key',
     }, encoding: 'utf8', timeout: 10000,
   });
   assert.ifError(run.error);

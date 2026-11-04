@@ -66,4 +66,6 @@ def synthetic_corpus(tmp_path, monkeypatch):
         ledger.write_text(json.dumps(rows), encoding='utf-8')
     monkeypatch.setattr(k, 'HYDRO', hydro)
     monkeypatch.setattr(k, 'NATIVE', native)
+    # No website ledger: an operator's real snapshots/site must never leak into fixtures.
+    monkeypatch.setattr(k, 'SITE', tmp_path / 'site')
     return records
