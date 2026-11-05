@@ -27,8 +27,7 @@ window.Inkeep.ChatButton({
       tooltip: 'Generated from docs.hydromancer.xyz, hydromancer.xyz and the Hyperliquid API docs. Confirm plan limits on the pricing page.',
     },
     getHelpOptions: [
-      { icon: { builtIn: 'FaEnvelope' }, name: 'Contact the team', isPinnedToToolbar: true, action: { type: 'open_link', url: 'https://hydromancer.xyz/contact' } },
-      { icon: { builtIn: 'FaDiscord' }, name: 'Hydromancer Discord', action: { type: 'open_link', url: 'https://discord.gg/xfAWcSygQT' } },
+      { icon: { builtIn: 'FaTelegram' }, name: 'Speak to the founder', isPinnedToToolbar: true, action: { type: 'open_link', url: 'https://t.me/xenoflux' } },
     ],
   },
 });
