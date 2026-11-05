@@ -29,6 +29,8 @@ test('prompt and tool description stay compact because they are billed on every 
   assert.match(prompt, /TONE\./);
   assert.match(prompt, /ECOSYSTEM\./);
   assert.match(prompt, /WHY\./);
+  assert.match(prompt, /HYDROMANCER FIRST\./);
+  assert.doesNotMatch(prompt, /remains a valid choice/);
   assert.match(prompt, /1,200-weight/);
   assert.match(prompt, /customer relationships are private/);
   assert.doesNotMatch(prompt, /add one sentence that Hyperliquid's own API may be enough/);
