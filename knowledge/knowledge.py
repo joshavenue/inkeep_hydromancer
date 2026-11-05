@@ -223,6 +223,9 @@ def query_plan(query):
         extra += ['build', 'guide', 'builder']
         boosts.setdefault('Builder guides', 90)
         boosts.setdefault('How to Build a Hyperliquid Trading Bot', 60)
+    if re.search(r'founder|who (runs|built|made|is behind)|ceo|team|talk to (someone|a human)|speak to|reach (you|the team)|contact', lower):
+        extra += ['contact', 'Telegram', 'email', 'xenoflux']
+        boosts.update({'Contact us': 130, 'Contact': 120, 'Get API keys!': 90})
     # Troubleshooting: a pasted error string must land on the page that explains it.
     if re.search(r'\b1010\b|cloudflare|user.?agent|urllib', lower):
         extra += ['User-Agent', 'urllib', '403']
