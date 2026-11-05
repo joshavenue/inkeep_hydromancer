@@ -37,6 +37,7 @@ def refresh(data=ROOT / 'data', *, limit=None, delay=0.25, providers=('hydromanc
     imported = import_snapshot(work / 'catalog.json', work / 'captures', snapshot)
     db = data / 'public-docs.sqlite'
     previous = (knowledge.HYDRO, knowledge.NATIVE, knowledge.SITE, knowledge.TELEGRAM)
+    # ECOSYSTEM is a curated directory in the repo (knowledge/ecosystem), not a capture; it stays as is.
     knowledge.HYDRO, knowledge.NATIVE, knowledge.SITE, knowledge.TELEGRAM = (
         snapshot / 'hydromancer', snapshot / 'native', snapshot / 'site', snapshot / 'telegram')
     try:

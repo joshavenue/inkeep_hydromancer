@@ -6,7 +6,7 @@ MAX_DOCUMENT_BYTES = 2 * 1024 * 1024
 MAX_FETCH_OFFSET = MAX_DOCUMENT_BYTES
 FETCH_PAGE_CHARS = 10000
 MAX_CATALOG_SOURCES = 1000
-DOCUMENT_ID_PATTERN = r'^(hydro|native|site|tg)-[0-9]{1,4}$'
+DOCUMENT_ID_PATTERN = r'^(hydro|native|site|tg|eco)-[0-9]{1,4}$'
 
 # Closed set of public publishers. Every ledger record, capture and index row
 # belongs to exactly one of these hosts; nothing from any other host is indexed.
@@ -14,6 +14,8 @@ DOCUMENT_ID_PATTERN = r'^(hydro|native|site|tg)-[0-9]{1,4}$'
 #   native:      hyperliquid.gitbook.io, the public Hyperliquid API documentation
 #   site:        hydromancer.xyz, the marketing site (products, pricing, blog, customers)
 #   telegram:    t.me, one public profile: Xeno (@xenoflux), the founder, as linked from the contact pages
+#   ecosystem:   curated one-page summaries of public Hyperliquid apps (what each is, what data it
+#                needs), written from the app's own website and X profile; cited to the app's site
 PROVIDERS = {
     'hydromancer': {'prefix': 'hydro', 'host': 'docs.hydromancer.xyz',
                     'sections': ('rest-a', 'rest-b', 'websocket', 'platform'),
@@ -24,6 +26,8 @@ PROVIDERS = {
              'sections': ('site',), 'suffix': '.md', 'directory': 'sources'},
     'telegram': {'prefix': 'tg', 'host': 't.me',
                  'sections': ('contact',), 'suffix': '.md', 'directory': 'sources'},
+    'ecosystem': {'prefix': 'eco', 'host': None,
+                  'sections': ('apps',), 'suffix': '.md', 'directory': 'sources'},
 }
 SECTION_PROVIDER = {section: provider for provider, spec in PROVIDERS.items() for section in spec['sections']}
 SECTIONS = tuple(SECTION_PROVIDER)

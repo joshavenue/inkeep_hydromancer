@@ -1,0 +1,1486 @@
+[
+ {
+  "name": "fomo",
+  "x": "",
+  "website": "https://fomo.family",
+  "category": "copy/social trading",
+  "summary": "fomo is a social-first crypto trading app for mobile and web with a live trade feed, trader leaderboards, alerts on what top traders buy, and copy trading. It supports multichain, gasless memecoin and token trading with Apple Pay funding, and has added perpetuals on crypto, equities, indices, and commodities. Its website says 2,500,000 traders use it, mostly retail users.",
+  "hyperliquid_link": "fomo's official perps launch post says its in-app perpetuals are powered by Hyperliquid (alongside trade.xyz markets), so users trade Hyperliquid perps without bridging or using Hyperliquid's own interface.",
+  "data_needs": [
+   "live positions and PnL for many wallets (leaderboards, feed)",
+   "fills history per wallet for copy trading",
+   "order book and trade streams",
+   "HIP-3 market metadata for equity and commodity perps",
+   "candles",
+   "real-time user order and position updates"
+  ],
+  "status_note": "active",
+  "sources": [
+   "https://fomo.family",
+   "https://x.com/fomo",
+   "https://x.com/fomo/status/2065102110673277330"
+  ]
+ },
+ {
+  "name": "Bagel",
+  "x": "bagel_win",
+  "website": "https://bagel.win",
+  "category": "prediction markets",
+  "summary": "Bagel is a mobile app for iOS and Android that offers a simplified interface for trading Polymarket prediction markets on sports, esports, crypto, and trending events. It adds copy trading, combo bets, in-app chat, and a non-custodial wallet through Privy, with multi-language support aimed at users outside the US.",
+  "hyperliquid_link": "not stated publicly",
+  "data_needs": [
+   "prediction market outcome prices (if HIP-4 outcome markets are added)",
+   "fills history per wallet for copy trading",
+   "live positions for many wallets",
+   "market metadata and settlement status"
+  ],
+  "status_note": "active",
+  "sources": [
+   "https://bagel.win",
+   "https://x.com/bagel_win"
+  ]
+ },
+ {
+  "name": "Dreamcash",
+  "x": "",
+  "website": "https://dreamcash.xyz",
+  "category": "trading app/frontend",
+  "summary": "Dreamcash is a self-custodial trading app for iOS, Android, web, and macOS that combines perpetuals, spot, real-world asset markets, and prediction markets in one portfolio. It offers up to 40x leverage and an XP rewards system tied to weekly distributions. Users can create a new account or import an existing Hyperliquid wallet.",
+  "hyperliquid_link": "Dreamcash is built on Hyperliquid and lets users trade Hyperliquid spot, perpetuals, and HIP-3 markets through its own interface.",
+  "data_needs": [
+   "order book stream",
+   "candles",
+   "HIP-3 market metadata (stocks, commodities, forex)",
+   "user positions, orders, and fills",
+   "funding rates",
+   "trading volume per user for rewards tracking"
+  ],
+  "status_note": "active",
+  "sources": [
+   "https://dreamcash.xyz",
+   "https://x.com/Dreamcash"
+  ]
+ },
+ {
+  "name": "Click",
+  "x": "",
+  "website": "https://click.trade",
+  "category": "trading terminal",
+  "summary": "Click is a non-custodial web trading terminal that combines spot trading on Solana, BNB Chain, Base, and Robinhood Chain with perpetuals and prediction markets from one balance. It includes a token discovery feed, a monitor page, social trending data, copy trading, and cashback rewards. It is in early access with a waitlist, and a mobile app is in private testing.",
+  "hyperliquid_link": "not stated publicly",
+  "data_needs": [
+   "order book stream",
+   "candles",
+   "perp market metadata including HIP-3 markets",
+   "liquidation feed",
+   "fills history per wallet for copy trading",
+   "user positions and PnL"
+  ],
+  "status_note": "active",
+  "sources": [
+   "https://click.trade",
+   "https://x.com/clickdottrade"
+  ]
+ },
+ {
+  "name": "Cielo",
+  "x": "CieloFinance",
+  "website": "https://cielo.finance",
+  "category": "analytics/dashboard",
+  "summary": "Cielo is a wallet tracking and on-chain analytics platform covering 30+ blockchains, with wallet profiles showing PnL and trade history, wallet discovery, and real-time alerts via Telegram and Discord. It also offers a trading terminal with built-in Solana swaps and copy-trading agents. Its users are active on-chain traders who follow and copy high-performing wallets.",
+  "hyperliquid_link": "Cielo lists Hyperliquid as a supported network for wallet tracking and wallet intelligence alongside EVM chains and Solana.",
+  "data_needs": [
+   "fills history per wallet",
+   "live positions for many wallets",
+   "real-time trade stream for tracked wallets (alerts)",
+   "PnL and win-rate history per wallet",
+   "liquidation feed"
+  ],
+  "status_note": "active",
+  "sources": [
+   "https://cielo.finance",
+   "https://x.com/CieloFinance"
+  ]
+ },
+ {
+  "name": "GTE",
+  "x": "GTE_XYZ",
+  "website": "https://gte.xyz",
+  "category": "trading app/frontend",
+  "summary": "GTE describes itself as a fully on-chain order book exchange with centralized-exchange latency, offering perps, spot, and an API built for agents. It includes an AI trading agent called EDGE that turns market context into trade ideas. Access is rolling out in cohorts from a large waitlist.",
+  "hyperliquid_link": "GTE's X account has listed HIP-4 support among its product updates, but how its exchange connects to Hyperliquid is not detailed publicly.",
+  "data_needs": [
+   "order book stream",
+   "candles",
+   "prediction or outcome market metadata (HIP-4)",
+   "user positions, orders, and fills",
+   "funding rates"
+  ],
+  "status_note": "active",
+  "sources": [
+   "https://gte.xyz",
+   "https://x.com/GTE_XYZ",
+   "https://x.com/GTE_XYZ/status/2094404323916603708"
+  ]
+ },
+ {
+  "name": "Kinetiq",
+  "x": "",
+  "website": "https://kinetiq.xyz",
+  "category": "HIP-3 venue/deployer",
+  "summary": "Kinetiq is a liquid staking protocol on Hyperliquid where users stake HYPE and receive kHYPE, which earns staking rewards and is used across Hyperliquid DeFi protocols. It also runs Markets.xyz, a venue for 24/7 perpetual futures on equities, indices, currencies, and commodities. Its Launch product lets stakers back HIP-3 deployers and earn a share of their trading fees.",
+  "hyperliquid_link": "Kinetiq stakes HYPE with Hyperliquid validators to issue kHYPE and operates Markets.xyz, a perpetuals venue powered by Hyperliquid HIP-3.",
+  "data_needs": [
+   "validator and staking state",
+   "HIP-3 market metadata and deployer state",
+   "order book stream and candles for its markets",
+   "open interest and volume per market",
+   "funding rates",
+   "oracle prices for HIP-3 markets"
+  ],
+  "status_note": "active",
+  "sources": [
+   "https://kinetiq.xyz",
+   "https://x.com/Kinetiq_xyz"
+  ]
+ },
+ {
+  "name": "Vigil Labs",
+  "x": "vigillabs",
+  "website": "https://vigillabs.ai",
+  "category": "other",
+  "summary": "Vigil Labs is an applied research lab in Palo Alto building machine intelligence systems for live markets. It starts by helping human traders detect, surface, and forecast market-relevant events, with a stated long-term goal of building a prediction engine. Its team lists backgrounds at Citadel Securities, xAI, Millennium, and prediction market trading.",
+  "hyperliquid_link": "not stated publicly",
+  "data_needs": [
+   "trade and order book streams across markets",
+   "candles",
+   "funding rates and open interest",
+   "liquidation feed",
+   "large-wallet position changes"
+  ],
+  "status_note": "active",
+  "sources": [
+   "https://vigillabs.ai",
+   "https://x.com/vigillabs"
+  ]
+ },
+ {
+  "name": "Mullet",
+  "x": "MulletOfficial",
+  "website": "https://mullet.top",
+  "category": "trading app/frontend",
+  "summary": "Mullet is a mobile trading app for leveraged contracts on forex, gold, crude oil, stock indices, and crypto, with 59 instruments across five asset classes. Its website says orders execute off-chain while liquidations, settlements, and quotes are recorded on Solana. It offers a demo account, negative balance protection, and custody without private key management.",
+  "hyperliquid_link": "not stated publicly",
+  "data_needs": [
+   "reference prices and candles for TradFi-linked perps (HIP-3 markets)",
+   "order book stream",
+   "funding rates",
+   "oracle prices"
+  ],
+  "status_note": "active",
+  "sources": [
+   "https://mullet.top",
+   "https://x.com/MulletOfficial"
+  ]
+ },
+ {
+  "name": "Wick",
+  "x": "wickdottrade",
+  "website": "https://wick.trade",
+  "category": "trading app/frontend",
+  "summary": "Wick is a mobile trading app for iOS and Android that combines perpetuals with prediction markets, including a sportsbook-style interface for sports events. It offers position management, market movers, leaderboards, new-market alerts, and Privy-secured wallets with no KYC.",
+  "hyperliquid_link": "Wick's website says users can trade Hyperliquid and Polymarket markets in one app.",
+  "data_needs": [
+   "order book stream",
+   "candles",
+   "new market listings and HIP-3 market metadata",
+   "user positions, orders, and fills",
+   "PnL per wallet for leaderboards"
+  ],
+  "status_note": "active",
+  "sources": [
+   "https://wick.trade",
+   "https://x.com/wickdottrade"
+  ]
+ },
+ {
+  "name": "Liminal",
+  "x": "liminalmoney",
+  "website": "https://liminal.money",
+  "category": "other",
+  "summary": "Liminal is a yield protocol that runs delta-neutral strategies on Hyperliquid, mainly capturing perpetual funding rates while hedging price exposure. Users can mint tokenized strategies such as limUSD and xTokens (for example xHYPE and xBTC) or design custom self-custodial strategies. Its users are yield-focused DeFi depositors.",
+  "hyperliquid_link": "Liminal executes spot and perp hedges on HyperCore to harvest Hyperliquid funding rates, uses HyperEVM for composable yield tokens, and is expanding into HIP-3 markets.",
+  "data_needs": [
+   "funding rates (live and historical)",
+   "spot and perp order books",
+   "account margin and positions for strategy vaults",
+   "HIP-3 market metadata",
+   "fills history per vault"
+  ],
+  "status_note": "active",
+  "sources": [
+   "https://liminal.money",
+   "https://x.com/liminalmoney"
+  ]
+ },
+ {
+  "name": "OrderX",
+  "x": "orderx",
+  "website": "https://orderx.com",
+  "category": "trading terminal",
+  "summary": "OrderX is an AI trading terminal for stocks, options, perps, and crypto that users drive with natural-language requests for research, positioning, and execution. It publishes options market analysis such as dealer gamma and skew, and supports agentic execution with human approval and configurable guardrails.",
+  "hyperliquid_link": "OrderX's website shows Hyperliquid perps as a supported market, including an example strategy that captures spreads and funding between SK Hynix on Hyperliquid and KRX.",
+  "data_needs": [
+   "order book stream",
+   "funding rates",
+   "HIP-3 market metadata for equity perps",
+   "candles",
+   "user positions, orders, and fills"
+  ],
+  "status_note": "active",
+  "sources": [
+   "https://orderx.com",
+   "https://x.com/orderx"
+  ]
+ },
+ {
+  "name": "Trasia",
+  "x": "trasiaxyz",
+  "website": "https://trasia.xyz",
+  "category": "trading app/frontend",
+  "summary": "Trasia is an Asia-first trading platform with web and mobile apps that serves mainly Chinese-speaking traders. It offers perps trading, TWAP and grid orders, and a beta Scout Mode that tracks whale positions, win rates, and PnL. It also runs community trading competitions.",
+  "hyperliquid_link": "Trasia describes itself as built on Hyperliquid and lists Hyperliquid perps, including HIP-3 markets such as xyz:SP500.",
+  "data_needs": [
+   "live positions for many wallets (whale tracking)",
+   "fills history per wallet",
+   "order book stream and trades",
+   "candles",
+   "HIP-3 market metadata",
+   "funding rates"
+  ],
+  "status_note": "active",
+  "sources": [
+   "https://trasia.xyz",
+   "https://x.com/trasiaxyz"
+  ]
+ },
+ {
+  "name": "Bullpen",
+  "x": "",
+  "website": "https://bullpen.fi",
+  "category": "trading app/frontend",
+  "summary": "Bullpen is a non-custodial trading app that combines Solana tokens, perps, and Polymarket prediction markets in one interface with social and competition features. It supports deposits and withdrawals via same-day ACH and uses Turnkey for key management. It was co-founded by crypto trader Ansem.",
+  "hyperliquid_link": "Bullpen routes perp and spot trades to Hyperliquid and shows Hyperliquid insights such as net positioning, open interest, and volatility.",
+  "data_needs": [
+   "order book stream",
+   "candles",
+   "open interest and net positioning data",
+   "user positions, orders, and fills",
+   "funding rates",
+   "HIP-3 market metadata"
+  ],
+  "status_note": "active",
+  "sources": [
+   "https://bullpen.fi",
+   "https://x.com/BullpenFi"
+  ]
+ },
+ {
+  "name": "Hunch",
+  "x": "tradeonhunch",
+  "website": "https://hunch.trade",
+  "category": "prediction markets",
+  "summary": "Hunch is a trading terminal and aggregator for prediction markets that combines market discovery, wallet tracking, cross-venue price comparison, and execution in one interface. It also offers a Telegram bot and a points, cashback, and referral rewards program. It is used by prediction market traders focused on sports, politics, and news events.",
+  "hyperliquid_link": "Its website lists Hyperliquid as one of its supported prediction market venues, alongside Polymarket, Kalshi, Limitless, Opinion, and Melee.",
+  "data_needs": [
+   "prediction/outcome market metadata",
+   "order book stream for outcome markets",
+   "live prices and odds changes",
+   "fills history per wallet",
+   "live positions for many wallets"
+  ],
+  "status_note": "active",
+  "sources": [
+   "https://hunch.trade",
+   "https://x.com/tradeonhunch"
+  ]
+ },
+ {
+  "name": "Legend Trade",
+  "x": "",
+  "website": "https://legend.trade",
+  "category": "copy/social trading",
+  "summary": "Legend is a social onchain trading app for crypto, stocks, and commodities, available on web, iOS, and Android. Trader profiles show public trades and PnL, and users can copy other traders, join leaderboards, and compete in seasonal competitions. It is used by perp traders who want social discovery and copy trading.",
+  "hyperliquid_link": "It is a frontend for Hyperliquid perps, and its market list includes HIP-3 markets such as xyz:SP500, xyz:NVDA, and xyz:SILVER alongside native Hyperliquid perps like HYPE.",
+  "data_needs": [
+   "live positions for many wallets",
+   "fills history per wallet",
+   "PnL and leaderboard data per wallet",
+   "HIP-3 market metadata",
+   "order book stream",
+   "candles"
+  ],
+  "status_note": "active",
+  "sources": [
+   "https://legend.trade",
+   "https://x.com/legendtrade"
+  ]
+ },
+ {
+  "name": "Stride",
+  "x": "stride_zone",
+  "website": "https://stride.zone",
+  "category": "other",
+  "summary": "Stride is a liquid staking protocol for Cosmos ecosystem chains that issues stTokens such as stATOM and stTIA. Stride governance voted to wind down the chain, and liquid staking and new redemptions closed on Oct 12, 2026. stTokens are to become redeemable on Osmosis at a fixed rate by Nov 20, 2026.",
+  "hyperliquid_link": "not stated publicly",
+  "data_needs": [
+   "none identified; no Hyperliquid integration stated"
+  ],
+  "status_note": "appears inactive or shut down (public evidence: stride.zone states 'Stride is winding down', liquid staking and redemptions closed Oct 12, 2026, chain to stop producing blocks by Nov 20, 2026)",
+  "sources": [
+   "https://stride.zone",
+   "https://x.com/stride_zone"
+  ]
+ },
+ {
+  "name": "Hyperdash",
+  "x": "hypurrdash",
+  "website": "https://pvp.trade",
+  "category": "trading terminal",
+  "summary": "Hyperdash, per its X account, is a trading terminal and analytics suite for Hyperliquid with advanced order types such as iceberg and VWAP orders, a flow inspector, and trader and address pages with leaderboards. The website listed for this entry, pvp.trade, is a Telegram bot that lets groups long and short tokens together and copy or countertrade friends. It is used by active Hyperliquid traders who want execution tools and onchain flow visibility.",
+  "hyperliquid_link": "Hyperdash builds its trading and analytics on Hyperliquid perps and onchain activity, and pvp.trade states it is powered by Hyperliquid.",
+  "data_needs": [
+   "live positions for many wallets",
+   "fills history per wallet",
+   "trades stream with wallet attribution",
+   "order book stream",
+   "candles",
+   "liquidation feed"
+  ],
+  "status_note": "active",
+  "sources": [
+   "https://pvp.trade",
+   "https://x.com/hypurrdash"
+  ]
+ },
+ {
+  "name": "Ferm",
+  "x": "",
+  "website": "https://tryferm.com",
+  "category": "other",
+  "summary": "Ferm is a perps prop firm where traders pay for a one-step evaluation challenge and, if they pass, receive a simulated funded account with up to a 90% profit split. It lists 84 markets including crypto perpetuals and forex, index, and commodity CFDs, with web and mobile apps. Its site states that challenge and funded orders are synthetic and are not routed to an external market.",
+  "hyperliquid_link": "not stated publicly",
+  "data_needs": [
+   "mark and oracle prices for crypto perps",
+   "candles",
+   "order book snapshots for simulated fills",
+   "funding rates"
+  ],
+  "status_note": "active",
+  "sources": [
+   "https://tryferm.com"
+  ]
+ },
+ {
+  "name": "Dapital",
+  "x": "trydapital",
+  "website": "https://dapital.xyz",
+  "category": "copy/social trading",
+  "summary": "Dapital describes itself as a financialized social network where users post trade ideas and discussions and can trade directly from the feed. It offers perps, crypto, and pre-IPO markets through iOS and Android apps. Users include traders and creators who share calls and theses.",
+  "hyperliquid_link": "Public posts describe its perp trades as executing on Hyperliquid using Hyperliquid builder codes.",
+  "data_needs": [
+   "live positions for many wallets",
+   "fills history per wallet",
+   "PnL per wallet",
+   "order book stream",
+   "candles",
+   "HIP-3 market metadata"
+  ],
+  "status_note": "active",
+  "sources": [
+   "https://dapital.xyz",
+   "https://x.com/trydapital"
+  ]
+ },
+ {
+  "name": "Felix Protocol",
+  "x": "felixprotocol",
+  "website": "https://usefelix.xyz",
+  "category": "HIP-3 venue/deployer",
+  "summary": "Felix is a DeFi app on Hyperliquid that offers stablecoin lending and borrowing, a CDP stablecoin (feUSD), 24/7 derivatives trading, and U.S. spot equities bought with USDC. Its lending markets accept collateral such as HYPE and HYPE liquid staking tokens. It is used by HYPE holders, stablecoin lenders, and traders seeking onchain exposure to equities and commodities.",
+  "hyperliquid_link": "Felix deploys and operates HIP-3 perp markets on Hyperliquid for equities, commodities, and indices, and runs its lending and CDP products on HyperEVM.",
+  "data_needs": [
+   "HIP-3 market metadata",
+   "oracle and mark prices",
+   "order book stream",
+   "open interest per market",
+   "liquidation feed",
+   "HyperEVM events for lending and CDP positions"
+  ],
+  "status_note": "active",
+  "sources": [
+   "https://usefelix.xyz",
+   "https://x.com/felixprotocol"
+  ]
+ },
+ {
+  "name": "TrueNorth",
+  "x": "get_truenorth",
+  "website": "https://truenorth.xyz",
+  "category": "trading terminal",
+  "summary": "TrueNorth describes itself as an agentic brokerage where users deploy AI agents that scan markets, propose trades, and monitor positions, with alerts delivered to apps such as Telegram. Features include a funding rate arbitrage scanner across perp venues, an options flow desk, and a position watcher. It is non-custodial and connects to venues including Hyperliquid, Lighter, Binance, Bybit, and Bitget.",
+  "hyperliquid_link": "It started as a layer built on Hyperliquid and trades there through an agent wallet that can place trades but cannot withdraw funds.",
+  "data_needs": [
+   "funding rates across markets",
+   "order book stream",
+   "live positions per user wallet",
+   "fills history per wallet",
+   "candles",
+   "HIP-3 market metadata"
+  ],
+  "status_note": "active",
+  "sources": [
+   "https://truenorth.xyz",
+   "https://x.com/get_truenorth"
+  ]
+ },
+ {
+  "name": "BharatLiquid",
+  "x": "BL_labs_xyz",
+  "website": "https://bharatliquid.xyz",
+  "category": "trading app/frontend",
+  "summary": "BharatLiquid (BL) is a trading app for users in India that offers exposure to global equities, crypto, commodities, and pre-IPO markets with rupee deposits and withdrawals. It is being built with Privy wallet infrastructure. It is currently in an early access waitlist phase, and pricing is to be published before trading opens.",
+  "hyperliquid_link": "Its site states it is built on Hyperliquid, connects users to Hyperliquid order books, and shows live market data from the Hyperliquid websocket API.",
+  "data_needs": [
+   "order book stream",
+   "candles",
+   "recent trades stream",
+   "mark prices",
+   "HIP-3 market metadata",
+   "fills history per wallet"
+  ],
+  "status_note": "unknown",
+  "sources": [
+   "https://bharatliquid.xyz",
+   "https://x.com/BL_labs_xyz"
+  ]
+ },
+ {
+  "name": "Hypercall",
+  "x": "SynapseProtocol",
+  "website": "https://hypercall.xyz",
+  "category": "other",
+  "summary": "Hypercall is an onchain options exchange for crypto and tokenized equities, offering calls, puts, and multi-leg strategies with no minimum size and no liquidations on long options. It is built by Synapse Protocol and runs on desktop and mobile, 24/7 including weekends. It also offers a liquidity vault (SLP) that quotes options and hedges positions.",
+  "hyperliquid_link": "Options settle on Hyperliquid, and its vault hedges using Hyperliquid perps, spot, and HIP-3 equity perps.",
+  "data_needs": [
+   "oracle and mark prices for underlyings",
+   "order book stream",
+   "HIP-3 market metadata",
+   "funding rates",
+   "candles",
+   "spot balances and positions for hedging accounts"
+  ],
+  "status_note": "active",
+  "sources": [
+   "https://hypercall.xyz",
+   "https://x.com/SynapseProtocol"
+  ]
+ },
+ {
+  "name": "Ergonia",
+  "x": "",
+  "website": "https://ergonia.io",
+  "category": "market maker/infra",
+  "summary": "Ergonia describes itself on X as a DeFi trading desk and venture studio that does onchain market making, DEX liquidity provision, and early-stage company building. Its stated focus areas include DeFi, infrastructure, yield, perps, and consumer crypto. The ergonia.io website currently redirects to a DRW Labs page.",
+  "hyperliquid_link": "not stated publicly",
+  "data_needs": [
+   "order book stream",
+   "fills history per wallet",
+   "funding rates",
+   "live positions for own accounts"
+  ],
+  "status_note": "unknown",
+  "sources": [
+   "https://ergonia.io",
+   "https://x.com/Ergoniaio"
+  ]
+ },
+ {
+  "name": "Wasabi",
+  "x": "wasabi_protocol",
+  "website": "https://wasabi.xyz",
+  "category": "other",
+  "summary": "Wasabi Protocol is a leverage trading protocol that offers up to 20x leverage on hundreds of assets, including long-tail tokens, memecoins, and tokenized stocks. Users can also deposit into vaults that earn yield from trading activity. It operates on Ethereum mainnet, Base, Solana, and other chains.",
+  "hyperliquid_link": "not stated publicly",
+  "data_needs": [
+   "none identified; no Hyperliquid integration stated"
+  ],
+  "status_note": "active",
+  "sources": [
+   "https://wasabi.xyz",
+   "https://x.com/wasabi_protocol"
+  ]
+ },
+ {
+  "name": "Silhouette Exchange",
+  "x": "",
+  "website": "https://silhouette.exchange",
+  "category": "market maker/infra",
+  "summary": "Silhouette is a block trading layer that uses request-for-quote (RFQ) so traders can get competing quotes from market makers for large orders without posting them to the public order book. It covers Hyperliquid perps and ecosystem assets such as tokenized equities. It is used by large traders and the market makers that answer quotes.",
+  "hyperliquid_link": "Trades settle on Hyperliquid across HyperCore and HyperEVM, and it describes itself as the universal block trading layer on Hyperliquid.",
+  "data_needs": [
+   "order book stream",
+   "mark and oracle prices",
+   "fills history per wallet",
+   "live positions for many wallets",
+   "HIP-3 market metadata"
+  ],
+  "status_note": "active",
+  "sources": [
+   "https://silhouette.exchange",
+   "https://x.com/silhouette_ex"
+  ]
+ },
+ {
+  "name": "Share",
+  "x": "sharexyz",
+  "website": "https://share.xyz",
+  "category": "prediction markets",
+  "summary": "Share is a prediction market trading app on web and iOS that compares prices and routes orders across Polymarket and Hyperliquid. It includes sports data, social features such as following traders and trade alerts, and a points program. It is used by prediction market traders, including sports bettors.",
+  "hyperliquid_link": "It describes itself as the trading app for Hyperliquid HIP-4 prediction markets and routes orders across HIP-4 deployers.",
+  "data_needs": [
+   "HIP-4 outcome market metadata",
+   "order book stream for outcome markets",
+   "fills history per wallet",
+   "live positions for many wallets",
+   "recent trades stream"
+  ],
+  "status_note": "active",
+  "sources": [
+   "https://share.xyz",
+   "https://x.com/sharexyz"
+  ]
+ },
+ {
+  "name": "Sentral",
+  "x": "sentralcash",
+  "website": "https://sentral.cash",
+  "category": "other",
+  "summary": "Sentral describes itself as 'the bank of tomorrow, today' with features to save, spend, move, and invest. Access is by invitation only through a waitlist. No further product details are published on its website.",
+  "hyperliquid_link": "not stated publicly",
+  "data_needs": [
+   "not determinable from public information"
+  ],
+  "status_note": "unknown",
+  "sources": [
+   "https://sentral.cash",
+   "https://x.com/sentralcash"
+  ]
+ },
+ {
+  "name": "tread.fi",
+  "x": "tread_fi",
+  "website": "https://tread.fi",
+  "category": "trading terminal",
+  "summary": "tread.fi is an algorithmic trading terminal and order execution management system that lets traders run execution algorithms, bots, and AI trading agents on their own CEX and DEX accounts from one interface. It offers a REST API with self-deployment options and an agent marketplace tied to its TREAD token. It describes its users as both retail traders and institutional trading firms.",
+  "hyperliquid_link": "tread.fi routes orders, bots, and agents to Hyperliquid perps, including HIP-3 pairs, and its TREAD staking for agent sponsor slots runs on HyperEVM.",
+  "data_needs": [
+   "order book stream for execution algorithms",
+   "fills history per wallet",
+   "live positions and margin per connected account",
+   "HIP-3 market metadata",
+   "candles",
+   "funding rates"
+  ],
+  "status_note": "active",
+  "sources": [
+   "https://tread.fi",
+   "https://x.com/tread_fi"
+  ]
+ },
+ {
+  "name": "Dexari",
+  "x": "DexariApp",
+  "website": "https://dexari.com",
+  "category": "trading app/frontend",
+  "summary": "Dexari is a self-custodial mobile app for iOS and Android for trading perps and spot markets with up to 40x leverage, TradingView charts, and advanced order types such as TP/SL and TWAP. It uses Turnkey for self-custody and supports deposits by card, bank transfer, or crypto. It targets traders who want to trade onchain markets from their phone.",
+  "hyperliquid_link": "Dexari states it is powered by Hyperliquid's order book and gives mobile access to Hyperliquid perps, spot, and HIP-3 markets such as stocks and commodities.",
+  "data_needs": [
+   "order book stream",
+   "candles",
+   "live positions and margin per wallet",
+   "order fill notifications per wallet",
+   "HIP-3 market metadata",
+   "new listing announcements"
+  ],
+  "status_note": "active",
+  "sources": [
+   "https://dexari.com",
+   "https://x.com/DexariApp"
+  ]
+ },
+ {
+  "name": "Button",
+  "x": "buttonxyz",
+  "website": "https://button.xyz",
+  "category": "trading app/frontend",
+  "summary": "Button makes Tailor, an AI trading assistant app for trading stocks, crypto, and other markets. Tailor researches markets, reads the user's portfolio and open orders, drafts trades that the user confirms, and runs scheduled briefs and price alerts by push notification or Telegram. Access is through a waitlist.",
+  "hyperliquid_link": "The website says users can look up any trader on Hyperliquid, see their account and holdings, and get notified when followed traders open or close a trade.",
+  "data_needs": [
+   "live positions for many wallets",
+   "fills history per wallet",
+   "open orders per wallet",
+   "candles",
+   "price feed for alerts",
+   "HIP-3 market metadata"
+  ],
+  "status_note": "active",
+  "sources": [
+   "https://button.xyz",
+   "https://x.com/buttonxyz"
+  ]
+ },
+ {
+  "name": "Quote",
+  "x": "quotemarkets",
+  "website": "https://quotemarkets.xyz",
+  "category": "trading terminal",
+  "summary": "Quote is a trading terminal that splits algo orders (TWAP, VWAP, POV, Iceberg, Chase) into child orders so the full size never reaches the order book. It covers perps, spot, and prediction markets for crypto, equities, indices, commodities, and pre-IPO companies, and includes an AI assistant, news trading, and an enterprise REST API with a read-only MCP server. It is in private alpha.",
+  "hyperliquid_link": "The website does not name Hyperliquid directly, but its market list uses HIP-3 style tickers such as xyz:NVDA and xyz:SP500.",
+  "data_needs": [
+   "order book stream",
+   "trades stream",
+   "fills history per wallet",
+   "HIP-3 market metadata",
+   "candles",
+   "funding rates"
+  ],
+  "status_note": "active",
+  "sources": [
+   "https://quotemarkets.xyz",
+   "https://x.com/quotemarkets"
+  ]
+ },
+ {
+  "name": "Polymarket",
+  "x": "Polymarket",
+  "website": "https://polymarket.com",
+  "category": "prediction markets",
+  "summary": "Polymarket is a prediction market where users trade on the outcomes of events in politics, sports, crypto, culture, and other topics. US users are directed to a separate site, polymarket.us. It is not built on Hyperliquid.",
+  "hyperliquid_link": "Polymarket announced Hyperliquid deposits and withdrawals in October 2025 and lists markets about Hyperliquid and HYPE, but it does not run on Hyperliquid.",
+  "data_needs": [
+   "deposit and withdrawal status on Hyperliquid",
+   "HYPE spot price for market resolution",
+   "Hyperliquid protocol metrics for event markets",
+   "HIP-4 prediction market data for comparison"
+  ],
+  "status_note": "active",
+  "sources": [
+   "https://polymarket.com",
+   "https://x.com/Polymarket"
+  ]
+ },
+ {
+  "name": "Arena",
+  "x": "TheArenaApp",
+  "website": "https://arena.social",
+  "category": "copy/social trading",
+  "summary": "The Arena is a SocialFi app that combines a social feed, tipping, communities, a token launchpad, and a non-custodial wallet with an ARENA token. It has added in-app perps trading with leaderboards, points, and trade sharing. Users include crypto traders, creators, and memecoin communities.",
+  "hyperliquid_link": "Arena uses Hyperliquid as the engine for its in-app perps trading across 200+ markets, including HIP-3 stock and commodity markets.",
+  "data_needs": [
+   "live positions for many wallets",
+   "fills history per wallet",
+   "liquidation feed",
+   "PnL per wallet for leaderboards",
+   "HIP-3 market metadata",
+   "candles"
+  ],
+  "status_note": "active",
+  "sources": [
+   "https://arena.social",
+   "https://x.com/TheArenaApp"
+  ]
+ },
+ {
+  "name": "Entropy",
+  "x": "entropyIO",
+  "website": "",
+  "category": "HIP-3 venue/deployer",
+  "summary": "Entropy lists perpetual futures on frontier assets such as pre-IPO companies (for example Anthropic and OpenAI) and some equities, and runs its own trading frontend. It runs a referral and rebate program that pays HYPE to users who connect a wallet on its site. Its posts describe a team with backgrounds at trading firms and a funding round led by Ribbit Capital.",
+  "hyperliquid_link": "Entropy is a HIP-3 deployer whose markets settle on Hyperliquid and are also tradable through other Hyperliquid frontends such as Trust Wallet.",
+  "data_needs": [
+   "HIP-3 market metadata",
+   "open interest per market",
+   "volume and fees per deployer",
+   "fills history per wallet for rebates",
+   "oracle and mark prices",
+   "order book stream"
+  ],
+  "status_note": "active",
+  "sources": [
+   "https://x.com/entropyIO"
+  ]
+ },
+ {
+  "name": "Fatbot",
+  "x": "fatty_io",
+  "website": "https://fatty.io",
+  "category": "telegram/trading bot",
+  "summary": "FatBot is a web-based crypto trading platform focused on token sniping, smart money alerts, whale tracking, copy trading, and perpetual trading with up to 40x leverage. It is tied to the FATTY token and runs volume airdrop and multi-level referral programs. Its users are mainly memecoin traders and FATTY holders.",
+  "hyperliquid_link": "FatBot's perps feature trades on Hyperliquid, including HIP-3 assets such as oil, gold, and silver.",
+  "data_needs": [
+   "live positions per wallet",
+   "fills history per wallet",
+   "HIP-3 market metadata",
+   "candles",
+   "order book stream",
+   "liquidation feed"
+  ],
+  "status_note": "active",
+  "sources": [
+   "https://fatty.io",
+   "https://x.com/fatty_io"
+  ]
+ },
+ {
+  "name": "Ventuals",
+  "x": "ventuals",
+  "website": "https://ventuals.com",
+  "category": "HIP-3 venue/deployer",
+  "summary": "Ventuals offered 24/7 perpetual futures on private companies such as SpaceX, OpenAI, and Anthropic, plus thematic baskets. It ran a vHYPE staking product and a liquidity provider vault. On June 15, 2026 the team announced it was winding down, settling and halting all its markets, and discontinuing its points program.",
+  "hyperliquid_link": "Ventuals deployed HIP-3 markets on Hyperliquid, which were settled and halted as part of its shutdown, with vHYPE redeemable for HYPE.",
+  "data_needs": [
+   "HIP-3 market metadata",
+   "oracle and mark prices",
+   "open interest per market",
+   "market settlement status",
+   "staking balances for vHYPE"
+  ],
+  "status_note": "appears inactive or shut down (public evidence: app.ventuals.com post dated June 15, 2026 titled 'Ventuals is sunsetting' announcing wind-down and settlement of all its HIP-3 markets)",
+  "sources": [
+   "https://ventuals.com",
+   "https://x.com/ventuals"
+  ]
+ },
+ {
+  "name": "Senpi",
+  "x": "senpi_ai",
+  "website": "https://senpi.ai",
+  "category": "telegram/trading bot",
+  "summary": "Senpi is an AI trading agent app that analyzes a wallet's trade history, scores trading habits, and builds and runs automated strategies around the clock. It offers more than 100 strategy templates, a plain-English strategy builder, a Chrome extension, and iOS and Android apps. It also runs agent trading competitions.",
+  "hyperliquid_link": "Senpi is built for Hyperliquid: it reads any Hyperliquid address and executes its agents' strategies on Hyperliquid markets.",
+  "data_needs": [
+   "fills history per wallet",
+   "live positions for many wallets",
+   "top trader positioning",
+   "candles",
+   "funding rates",
+   "order book stream"
+  ],
+  "status_note": "active",
+  "sources": [
+   "https://senpi.ai",
+   "https://x.com/senpi_ai"
+  ]
+ },
+ {
+  "name": "Sorcery",
+  "x": "",
+  "website": "https://srcry.xyz",
+  "category": "other",
+  "summary": "Sorcery's website describes it as 'Powering Financial Content' and says it aims to bring any asset to traders and stream liquidity 24/7 in anything that ticks. The site gives no further product details.",
+  "hyperliquid_link": "not stated publicly",
+  "data_needs": [
+   "oracle and mark prices",
+   "order book stream",
+   "HIP-3 market metadata"
+  ],
+  "status_note": "unknown",
+  "sources": [
+   "https://srcry.xyz"
+  ]
+ },
+ {
+  "name": "Propr",
+  "x": "ProprXYZ",
+  "website": "https://propr.xyz",
+  "category": "other",
+  "summary": "Propr is a perps proprietary trading firm where traders pass an evaluation challenge to get a funded account and receive a share of rewards paid onchain in USDC. It covers 160+ crypto, stock, index, commodity, and forex perps and publishes payouts on a transparency page. It is API-first, with REST and SDK access, and allows algorithmic and agent trading.",
+  "hyperliquid_link": "Propr describes itself as the perps prop firm built on Hyperliquid, offering Hyperliquid perps including HIP-3 markets; its site also lists Lighter.",
+  "data_needs": [
+   "live positions for many wallets",
+   "fills history per wallet",
+   "PnL and drawdown per account",
+   "HIP-3 market metadata",
+   "mark prices",
+   "order book stream"
+  ],
+  "status_note": "active",
+  "sources": [
+   "https://propr.xyz",
+   "https://x.com/ProprXYZ"
+  ]
+ },
+ {
+  "name": "Force",
+  "x": "forcexyzhq",
+  "website": "https://force.xyz",
+  "category": "HIP-3 venue/deployer",
+  "summary": "Force offers macro indices, such as a US 10-year Treasury index (US10Y), as onchain tradable markets. Its website gives little further detail.",
+  "hyperliquid_link": "Force says its macro indices are live on Hyperliquid, and its trade link points to a frce:US10Y market on Hyperliquid testnet.",
+  "data_needs": [
+   "HIP-3 market metadata",
+   "oracle and mark prices",
+   "order book stream",
+   "open interest per market",
+   "candles"
+  ],
+  "status_note": "unknown",
+  "sources": [
+   "https://force.xyz",
+   "https://x.com/forcexyzhq"
+  ]
+ },
+ {
+  "name": "Elytra",
+  "x": "ElytraProtocol",
+  "website": "",
+  "category": "other",
+  "summary": "Elytra describes itself on X as a liquid restaking protocol engineered for Hyperliquid. It had a security audit by Pashov Audit Group in 2025. No public details on launch, products, or users were found.",
+  "hyperliquid_link": "Elytra describes itself as a liquid restaking protocol built for Hyperliquid.",
+  "data_needs": [
+   "HYPE staking and validator data",
+   "HyperEVM contract events",
+   "spot balances per wallet"
+  ],
+  "status_note": "unknown",
+  "sources": [
+   "https://x.com/ElytraProtocol"
+  ]
+ },
+ {
+  "name": "Cabals",
+  "x": "cabals",
+  "website": "https://cabals.com",
+  "category": "copy/social trading",
+  "summary": "Cabals is a web trading app with markets, intel, feed, news, and leaderboard sections, plus group chats for named trading groups called cabals. Users connect a wallet through Privy.",
+  "hyperliquid_link": "Cabals lists Hyperliquid perps, including HIP-3 markets such as xyz:SP500 and xyz:NVDA, using Hyperliquid market data.",
+  "data_needs": [
+   "market list with 24h volume",
+   "HIP-3 market metadata",
+   "live positions for many wallets",
+   "PnL per wallet for leaderboards",
+   "candles",
+   "order book stream"
+  ],
+  "status_note": "active",
+  "sources": [
+   "https://cabals.com",
+   "https://x.com/cabals"
+  ]
+ },
+ {
+  "name": "WhaleDance",
+  "x": "whaledotdance",
+  "website": "https://whale.dance",
+  "category": "trading app/frontend",
+  "summary": "WhaleDance is a trading app built around AI agents, available on iOS, Android, and the web. Users can ask an AI assistant called Max about trades, and can delegate funds to AI agents that monitor markets 24/7 and trade for them. Its website lists 24/7 markets on stocks, commodities, and crypto with up to 40x leverage.",
+  "hyperliquid_link": "not stated publicly",
+  "data_needs": [
+   "live prices and candles across crypto, stock, and commodity markets",
+   "order book stream for execution",
+   "live positions and PnL per user and per agent",
+   "fills history per wallet",
+   "funding rates and open interest for agent signals"
+  ],
+  "status_note": "active",
+  "sources": [
+   "https://whale.dance",
+   "https://x.com/whaledotdance"
+  ]
+ },
+ {
+  "name": "Outcome",
+  "x": "",
+  "website": "https://outcome.xyz",
+  "category": "prediction markets",
+  "summary": "Outcome is a prediction markets app where users trade event contracts on sports, crypto, esports, economics, finance, and politics. It runs a trader rewards program and restricts trading in some regions, including the US. X posts describe it as the leading frontend and deployer for prediction markets on Hyperliquid.",
+  "hyperliquid_link": "Outcome deploys and offers trading in Hyperliquid-native outcome (HIP-4) markets that settle on Hyperliquid's order book, according to posts on X.",
+  "data_needs": [
+   "HIP-4 outcome market metadata and resolution status",
+   "order book stream per outcome market",
+   "live prices and volume per market",
+   "fills history per wallet",
+   "live positions for many wallets",
+   "deployer and market listing events"
+  ],
+  "status_note": "active",
+  "sources": [
+   "https://outcome.xyz",
+   "https://x.com/Outcomexyz"
+  ]
+ },
+ {
+  "name": "Liquid",
+  "x": "liquidtrading",
+  "website": "https://liquidmax.xyz",
+  "category": "trading app/frontend",
+  "summary": "Liquid is a trading app on web, iOS, and Android for trading perpetuals on crypto, stocks, FX, and commodities 24/7 with up to 50x leverage. It also offers Co-Invest, a connector that lets users trade from ChatGPT or Claude. The given domain redirects to liquid.trade.",
+  "hyperliquid_link": "Liquid's app routes trades to Hyperliquid markets, including core perps and HIP-3 markets listed under the xyz: prefix.",
+  "data_needs": [
+   "live prices and candles across core and HIP-3 markets",
+   "order book stream",
+   "HIP-3 market metadata",
+   "live positions and margin per wallet",
+   "fills history per wallet",
+   "funding rates"
+  ],
+  "status_note": "active",
+  "sources": [
+   "https://liquidmax.xyz",
+   "https://x.com/liquidtrading",
+   "https://www.liquid.trade/"
+  ]
+ },
+ {
+  "name": "GTR",
+  "x": "tradeongtr",
+  "website": "https://gtr.trade",
+  "category": "copy/social trading",
+  "summary": "GTR is a social trading platform for crypto perps, stock perps, memecoins, and prediction markets on web and mobile. It combines a trading terminal with live social trade feeds, one-click copy trading of top traders, news and listing alerts, and group trading circles called Clans with leaderboards. It is non-custodial and in beta.",
+  "hyperliquid_link": "GTR's website states that it is powered by Hyperliquid.",
+  "data_needs": [
+   "live positions for many wallets",
+   "fills history per wallet for social feeds and copying",
+   "real-time trade stream for followed traders",
+   "PnL and leaderboard data per wallet",
+   "order book stream and candles",
+   "HIP-3 market metadata for stock perps"
+  ],
+  "status_note": "active",
+  "sources": [
+   "https://gtr.trade",
+   "https://x.com/tradeongtr"
+  ]
+ },
+ {
+  "name": "Stingray",
+  "x": "",
+  "website": "https://stingray.fi",
+  "category": "telegram/trading bot",
+  "summary": "Stingray is an AI trading assistant that users message over iMessage or Telegram. A user shares a trade idea, Stingray turns it into a rule, shows how often the setup happened before, and sends a text alert if it happens again. The user decides whether to trade.",
+  "hyperliquid_link": "Not stated on its website; X users describe using its signals to trade Hyperliquid markets.",
+  "data_needs": [
+   "historical candles for backtesting setups",
+   "live prices for alert triggers",
+   "funding rates and open interest",
+   "liquidation feed",
+   "market metadata for supported assets"
+  ],
+  "status_note": "active",
+  "sources": [
+   "https://stingray.fi",
+   "https://x.com/Stingray_fi",
+   "https://x.com/Wyriium/status/2115773544596713942"
+  ]
+ },
+ {
+  "name": "HyENA",
+  "x": "hyenatrade",
+  "website": "https://hyena.trade",
+  "category": "HIP-3 venue/deployer",
+  "summary": "HyENA is a perpetuals exchange margined in Ethena's USDe, launched by Based. Traders earn rewards on their USDe margin while holding positions, and liquidity providers can deposit into an HLPe vault. It has its own web trading app and runs a points program.",
+  "hyperliquid_link": "HyENA is a HIP-3 perp venue deployed on Hyperliquid, and its markets can also be traded on Hyperliquid's own frontend.",
+  "data_needs": [
+   "HIP-3 market metadata for its deployed markets",
+   "order book stream",
+   "live positions and margin for many wallets",
+   "fills history per wallet for points",
+   "liquidation feed",
+   "vault equity and PnL history"
+  ],
+  "status_note": "active",
+  "sources": [
+   "https://hyena.trade",
+   "https://x.com/hyenatrade"
+  ]
+ },
+ {
+  "name": "Talis",
+  "x": "talistrade",
+  "website": "https://talis.trade",
+  "category": "trading app/frontend",
+  "summary": "Talis is an AI trading copilot app on web, iOS, and Android for trading crypto, stocks, commodities, prediction markets, and pre-IPO markets in one portfolio. It offers AI research, copy trading, paper trading, backtesting, natural-language automated strategies, and sub-account management. Trades are placed through a delegated agent wallet that can sign orders but cannot withdraw funds.",
+  "hyperliquid_link": "Talis executes trades on Hyperliquid, where each user's balance sits in their own Hyperliquid account.",
+  "data_needs": [
+   "live positions for many wallets",
+   "fills history per wallet for copy trading",
+   "historical candles for backtesting",
+   "order book stream",
+   "HIP-3 market metadata",
+   "sub-account and agent wallet state"
+  ],
+  "status_note": "active",
+  "sources": [
+   "https://talis.trade",
+   "https://x.com/talistrade"
+  ]
+ },
+ {
+  "name": "Ult",
+  "x": "UltApp",
+  "website": "https://cronoslabs.org",
+  "category": "trading app/frontend",
+  "summary": "Ult is a self-custody trading app from Cronos Labs for crypto, stock perps, commodities, sports, and prediction markets on iPhone, Android, and desktop. It started as the Crypto.com Onchain Wallet and was renamed Ult in 2026. The given domain redirects to cronos.com.",
+  "hyperliquid_link": "not stated publicly",
+  "data_needs": [
+   "live prices and candles across perp markets",
+   "order book stream",
+   "live positions per wallet",
+   "fills history per wallet",
+   "market metadata for stock and commodity perps"
+  ],
+  "status_note": "active",
+  "sources": [
+   "https://cronoslabs.org",
+   "https://x.com/UltApp",
+   "https://cronos.com/"
+  ]
+ },
+ {
+  "name": "HyperLink",
+  "x": "hyperlink_xyz",
+  "website": "https://hyperlink.xyz",
+  "category": "market maker/infra",
+  "summary": "HyperLink is a prime brokerage layer for Hyperliquid aimed at power users, market makers, prop desks, algo traders, and AI agents. It offers lower trading fees, private order flow, and a web and mobile trading app. Its API mirrors the Hyperliquid API so existing strategies can switch by changing the base URL.",
+  "hyperliquid_link": "HyperLink routes client orders onto Hyperliquid's order book while keeping positions and orders private before settlement.",
+  "data_needs": [
+   "order book stream",
+   "fills history per wallet",
+   "trading volume and fee tier per wallet",
+   "live positions and margin for many wallets",
+   "asset metadata and indexes, including spot markets"
+  ],
+  "status_note": "active",
+  "sources": [
+   "https://hyperlink.xyz",
+   "https://x.com/hyperlink_xyz"
+  ]
+ },
+ {
+  "name": "Auto",
+  "x": "autodotfun_",
+  "website": "https://auto.fun",
+  "category": "telegram/trading bot",
+  "summary": "Auto is an AI agent platform for onchain finance that lets users have AI agents retrieve market data and execute trades across chains. It grew out of the auto.fun platform from the elizaOS ecosystem.",
+  "hyperliquid_link": "X posts mention bridging to HyperEVM; no deeper Hyperliquid integration is stated publicly.",
+  "data_needs": [
+   "live prices and candles",
+   "order book stream",
+   "live positions per wallet",
+   "fills history per wallet",
+   "HyperEVM bridge and balance data"
+  ],
+  "status_note": "appears inactive or shut down (public evidence: in September 2026 the team posted on X that it had shut down all production after its account was hacked, and auto.fun returned a Cloudflare 525 error when checked)",
+  "sources": [
+   "https://auto.fun",
+   "https://x.com/autodotfun_"
+  ]
+ },
+ {
+  "name": "Faro",
+  "x": "FaroTrading",
+  "website": "https://faro.io",
+  "category": "trading terminal",
+  "summary": "Faro is an AI trading platform built for Hyperliquid that combines onchain data, sentiment, social activity, and other market signals to surface trade ideas. Its app includes charts, an order book, an AI assistant, and order entry for instant execution. It is non-custodial and part of the Swell ecosystem.",
+  "hyperliquid_link": "Faro is built for Hyperliquid, using its market data and executing trades on it from a new or imported wallet.",
+  "data_needs": [
+   "order book stream",
+   "candles",
+   "funding rates and open interest",
+   "liquidation feed",
+   "aggregate positioning across many wallets",
+   "live positions per wallet"
+  ],
+  "status_note": "active",
+  "sources": [
+   "https://faro.io",
+   "https://x.com/FaroTrading"
+  ]
+ },
+ {
+  "name": "Hypemarkets",
+  "x": "",
+  "website": "https://hypemarkets.xyz",
+  "category": "analytics/dashboard",
+  "summary": "Hype Markets is a Hyperliquid market intelligence site with tables of perps, spot, and prediction markets showing price, volume, open interest, and funding. It also offers screeners, whale and wallet tracking, and market briefs, and lets users trade from market pages.",
+  "hyperliquid_link": "Hype Markets displays and links to trading on Hyperliquid perps, spot, HIP-3, and outcome markets.",
+  "data_needs": [
+   "market metadata for all perps, including HIP-3",
+   "funding rates and open interest",
+   "24h volume and trade counts",
+   "live positions for many wallets",
+   "order book stream",
+   "HIP-4 outcome market data"
+  ],
+  "status_note": "active",
+  "sources": [
+   "https://hypemarkets.xyz",
+   "https://x.com/_hypemarkets"
+  ]
+ },
+ {
+  "name": "Aura",
+  "x": "Auramoney",
+  "website": "https://aura.money",
+  "category": "trading app/frontend",
+  "summary": "Aura is a trading app on iOS, Android, and desktop for trading Hyperliquid and Polymarket markets from one wallet. Users can sign up for an Aura account or bring their own wallet. It includes perps and spot trading, social groups, missions, and points.",
+  "hyperliquid_link": "Aura offers Hyperliquid perps, spot, and HIP-3 markets through its app, and its X posts describe launching HIP-3 markets such as US Treasury perps.",
+  "data_needs": [
+   "live prices and candles across core and HIP-3 markets",
+   "order book stream",
+   "HIP-3 market metadata",
+   "live positions per wallet",
+   "fills history per wallet",
+   "trading volume per user for missions"
+  ],
+  "status_note": "active",
+  "sources": [
+   "https://aura.money",
+   "https://x.com/Auramoney"
+  ]
+ },
+ {
+  "name": "Onyx",
+  "x": "Onyx_terminal",
+  "website": "https://onyx.live",
+  "category": "trading terminal",
+  "summary": "Onyx is a trading terminal whose X bio says it gives users more edge and is powered by Hyperliquid. It is linked to the team behind Sentiment.",
+  "hyperliquid_link": "Onyx describes itself on X as a trading terminal powered by Hyperliquid.",
+  "data_needs": [
+   "order book stream",
+   "candles",
+   "live positions per wallet",
+   "fills history per wallet",
+   "funding rates"
+  ],
+  "status_note": "appears inactive or shut down (public evidence: onyx.live shows 'This deployment is temporarily paused', and the most recent X post found dates from February 2025)",
+  "sources": [
+   "https://onyx.live",
+   "https://x.com/Onyx_terminal"
+  ]
+ },
+ {
+  "name": "AssetDash",
+  "x": "assetdash",
+  "website": "https://assetdash.com",
+  "category": "other",
+  "summary": "AssetDash is a portfolio tracking and trading company whose current app, Moby, shows live order flow and whale positioning and lets users trade with one tap. Moby runs on Solana, Robinhood Chain, BNB Chain, and Base and includes copy trading and rewards. The given domain redirects to moby.win.",
+  "hyperliquid_link": "AssetDash's X posts mention adding Hyperliquid spot asset tracking and a Whale Watch Perps feed; Hyperliquid is not listed among Moby's supported chains.",
+  "data_needs": [
+   "spot balances per wallet",
+   "live positions for many wallets",
+   "large trade and whale position feed",
+   "liquidation feed",
+   "market metadata"
+  ],
+  "status_note": "active",
+  "sources": [
+   "https://assetdash.com",
+   "https://x.com/assetdash",
+   "https://moby.win/"
+  ]
+ },
+ {
+  "name": "Invo",
+  "x": "invoxyz",
+  "website": "https://invoapp.com",
+  "category": "copy/social trading",
+  "summary": "Invo is a social trading app where users browse leaderboards and trader profiles, copy other traders' positions with one click, and earn when others copy their trades. It includes a social feed, track records for traders, and an 'Invo Score' that rates trader profitability and risk. It is available on web, iOS and Android (app listings use the name Involio), and the site cites 250K+ users.",
+  "hyperliquid_link": "Its X account posts Hyperliquid market and news updates, such as Hyperliquid liquidation totals, but the website does not state which venue executes trades.",
+  "data_needs": [
+   "live positions for many wallets",
+   "fills history per wallet",
+   "PnL and trade history per wallet for leaderboards and scoring",
+   "real-time fills stream for copied traders",
+   "liquidation feed",
+   "mark prices and candles"
+  ],
+  "status_note": "active",
+  "sources": [
+   "https://invoapp.com",
+   "https://x.com/invoxyz",
+   "https://x.com/invoxyz/status/2116585672069067153",
+   "https://x.com/invoxyz/status/2117998769216393658"
+  ]
+ },
+ {
+  "name": "Based",
+  "x": "BasedOneX",
+  "website": "https://based.one",
+  "category": "trading app/frontend",
+  "summary": "Based is a self-custodial trading app for crypto perpetuals and US stock markets, available as a web terminal, desktop app, iOS and Android apps, and a Telegram trading bot. It also offers Based Cash, a Visa debit card for spending crypto, plus multichain deposits, prediction market access, and Based Cloud, a tool for launching branded trading terminals. The site reports more than $44 billion in volume and 100k+ users.",
+  "hyperliquid_link": "Based is built on Hyperliquid and routes trading to Hyperliquid perps and HIP-3 equity markets (its stock pages use the xyz: market prefix), and its X posts describe support for HIP-4 outcome markets.",
+  "data_needs": [
+   "order book stream",
+   "candles and mark prices",
+   "positions, balances and fills per user wallet",
+   "HIP-3 market metadata",
+   "funding rates",
+   "HIP-4 outcome market data"
+  ],
+  "status_note": "active",
+  "sources": [
+   "https://based.one",
+   "https://x.com/BasedOneX",
+   "https://x.com/BasedOneX/status/1960674035844702390",
+   "https://x.com/BasedOneX/status/1961032640754274311",
+   "https://x.com/BasedOneX/status/2051164517229560262"
+  ]
+ },
+ {
+  "name": "OneKey",
+  "x": "",
+  "website": "https://onekey.so",
+  "category": "wallet",
+  "summary": "OneKey makes open-source hardware wallets (OneKey Pro 2, Classic 1S) and a self-custodial software wallet available as an app, browser extension and web app. Its app lets users trade crypto, stocks and other assets from the wallet. OneKey Perps, a built-in perpetual futures feature, supports crypto, equity, commodity and other markets with TP/SL, TWAP orders and funding history.",
+  "hyperliquid_link": "OneKey Perps executes trades on Hyperliquid's order book, including HIP-3 markets, with orders signed by the user's own OneKey keys.",
+  "data_needs": [
+   "order book stream",
+   "positions and liquidation prices per user wallet",
+   "funding rate history",
+   "HIP-3 market metadata",
+   "TWAP order status",
+   "candles"
+  ],
+  "status_note": "active",
+  "sources": [
+   "https://onekey.so",
+   "https://x.com/OneKeyHQ/status/2115732491269239152",
+   "https://x.com/OneKeyHQ/status/2097264049696182333",
+   "https://x.com/OneKeyHQ/status/2100456226609910197"
+  ]
+ },
+ {
+  "name": "Mass",
+  "x": "massdotmoney",
+  "website": "https://mass.money",
+  "category": "trading app/frontend",
+  "summary": "Mass is a self-custodial mobile money app for iOS and Android that combines perpetuals trading, tokenized stocks, prediction markets, savings and payments. It requires no KYC to trade, is available in more than 170 countries, and says its smart contracts were audited by Pashov and Trail of Bits. Its X posts say prediction markets are powered by Polymarket and tokenized stocks by Dinari.",
+  "hyperliquid_link": "Mass's X posts say it moved its perps product to Hyperliquid in mid-2025 and operates as a Hyperliquid builder frontend for mobile perps trading.",
+  "data_needs": [
+   "order book stream",
+   "positions, balances and fills per user wallet",
+   "candles and mark prices",
+   "funding rates",
+   "HIP-3 market metadata",
+   "trade history per wallet"
+  ],
+  "status_note": "active",
+  "sources": [
+   "https://mass.money",
+   "https://x.com/massdotmoney",
+   "https://x.com/massdotmoney/status/1938577640807452882",
+   "https://x.com/massdotmoney/status/1940421198116200652",
+   "https://x.com/massdotmoney/status/2014384115823603967"
+  ]
+ },
+ {
+  "name": "Iceberg",
+  "x": "Icebergdotcash",
+  "website": "https://iceberg.cash",
+  "category": "other",
+  "summary": "Iceberg is an on-chain crypto prop trading firm that gives traders up to $100,000 of simulated capital and an 80% share of funded profits. It offers Instant Funding accounts with no evaluation and 1-Step Unlimited accounts with a 10% profit target, both with 3% daily and 6% total drawdown limits. Payouts come from a public payout pool funded by account fees, and it runs an affiliate program and Ice Points rewards.",
+  "hyperliquid_link": "The website states Iceberg is powered by Hyperliquid, and its X account describes it as built on Hyperliquid perps.",
+  "data_needs": [
+   "real-time mark prices and order book stream",
+   "candles",
+   "funding rates",
+   "fills and positions per trader account",
+   "perp and HIP-3 market metadata"
+  ],
+  "status_note": "active",
+  "sources": [
+   "https://iceberg.cash",
+   "https://x.com/Icebergdotcash",
+   "https://x.com/Icebergdotcash/status/2115881867568386277"
+  ]
+ },
+ {
+  "name": "Delpho",
+  "x": "delpho_labs",
+  "website": "https://delpho.xyz",
+  "category": "other",
+  "summary": "Delpho issues USDV, a yield-bearing dollar on HyperEVM that users mint at 0% interest against HYPE, kHYPE, USDC or USDT collateral. Staking USDV into sUSDV earns yield from a delta-neutral position whose short leg collects funding paid by leveraged longs. The protocol has a Sherlock audit, and USDV is designed for use across HyperEVM lending, liquidity and trading venues.",
+  "hyperliquid_link": "Delpho describes itself as Hyperliquid's balance-sheet layer; deposited collateral runs a delta-neutral position on Hyperliquid, and USDV lives on HyperEVM.",
+  "data_needs": [
+   "funding rates and funding history",
+   "protocol vault positions and margin",
+   "mark and oracle prices for HYPE and collateral assets",
+   "HyperEVM collateral and supply state",
+   "HyperCore and HyperEVM transfer events"
+  ],
+  "status_note": "active",
+  "sources": [
+   "https://delpho.xyz",
+   "https://x.com/delpho_labs",
+   "https://x.com/delpho_labs/status/2115849726776275092"
+  ]
+ },
+ {
+  "name": "Valiant",
+  "x": "ValiantTrade",
+  "website": "https://valiant.trade",
+  "category": "trading app/frontend",
+  "summary": "Valiant is a trading platform on the Fogo blockchain, with a spot swap interface (for example USDC to FOGO) and liquidity provision tied to Fogo ecosystem points and badges. It previously offered perpetuals, outcome markets and an AI trading agent called Maximus, but its X account announced a wind-down of Valiant Perps and Outcomes. It runs on Fogo, not on Hyperliquid.",
+  "hyperliquid_link": "Its X posts promoted trading 'the exact Hyperliquid liquidity' on Fogo for its perps product, which has since been wound down.",
+  "data_needs": [
+   "order book stream",
+   "mark prices and candles",
+   "funding rates",
+   "perp market metadata"
+  ],
+  "status_note": "active",
+  "sources": [
+   "https://valiant.trade",
+   "https://x.com/ValiantTrade",
+   "https://x.com/ValiantTrade/status/2039068656832016493",
+   "https://x.com/ValiantTrade/status/2095548425299427741"
+  ]
+ },
+ {
+  "name": "Monarch",
+  "x": "monarch_fast",
+  "website": "https://monarch.fast",
+  "category": "market maker/infra",
+  "summary": "Monarch builds liquidity tooling for new and long-tail markets, centered on Marina, a program that pays makers on-chain rewards based on quoting, spreads, depth and fills. Its site lists Outcome.xyz liquidity reward campaigns across sports, macro and price-target markets, with a wallet leaderboard and per-market stats. It also offers Marina Earn vaults that run on-chain market-making strategies and helps projects launch their own markets.",
+  "hyperliquid_link": "Monarch runs liquidity incentives for markets on Hyperliquid, including Outcome.xyz HIP-4 markets and spot listings, and offers help launching HIP-3 and HIP-4 markets.",
+  "data_needs": [
+   "order book snapshots per block",
+   "open orders and quotes per wallet",
+   "maker and taker fills per wallet",
+   "HIP-4 outcome market metadata",
+   "HIP-3 market metadata",
+   "spread and depth history per market"
+  ],
+  "status_note": "active",
+  "sources": [
+   "https://monarch.fast",
+   "https://monarch.fast/marina",
+   "https://x.com/monarch_fast",
+   "https://x.com/monarch_fast/status/2033937151893635355",
+   "https://x.com/monarch_fast/status/2115085834244481030"
+  ]
+ },
+ {
+  "name": "Native Markets",
+  "x": "nativemarkets",
+  "website": "https://nativemarkets.com",
+  "category": "other",
+  "summary": "Native Markets is the issuer of USDH, a stablecoin built for Hyperliquid and minted on HyperEVM with a USDH/USDC spot order book on HyperCore. USDH was used for spot trading, portfolio margin and as the quote asset for USDH-denominated markets, including HIP-3 perps. Its website describes the company as building payments, risk and yield products, with a team from BlackRock, Uniswap, Stripe, Circle and Scale AI.",
+  "hyperliquid_link": "Native Markets issued USDH as a Hyperliquid-native stablecoin and staked HYPE to give USDH-quoted markets aligned quote asset fee benefits.",
+  "data_needs": [
+   "spot order book for USDH/USDC",
+   "spot balances and transfers per wallet",
+   "HIP-3 market metadata for USDH-quoted markets",
+   "staking and delegation state",
+   "portfolio margin borrow and supply state"
+  ],
+  "status_note": "appears inactive or shut down (public evidence: @nativemarkets X posts announce a USDH sunset, including unstaking HYPE, removing some USDH spot markets and directing users to convert to USDC)",
+  "sources": [
+   "https://nativemarkets.com",
+   "https://x.com/nativemarkets",
+   "https://x.com/nativemarkets/status/1970806974737793529",
+   "https://x.com/nativemarkets/status/2059068720983769187"
+  ]
+ },
+ {
+  "name": "Hypernova",
+  "x": "HypernovaX",
+  "website": "https://hypernova.trade",
+  "category": "other",
+  "summary": "Hypernova is an on-chain crypto prop trading firm that funds traders who pass an assessment, with accounts from $5k to $200k and up to $300k total initial funding. Traders keep 80% of profits (90% with an add-on), and payouts settle from a public on-chain reserve in seconds. It offers 106 perpetual markets across crypto, equities, commodities and pre-IPO names, and is in an invite-only closed beta.",
+  "hyperliquid_link": "Hypernova is built on Hyperliquid, prices its markets from live Hyperliquid market data, and lets traders connect Hyperliquid trading history for assessments.",
+  "data_needs": [
+   "real-time mark prices and order book stream",
+   "candles",
+   "fills history per wallet",
+   "funding rates",
+   "HIP-3 market metadata",
+   "PnL history per trader wallet"
+  ],
+  "status_note": "active",
+  "sources": [
+   "https://hypernova.trade",
+   "https://hypernova.xyz/",
+   "https://x.com/HypernovaX",
+   "https://x.com/HypernovaX/status/2047695603526992156"
+  ]
+ },
+ {
+  "name": "Unit",
+  "x": "unitxyz",
+  "website": "https://hyperunit.xyz",
+  "category": "aggregator/bridge",
+  "summary": "Unit is an asset tokenization and bridging layer that lets users deposit and withdraw native assets such as BTC, ETH, SOL and AVAX to and from Hyperliquid. Deposits and withdrawals are verified by a Guardian network, and a public explorer shows each operation. Users trade the resulting assets on Hyperliquid spot markets and use them as collateral.",
+  "hyperliquid_link": "Unit supplies the native spot assets traded on Hyperliquid, with an initial Guardian set led by Unit, Hyperliquid Labs and Infinite Field, and one-click deposits on the Hyperliquid interface.",
+  "data_needs": [
+   "spot balances per wallet",
+   "deposit and withdrawal transfer events",
+   "spot market metadata",
+   "spot order book stream",
+   "portfolio margin collateral state"
+  ],
+  "status_note": "active",
+  "sources": [
+   "https://hyperunit.xyz",
+   "https://x.com/unitxyz",
+   "https://x.com/unitxyz/status/1922801777407295658",
+   "https://x.com/unitxyz/status/2116098065262334073"
+  ]
+ },
+ {
+  "name": "Duels",
+  "x": "duelstrade",
+  "website": "https://duels.trade",
+  "category": "trading app/frontend",
+  "summary": "Duels is a gamified trading platform where individuals or verified teams compete trading perpetuals on 100+ assets. It features leaderboards, an AURA points system and instant USDC payouts, and presents trading as an esport. The website is titled 'Duels | Gamified Trading' but shows little text without loading the app.",
+  "hyperliquid_link": "Its X posts reference Hyperliquid as the venue for the 100+ perp markets traded in its competitions.",
+  "data_needs": [
+   "fills history per wallet",
+   "live positions for many wallets",
+   "PnL per wallet for leaderboards",
+   "mark prices and candles",
+   "order book stream"
+  ],
+  "status_note": "active",
+  "sources": [
+   "https://duels.trade",
+   "https://x.com/duelstrade",
+   "https://x.com/duelstrade/status/2026303593494565129",
+   "https://x.com/duelstrade/status/2062930739314696584"
+  ]
+ },
+ {
+  "name": "Valantis",
+  "x": "",
+  "website": "https://valantis.xyz",
+  "category": "other",
+  "summary": "Valantis runs stHYPE, a liquid staking token for HYPE, along with the stHYPE AMM, a pool built for liquid staking tokens that earns swap, lending and staking yield. Its Prime Trading product gives stHYPE holders up to 40% off trading fees when trading through a Prime account, and it also offers Prime DCA. Its site says stHYPE yield comes from staking plus payments from HIP-3 and stablecoin businesses on Hyperliquid.",
+  "hyperliquid_link": "Valantis is built on Hyperliquid and HyperEVM; Prime Trading discounts apply across Hyperliquid perps, spot and HIP-3 markets.",
+  "data_needs": [
+   "staking and delegation state",
+   "user fee tiers and 14-day trading volume",
+   "fills history per wallet",
+   "HIP-3 market metadata",
+   "spot and perp order book stream",
+   "HyperCore and HyperEVM transfer events"
+  ],
+  "status_note": "active",
+  "sources": [
+   "https://valantis.xyz",
+   "https://x.com/ValantisLabs/status/2116939651537842580",
+   "https://x.com/ValantisLabs/status/2117663187898388722"
+  ]
+ }
+]
