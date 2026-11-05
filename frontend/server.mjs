@@ -72,8 +72,8 @@ export function createPreviewServer(config) {
       }
       body = Buffer.concat(chunks).toString('utf8');
     }
+    let payload;
     if (isChat) {
-      let payload;
       try { payload = JSON.parse(body); } catch { return json(res, 400, { error: 'Invalid request.' }); }
       if (!payload || !Array.isArray(payload.messages) || !payload.messages.length || payload.messages.length > 40) {
         return json(res, 400, { error: 'Invalid messages.' });
