@@ -262,9 +262,23 @@ def connect(db=DB):
     return conn
 
 
+MARKDOWN_MIRRORS = ('https://docs.hydromancer.xyz/', 'https://hyperliquid.gitbook.io/')
+
+
+def page_url(url):
+    """The URL a visitor should open. GitBook sites were captured through their
+    `.md` mirrors; the same path without `.md` is the rendered page, and that is
+    the only form the assistant may cite (never llms.txt or raw markdown)."""
+    if url.startswith(MARKDOWN_MIRRORS) and url.endswith('.md'):
+        return url[:-3]
+    return url
+
+
 def metadata(row):
-    return {k: row[k] for k in ('id', 'url', 'title', 'sha256', 'snapshot_date',
-                               'snapshot_date_basis', 'provider', 'section')}
+    item = {k: row[k] for k in ('id', 'url', 'title', 'sha256', 'snapshot_date',
+                                'snapshot_date_basis', 'provider', 'section')}
+    item['url'] = page_url(item['url'])
+    return item
 
 
 def search(query, limit=6, *, db=DB):
@@ -313,6 +327,7 @@ def search(query, limit=6, *, db=DB):
                 continue
             body = conn.execute('SELECT body FROM documents WHERE id=?', (row['id'],)).fetchone()['body']
             item = {k: row[k] for k in ('id', 'url', 'title', 'snapshot_date', 'provider', 'section')}
+            item['url'] = page_url(item['url'])
             # Compact result: the model reads the first paragraphs of an excerpt and the
             # page opening; everything it needs for a deeper read is in fetch.
             item.update(heading=row['heading'], excerpt=clip(row['excerpt'], SEARCH_EXCERPT),

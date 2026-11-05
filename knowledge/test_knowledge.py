@@ -167,3 +167,17 @@ def test_bounded_queries_and_readonly_fetch(tmp_path):
             k.fetch(identifier, db=db)
     with pytest.raises(ValueError):
         k.fetch('hydro-132', offset=-1, db=db)
+
+def test_results_cite_rendered_pages_not_markdown_mirrors(tmp_path):
+    k = module()
+    assert k.page_url('https://docs.hydromancer.xyz/readme/get-api-keys.md') == 'https://docs.hydromancer.xyz/readme/get-api-keys'
+    assert k.page_url('https://hyperliquid.gitbook.io/hyperliquid-docs/historical-data.md') == 'https://hyperliquid.gitbook.io/hyperliquid-docs/historical-data'
+    assert k.page_url('https://hydromancer.xyz/blog/readme.md') == 'https://hydromancer.xyz/blog/readme.md'
+    db = tmp_path / 'urls.sqlite'
+    k.build_index(db)
+    hits = k.search('userFills', 4, db=db)['results']
+    assert hits
+    for item in hits:
+        assert not item['url'].endswith('.md'), item['url']
+        assert 'llms' not in item['url']
+    assert not k.fetch(hits[0]['id'], db=db)['url'].endswith('.md')
