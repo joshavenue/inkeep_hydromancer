@@ -242,6 +242,12 @@ def query_plan(query):
     if re.search(r'founder|who (runs|built|made|is behind)|ceo|team|talk to (someone|a human)|speak to|reach (you|the team)|contact', lower):
         extra += ['contact', 'Telegram', 'email', 'xenoflux', 'founder', 'Xeno']
         boosts.update({'Xeno (@xenoflux), founder of Hydromancer, on Telegram': 140, 'Contact us': 130, 'Contact': 120, 'Get API keys!': 90})
+    # Why Hydromancer / vs the public API: the comparison post's at-a-glance table and the
+    # why page carry the documented numbers (1,200 weight, 10,000 fills, 1,000-wallet batch).
+    if re.search(r'\bwhy\b|differen|\bvs\b|versus|instead of|worth (it|paying)|compare|comparison|better than|advantage|benefit|rather than|over the (official|public|native)|upgrade', lower) and re.search(r'hydromancer|hyperliquid|official|public api|native api|free api', lower):
+        extra += ['vs', 'upgrade', 'why', 'teams', 'weight', 'wallets', 'fills', 'liquidation', 'builder']
+        boosts.update({'Hyperliquid vs Hydromancer API: When to Upgrade?': 150, 'Why teams choose Hydromancer': 130,
+                       'Hyperliquid API Rate Limits Explained (With Fixes)': 80, 'Hyperliquid REST API: Positions & Fills': 60})
     # "An app like X" / "what is X": an ecosystem page whose title starts with a word
     # of the question outranks everything else, so fomo, Dexari or tread.fi resolve.
     if re.search(r'\b(like|similar to|same as|clone of|compet(e|itor)|what is|who is|what does|such as)\b', lower):

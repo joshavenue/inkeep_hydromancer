@@ -1,0 +1,7 @@
+# why Hydromancer, not just the public API
+How is Hydromancer different from the Hyperliquid API?
+Why would I pay for Hydromancer when the Hyperliquid API is free?
+Which should I use, Hydromancer or the Hyperliquid API?
+Is Hydromancer worth it for a copy trading app tracking 300 wallets?
+What does Hydromancer give me that Hyperliquid's API doesn't?
+Why do teams use Hydromancer?
