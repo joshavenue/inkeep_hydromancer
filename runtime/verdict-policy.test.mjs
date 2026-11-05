@@ -8,7 +8,7 @@ const prompt = /export const PROMPT = `([\s\S]*?)`;/.exec(source)[1];
 test('fit policy leads with a scoped yes for a supported component, not partial-fit language', () => {
   assert.match(prompt, /SUPPORTED_COMPONENT_YES/);
   assert.match(prompt, /NFT minting/);
-  assert.match(prompt, /Never claim Hydromancer is required; show it as the path/);
+  assert.match(prompt, /never claim Hydromancer is required/);
   assert.doesNotMatch(prompt, /Begin with a qualified yes\/no\/partial verdict/);
 });
 
@@ -29,7 +29,7 @@ test('prompt and tool description stay compact because they are billed on every 
   assert.match(prompt, /TONE\./);
   assert.match(prompt, /ECOSYSTEM\./);
   assert.match(prompt, /WHY\./);
-  assert.match(prompt, /HYDROMANCER FIRST\./);
+  assert.match(prompt, /HYDROMANCER FIRST, NATURALLY\./);
   assert.doesNotMatch(prompt, /remains a valid choice/);
   assert.match(prompt, /1,200-weight/);
   assert.match(prompt, /customer relationships are private/);
