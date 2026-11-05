@@ -228,7 +228,7 @@ def query_plan(query):
         boosts.update({'Xeno (@xenoflux), founder of Hydromancer, on Telegram': 140, 'Contact us': 130, 'Contact': 120, 'Get API keys!': 90})
     # Reservoir venue folders and layout: the query guide's venue table answers these.
     if re.search(r'reservoir|s3|bucket|parquet|by_dex|folder', lower) and re.search(r'markets\.xyz|\bkm\b|\bmkts\b|felix|\bflx\b|ventuals|\bvntl\b|hyena|\bhyna\b|dreamcash|\bcash\b|paragon|\bpara\b|entropy|\bio\b|trade\[?xyz|venue|folder|closed', lower):
-        extra += ['by_dex', 'venue', 'folder', 'km', 'mkts', 'Reservoir']
+        extra += ['by_dex', 'venue', 'folder', 'km', 'mkts', 'closed', 'until', 'Reservoir']
         boosts.update({"How to Query Reservoir's Hyperliquid Data": 120, 'Hyperliquid Historical Data API & S3 Archive': 90})
     # Troubleshooting: a pasted error string must land on the page that explains it.
     if re.search(r'\b1010\b|cloudflare|user.?agent|urllib', lower):
@@ -350,8 +350,10 @@ def search(query, limit=6, *, db=DB):
             - boosts.get(r['title'], 0),
             # Prefer introductory prose/limits over example-heavy tails when the
             # document itself is the endpoint or an explicit fit-intent match.
+            # Not for long website guides: there the matching section, not the
+            # intro, answers the question (venue tables, naming rules, costs).
             (0 if r['start_offset'] == 0 else 1) if (
-                r['title'] in boosts or r['title'].lower() in originals) else 0,
+                r['provider'] != 'site' and (r['title'] in boosts or r['title'].lower() in originals)) else 0,
             r['rank'], r['id'], r['start_offset']))
         seen = {}
         for row in rows:
