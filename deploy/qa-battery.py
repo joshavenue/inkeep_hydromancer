@@ -13,7 +13,7 @@ from http.cookiejar import CookieJar
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-ALLOWED = {'docs.hydromancer.xyz', 'hydromancer.xyz', 'www.hydromancer.xyz', 'hyperliquid.gitbook.io'}
+ALLOWED = {'docs.hydromancer.xyz', 'hydromancer.xyz', 'www.hydromancer.xyz', 'hyperliquid.gitbook.io', 't.me'}
 state = json.loads((ROOT / 'frontend/state.json').read_text())
 # The gateway sets a Secure session cookie, so go through the published HTTPS origin
 # (the tunnel), exactly as a visitor's browser does.

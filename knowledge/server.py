@@ -26,7 +26,7 @@ def search_hydromancer_docs(
     query: Annotated[str, Field(min_length=1, max_length=500)],
     limit: Annotated[int, Field(ge=1, le=8)] = 6,
 ) -> dict:
-    """Search public docs.hydromancer.xyz, hydromancer.xyz and Hyperliquid API docs.
+    """Search public docs.hydromancer.xyz, hydromancer.xyz, Hyperliquid API docs and the founder's Telegram profile.
 
     Handles exact endpoint names and plain questions (copytrading, batching,
     Reservoir, native limits, pricing, API keys). Each result is one section of a

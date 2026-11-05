@@ -25,7 +25,7 @@ calls and citations reliably:
 
 Measured on 4 November 2026 with the real index and eight typical questions: one
 search per question, about 10,000 input and 190 output tokens, **about $0.0011 per
-answered question** ($1.10 per 1,000 questions). Every answer cited only the three
+answered question** ($1.10 per 1,000 questions). Every answer cited only the four
 allowed hosts.
 
 Alternatives, all set through `MODEL` in `.env`:

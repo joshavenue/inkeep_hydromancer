@@ -13,8 +13,9 @@ live API access are part of this package.
 | `hydromancer` | `docs.hydromancer.xyz` | every page in the GitBook `llms.txt` index (226 pages on 4 Nov 2026): REST, WebSocket, Reservoir, builder guides, pricing | publisher Markdown (`.md`) |
 | `site` | `hydromancer.xyz` | every URL in the public sitemaps (68 pages): products, pricing, customers, blog posts, changelog | HTML main content converted to Markdown |
 | `native` | `hyperliquid.gitbook.io` | the Hyperliquid docs sections a builder compares against (82 pages): `for-developers/`, `trading/`, `hypercore/`, HIPs, historical data | publisher Markdown (`.md`) |
+| `telegram` | `t.me` | one page: Xeno's public profile (`@xenoflux`, "founder of Hydromancer"), the contact both docs sites point to | HTML converted to Markdown |
 
-Nothing outside these three hosts is ever fetched or indexed. URLs with query
+Nothing outside these four hosts is ever fetched or indexed. URLs with query
 strings, fragments or credentials are rejected. Pages that do not return HTTP 200
 are listed in `skipped.json` and never substituted.
 
@@ -88,7 +89,7 @@ The importer also accepts hand-reviewed captures: put `<id>.md` / `<id>.txt` fil
 in a directory, describe them in a `format_version: 1` catalog with the fields
 shown in `public-source-catalog.json` (plus a current `snapshot_date` and
 `snapshot_date_basis`), then run `import_snapshot.py --catalog ... --captures ...
---output data/<new-dir>` and `knowledge.py` with the three `*_SNAPSHOT_ROOT`
+--output data/<new-dir>` and `knowledge.py` with the four `*_SNAPSHOT_ROOT`
 variables pointing at that directory. Each record must name its own retrieval
 date; historical dates are applied only when URL and bytes match the historical
 catalog exactly.

@@ -2,11 +2,12 @@
 
 A documentation-grounded assistant for hydromancer.xyz: **the official Inkeep chat
 button**, backed by the released Inkeep Agents runtime, a cheap model, and a
-read-only search index built from exactly three public sources:
+read-only search index built from exactly four public sources:
 
 - `docs.hydromancer.xyz`: the API and Reservoir documentation
 - `hydromancer.xyz`: products, pricing, customers and blog posts
 - `hyperliquid.gitbook.io`: the public Hyperliquid API documentation
+- `t.me/xenoflux`: the founder's public Telegram profile (one page), linked from both contact pages
 
 The assistant answers only from text retrieved from that index and cites the page
 it used. It is read-only: it explains what the Hydromancer API, Reservoir and the
@@ -15,7 +16,7 @@ places orders, signs, or touches accounts.
 
 ## What is included
 
-- `knowledge/`: one-command capture of the three sources, SQLite/FTS search, the
+- `knowledge/`: one-command capture of the four sources, SQLite/FTS search, the
   official MCP Streamable HTTP service and tests.
 - `runtime/`: released Inkeep integration, assistant prompt, model and cost
   configuration, safe setup guidance and offline/opt-in live tests.
@@ -61,7 +62,7 @@ the gateway's per-session and global limits are abuse protection, not billing co
 dedicated database services.
 
 1. `knowledge/README.md`: create the Python environment, run `refresh.py` to
-   capture all three sources and build the index, start the MCP server.
+   capture all four sources and build the index, start the MCP server.
 2. `runtime/README.md`: generate `.env`, set `OPENROUTER_API_KEY`, prepare the
    dedicated databases and migrations, start the Inkeep API, run `project.mjs` to
    push the assistant configuration, create the Web Client App.
@@ -128,7 +129,7 @@ answer is correct: review answers against the pages they cite.
 
 - Searches the index before any factual claim and answers only from what it
   retrieved; if the tool fails it says so instead of answering from memory.
-- Cites the exact source URL next to each claim, from the three allowed hosts only.
+- Cites the exact source URL next to each claim, from the four allowed hosts only.
 - Leads with a **scoped Yes** when Hydromancer covers a meaningful part of the
   visitor's product, then names what remains their job (execution, keys, risk).
 - Says **No** when the request is outside documented scope, such as NFT minting

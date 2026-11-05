@@ -32,6 +32,10 @@ NATIVE_INDEX = b'''# Hyperliquid
 '''
 SITEMAP = b'<sitemapindex><sitemap><loc>https://hydromancer.xyz/sitemaps/pages.xml</loc></sitemap></sitemapindex>'
 PAGES = b'<urlset><url><loc>https://hydromancer.xyz/pricing</loc></url><url><loc>https://hydromancer.xyz/missing</loc></url></urlset>'
+TELEGRAM_HTML = b'''<!doctype html><html><head><title>Telegram: Contact @xenoflux</title>
+<meta property="og:title" content="Xeno"><meta property="og:description" content="founder of Hydromancer hydromancer.xyz"></head>
+<body><div class="tgme_page"><div class="tgme_page_title"><span>Xeno</span></div><div>@xenoflux</div>
+<div class="tgme_page_description">founder of Hydromancer hydromancer.xyz</div></div></body></html>'''
 NATIVE_MD = b'> For the complete documentation index, see [llms.txt](x).\n\n# Rate limits and user limits\n\nREST requests share an aggregated weight limit of 1200 per minute.\n'
 RESPONSES = {
     cps.DOCS_INDEX: DOCS_INDEX, cps.NATIVE_INDEX: NATIVE_INDEX, cps.SITE_SITEMAP: SITEMAP,
@@ -40,6 +44,7 @@ RESPONSES = {
     'https://docs.hydromancer.xyz/readme/rest-api/historical-data/userfills.md': b'# userFills\n\nGet fills.\n',
     'https://docs.hydromancer.xyz/readme/rest-api/market-data/l2book.md': b'# l2Book\n\nBook snapshot.\n',
     'https://hyperliquid.gitbook.io/hyperliquid-docs/for-developers/api/rate-limits-and-user-limits.md': NATIVE_MD,
+    'https://t.me/xenoflux': TELEGRAM_HTML,
 }
 
 
@@ -89,12 +94,15 @@ def test_index_parsing_filters_hosts_and_native_sections():
 
 def test_capture_writes_catalog_and_skips_failures(tmp_path):
     report = cps.capture(tmp_path / 'out', fetch_impl=fake_fetch, delay=0)
-    assert report == {'captured': 5, 'skipped': 1, 'per_provider': {'hydromancer': 3, 'site': 1, 'native': 1},
+    assert report == {'captured': 6, 'skipped': 1, 'per_provider': {'hydromancer': 3, 'site': 1, 'native': 1, 'telegram': 1},
                       'output': str(tmp_path / 'out')}
     catalog = json.loads((tmp_path / 'out/catalog.json').read_text())
     assert catalog['format_version'] == 1
     ids = [s['id'] for s in catalog['sources']]
-    assert ids == ['hydro-1', 'hydro-2', 'hydro-3', 'site-1', 'native-1']
+    assert ids == ['hydro-1', 'hydro-2', 'hydro-3', 'site-1', 'native-1', 'tg-1']
+    telegram = next(s for s in catalog['sources'] if s['provider'] == 'telegram')
+    assert telegram['title'].startswith('Xeno (@xenoflux), founder') and telegram['section'] == 'contact'
+    assert b'founder of Hydromancer' in (tmp_path / 'out/captures/tg-1.md').read_bytes()
     site = next(s for s in catalog['sources'] if s['provider'] == 'site')
     assert site['title'] == 'Pricing' and site['section'] == 'site' and site['url'] == 'https://hydromancer.xyz/pricing'
     assert 'converted to Markdown' in site['snapshot_date_basis']
@@ -105,7 +113,7 @@ def test_capture_writes_catalog_and_skips_failures(tmp_path):
 
 def test_refresh_builds_a_searchable_index_from_all_three_sources(tmp_path, monkeypatch):
     summary = refresh(tmp_path / 'data', delay=0, fetch_impl=fake_fetch)
-    assert summary['indexed'] == 5 and summary['provider_counts'] == {'hydromancer': 3, 'site': 1, 'native': 1}
+    assert summary['indexed'] == 6 and summary['provider_counts'] == {'hydromancer': 3, 'site': 1, 'native': 1, 'telegram': 1}
     db = tmp_path / 'data/public-docs.sqlite'
     assert db.is_file()
     hits = k.search('pricing plans', 8, db=db)['results']
@@ -115,4 +123,6 @@ def test_refresh_builds_a_searchable_index_from_all_three_sources(tmp_path, monk
     assert k.fetch(site_hit['id'], db=db)['text'].startswith('Source: https://hydromancer.xyz/pricing')
     native = k.search('native API rate limits for a small bot', 4, db=db)['results'][0]
     assert native['title'] == 'Rate limits and user limits | Hyperliquid Docs'
+    founder = k.search('who is the founder of Hydromancer', 4, db=db)['results'][0]
+    assert founder['url'] == 'https://t.me/xenoflux' and 'founder of Hydromancer' in founder['excerpt']
     assert not list((tmp_path / 'data').glob('capture-*/captures'))

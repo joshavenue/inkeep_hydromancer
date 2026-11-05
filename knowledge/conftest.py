@@ -68,4 +68,5 @@ def synthetic_corpus(tmp_path, monkeypatch):
     monkeypatch.setattr(k, 'NATIVE', native)
     # No website ledger: an operator's real snapshots/site must never leak into fixtures.
     monkeypatch.setattr(k, 'SITE', tmp_path / 'site')
+    monkeypatch.setattr(k, 'TELEGRAM', tmp_path / 'telegram')
     return records

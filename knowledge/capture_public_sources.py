@@ -4,6 +4,7 @@ Sources (closed allowlist, nothing else is ever fetched):
   docs.hydromancer.xyz      every page listed in its llms.txt, as GitBook Markdown (.md)
   hydromancer.xyz           every URL in the public sitemaps, HTML converted to Markdown
   hyperliquid.gitbook.io    the developer, trading and HyperCore sections of its llms.txt
+  t.me/xenoflux             the founder's public Telegram profile, which the contact pages link to
 
 The result is a catalog (format_version 1) plus one capture file per page, ready
 for import_snapshot.py and knowledge.py. No model, credential, login, cookie or
@@ -31,6 +32,8 @@ USER_AGENT = ('Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.3
 DOCS_INDEX = 'https://docs.hydromancer.xyz/llms.txt'
 NATIVE_INDEX = 'https://hyperliquid.gitbook.io/hyperliquid-docs/llms.txt'
 SITE_SITEMAP = 'https://hydromancer.xyz/sitemap.xml'
+# The only Telegram page ever fetched: the profile both contact pages point to.
+TELEGRAM_PAGES = [('Xeno (@xenoflux), founder of Hydromancer, on Telegram', 'https://t.me/xenoflux')]
 # Hyperliquid documentation sections a builder needs when comparing the native
 # API with Hydromancer. Onboarding, brand, points and similar pages are excluded.
 NATIVE_PATHS = ('for-developers/', 'historical-data.md', 'trading/', 'hypercore/',
@@ -73,6 +76,7 @@ class MainText(HTMLParser):
         self.parts, self.skip, self.main, self.seen_main = [], 0, 0, False
         self.pre, self.href, self.cell, self.row, self.list_depth = 0, None, None, None, 0
         self.title, self.description, self.in_title = '', '', False
+        self.og_title, self.og_description = '', ''
 
     def handle_starttag(self, tag, attrs):
         attrs = dict(attrs)
@@ -80,6 +84,10 @@ class MainText(HTMLParser):
             self.in_title = True
         if tag == 'meta' and attrs.get('name') == 'description':
             self.description = attrs.get('content', '')
+        if tag == 'meta' and attrs.get('property') == 'og:title':
+            self.og_title = attrs.get('content', '')
+        if tag == 'meta' and attrs.get('property') == 'og:description':
+            self.og_description = attrs.get('content', '')
         if tag == 'main':
             self.main += 1
             self.seen_main = True
@@ -166,15 +174,16 @@ class MainText(HTMLParser):
         return text.strip()
 
 
-def html_to_markdown(html, url):
+def html_to_markdown(html, url, title=None):
     parser = MainText(url)
     parser.feed(html)
     parser.close()
     body = parser.markdown()
-    title = re.sub(r'\s*\|\s*Hydromancer\s*$', '', ' '.join(parser.title.split())) or url
+    title = title or re.sub(r'\s*\|\s*Hydromancer\s*$', '', ' '.join(parser.title.split())) or url
     head = f'Source: {url}\nTitle: {title}\n'
-    if parser.description:
-        head += f'Description: {" ".join(parser.description.split())}\n'
+    description = parser.description or parser.og_description
+    if description:
+        head += f'Description: {" ".join(description.split())}\n'
     return title, head + '\n' + body + '\n'
 
 
@@ -210,6 +219,10 @@ def native_pages(fetch_impl):
     return pages
 
 
+def telegram_pages(fetch_impl):
+    return list(TELEGRAM_PAGES)
+
+
 def site_pages(fetch_impl):
     status, body = fetch_impl(SITE_SITEMAP, 'site')
     if status != 200:
@@ -238,13 +251,13 @@ def section_for(provider, url):
     return 'platform'
 
 
-def capture(output, *, providers=('hydromancer', 'site', 'native'), fetch_impl=fetch, delay=0.25,
+def capture(output, *, providers=('hydromancer', 'site', 'native', 'telegram'), fetch_impl=fetch, delay=0.25,
             limit=None, log=print):
     """Write <output>/captures/<id>.<ext> and <output>/catalog.json. Returns a report dict."""
     output = Path(output)
     captures = output / 'captures'
     captures.mkdir(parents=True, exist_ok=True)
-    listings = {'hydromancer': docs_pages, 'site': site_pages, 'native': native_pages}
+    listings = {'hydromancer': docs_pages, 'site': site_pages, 'native': native_pages, 'telegram': telegram_pages}
     sources, skipped = [], []
     for provider in providers:
         spec = PROVIDERS[provider]
@@ -260,8 +273,8 @@ def capture(output, *, providers=('hydromancer', 'site', 'native'), fetch_impl=f
                 log(f'skip {status} {url}')
                 continue
             retrieved = datetime.now(timezone.utc).replace(microsecond=0).isoformat()
-            if provider == 'site':
-                title, text = html_to_markdown(body.decode('utf-8', 'replace'), url)
+            if provider in ('site', 'telegram'):
+                title, text = html_to_markdown(body.decode('utf-8', 'replace'), url, title)
                 data = text.encode('utf-8')
                 basis = 'automated public HTTPS capture; HTML main content converted to Markdown at retrieval time'
             else:
@@ -292,7 +305,7 @@ def capture(output, *, providers=('hydromancer', 'site', 'native'), fetch_impl=f
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument('--output', type=Path, default=ROOT / 'data/capture', help='Directory for captures/ and catalog.json')
-    parser.add_argument('--providers', nargs='+', default=['hydromancer', 'site', 'native'], choices=sorted(PROVIDERS))
+    parser.add_argument('--providers', nargs='+', default=['hydromancer', 'site', 'native', 'telegram'], choices=sorted(PROVIDERS))
     parser.add_argument('--limit', type=int, default=None, help='Capture at most N pages per provider (smoke test)')
     parser.add_argument('--delay', type=float, default=0.25, help='Seconds between requests')
     args = parser.parse_args()

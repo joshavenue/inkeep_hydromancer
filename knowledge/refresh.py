@@ -24,7 +24,7 @@ from import_snapshot import import_snapshot
 ROOT = Path(__file__).resolve().parent
 
 
-def refresh(data=ROOT / 'data', *, limit=None, delay=0.25, providers=('hydromancer', 'site', 'native'), fetch_impl=None):
+def refresh(data=ROOT / 'data', *, limit=None, delay=0.25, providers=('hydromancer', 'site', 'native', 'telegram'), fetch_impl=None):
     data = Path(data)
     stamp = datetime.now(timezone.utc).strftime('%Y%m%dT%H%M%SZ')
     work = data / f'capture-{stamp}'
@@ -36,12 +36,13 @@ def refresh(data=ROOT / 'data', *, limit=None, delay=0.25, providers=('hydromanc
     snapshot = data / f'snapshot-{stamp}'
     imported = import_snapshot(work / 'catalog.json', work / 'captures', snapshot)
     db = data / 'public-docs.sqlite'
-    previous = (knowledge.HYDRO, knowledge.NATIVE, knowledge.SITE)
-    knowledge.HYDRO, knowledge.NATIVE, knowledge.SITE = (snapshot / 'hydromancer', snapshot / 'native', snapshot / 'site')
+    previous = (knowledge.HYDRO, knowledge.NATIVE, knowledge.SITE, knowledge.TELEGRAM)
+    knowledge.HYDRO, knowledge.NATIVE, knowledge.SITE, knowledge.TELEGRAM = (
+        snapshot / 'hydromancer', snapshot / 'native', snapshot / 'site', snapshot / 'telegram')
     try:
         built = knowledge.build_index(db)
     finally:
-        knowledge.HYDRO, knowledge.NATIVE, knowledge.SITE = previous
+        knowledge.HYDRO, knowledge.NATIVE, knowledge.SITE, knowledge.TELEGRAM = previous
     (data / 'manifest.json').write_text(json.dumps(built, indent=2) + '\n')
     shutil.rmtree(work / 'captures')  # bodies now live in the snapshot; keep catalog + skipped list
     summary = {'captured': report['captured'], 'skipped': report['skipped'], 'per_provider': report['per_provider'],
@@ -55,6 +56,6 @@ if __name__ == '__main__':
     parser.add_argument('--data', type=Path, default=ROOT / 'data')
     parser.add_argument('--limit', type=int, default=None)
     parser.add_argument('--delay', type=float, default=0.25)
-    parser.add_argument('--providers', nargs='+', default=['hydromancer', 'site', 'native'])
+    parser.add_argument('--providers', nargs='+', default=['hydromancer', 'site', 'native', 'telegram'])
     args = parser.parse_args()
     print(json.dumps(refresh(args.data, limit=args.limit, delay=args.delay, providers=tuple(args.providers)), indent=2))
