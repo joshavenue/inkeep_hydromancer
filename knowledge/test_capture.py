@@ -126,3 +126,10 @@ def test_refresh_builds_a_searchable_index_from_all_three_sources(tmp_path, monk
     founder = k.search('who is the founder of Hydromancer', 4, db=db)['results'][0]
     assert founder['url'] == 'https://t.me/xenoflux' and 'founder of Hydromancer' in founder['excerpt']
     assert not list((tmp_path / 'data').glob('capture-*/captures'))
+
+def test_inline_svg_titles_do_not_leak_into_the_page_title():
+    html = (b'<!doctype html><html><head><title>Why teams choose Hydromancer | Hydromancer</title></head>'
+            b'<body><main><h1>Why</h1><svg><title>badge 13</title></svg><svg><title>badge 13</title></svg>'
+            b'<p>Body text.</p></main></body></html>')
+    title, _ = cps.html_to_markdown(html.decode(), 'https://hydromancer.xyz/why-hydromancer')
+    assert title == 'Why teams choose Hydromancer'

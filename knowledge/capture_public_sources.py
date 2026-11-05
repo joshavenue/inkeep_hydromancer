@@ -80,8 +80,8 @@ class MainText(HTMLParser):
 
     def handle_starttag(self, tag, attrs):
         attrs = dict(attrs)
-        if tag == 'title':
-            self.in_title = True
+        if tag == 'title' and not self.title:
+            self.in_title = True  # the first <title> only; inline SVGs carry their own <title> tags
         if tag == 'meta' and attrs.get('name') == 'description':
             self.description = attrs.get('content', '')
         if tag == 'meta' and attrs.get('property') == 'og:title':
@@ -179,7 +179,8 @@ def html_to_markdown(html, url, title=None):
     parser.feed(html)
     parser.close()
     body = parser.markdown()
-    title = title or re.sub(r'\s*\|\s*Hydromancer\s*$', '', ' '.join(parser.title.split())) or url
+    page_title = ' '.join((parser.og_title or parser.title).split())
+    title = title or re.sub(r'\s*\|\s*Hydromancer\s*$', '', page_title) or url
     head = f'Source: {url}\nTitle: {title}\n'
     description = parser.description or parser.og_description
     if description:
