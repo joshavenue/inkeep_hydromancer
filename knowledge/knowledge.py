@@ -223,6 +223,39 @@ def query_plan(query):
         extra += ['build', 'guide', 'builder']
         boosts.setdefault('Builder guides', 90)
         boosts.setdefault('How to Build a Hyperliquid Trading Bot', 60)
+    # Troubleshooting: a pasted error string must land on the page that explains it.
+    if re.search(r'\b1010\b|cloudflare|user.?agent|urllib', lower):
+        extra += ['User-Agent', 'urllib', '403']
+        boosts.update({"How to Get a Hyperliquid Wallet's Trade History (API + Bulk)": 130, "How to Query Reservoir's Hyperliquid Data": 110, 'REST API': 80})
+    if re.search(r'\b401\b|invalid api key|authorization header|bearer|x-api-key|unauthori', lower):
+        extra += ['Authorization', 'Bearer', 'Invalid API key']
+        boosts.update({'REST API': 130, 'Websocket': 90})
+    if re.search(r'\b403\b|permission|forbidden|add-?on|not have permission', lower):
+        extra += ['permission', 'add-on', '403']
+        boosts.update({'walletLabels (experimental)': 100, 'REST API': 70, 'Pricing': 60})
+    if re.search(r'\b429\b|rate.?limit exceeded|too many requests|retry.?after|x-ratelimit|weight', lower):
+        extra += ['429', 'Retry-After', 'weight', 'budget']
+        boosts.update({'Rate Limits and User Limits': 130, 'Hyperliquid API Rate Limits Explained (With Fixes)': 90, 'Rate limits, user limits and heartbeats': 85})
+    if re.search(r'unknown api route|\b400\b|bad request|missing field|invalid ethereum address|invalid json|invalid cursor|missing or invalid', lower):
+        extra += ['400', 'error', 'Invalid Ethereum address', 'type']
+        boosts.update({'REST API': 120, 'batchClearinghouseStates': 70, 'userFillsByTime': 60})
+    if re.search(r'not listed|\b404\b|unknown coin|coin.{0,12}(not found|does not exist)|body null|null body', lower):
+        extra += ['coin', 'not listed', 'xyz', 'spotMeta']
+        boosts.update({'l2Book': 110, 'Hyperliquid API Guide: Endpoints, Keys, Limits and Code': 90})
+    if re.search(r'binary|garbage|msgpack|zstd|x-payload-format|decompress|can.?t parse|not json', lower):
+        extra += ['msgpack', 'zstd', 'x-payload-format', 'binary']
+        boosts.update({'perpSnapshots': 120, 'l4Book': 110, 'Live Message Chunking': 60})
+    if re.search(r'resync|cursor|sessionid|replay|reconnect|seq gap|dropped|disconnect|keeps closing|closes after|1008|1011', lower):
+        extra += ['resync', 'cursor', 'sessionId', 'reconnect', 'ping', 'pong']
+        boosts.update({'Session Management and Reconnection': 130, 'Rate limits, user limits and heartbeats': 90, 'Websocket': 70})
+    if re.search(r'message rate limit|subscription limit|too many subscriptions|connection limit|heartbeat|ping|pong', lower):
+        extra += ['limit', 'heartbeat', 'ping', 'pong', 'message_rate_limit']
+        boosts.update({'Rate limits, user limits and heartbeats': 130, 'Session Management and Reconnection': 80})
+    if re.search(r'failed_wallets|batch.{0,30}(fail|400|invalid|empty|maximum)|one address', lower):
+        boosts.update({'batchClearinghouseStates': 130, 'REST API': 70})
+    if re.search(r'starttime|endtime|unix|millisecond|seconds not|timestamp|returns nothing|empty (list|array|result)', lower):
+        extra += ['startTime', 'Unix', 'milliseconds', 'cursor']
+        boosts.update({'userFillsByTime': 120, "How to Get a Hyperliquid Wallet's Trade History (API + Bulk)": 90, 'candleSnapshot': 60})
     # Only the native API's own limits when the visitor asks about them; bare
     # "Hyperliquid" appears in most questions and must not outrank build guides.
     if re.search(r'native|official api|hyperliquid.s own|small bot|rate.?limit|weight|per ip', lower):

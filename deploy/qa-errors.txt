@@ -1,0 +1,16 @@
+# troubleshooting questions a builder pastes into the chat
+I get 403 error code 1010 when calling the Hydromancer API from Python
+My request returns 401 Invalid API key, what am I doing wrong?
+Hydromancer returns 400 Unknown API route for userfills
+I get "Your API key does not have permission" on walletLabels
+My WebSocket connection keeps closing after about a minute
+perpSnapshots returns binary garbage instead of JSON
+batchClearinghouseStates returns 400 when one address in my list is wrong
+I am getting 429 rate limit exceeded, what are my options?
+I get "resync required" on the WebSocket, what do I do?
+Message rate limit exceeded on the WebSocket, why?
+userFills over REST only returns 2000 fills, how do I get older ones?
+l2Book returns 500 with body null
+I sent X-API-Key header and get 401
+My startTime filter returns nothing on userFillsByTime
+Subscription limit reached for l4BookUpdates
