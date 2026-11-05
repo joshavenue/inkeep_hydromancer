@@ -226,6 +226,10 @@ def query_plan(query):
     if re.search(r'founder|who (runs|built|made|is behind)|ceo|team|talk to (someone|a human)|speak to|reach (you|the team)|contact', lower):
         extra += ['contact', 'Telegram', 'email', 'xenoflux', 'founder', 'Xeno']
         boosts.update({'Xeno (@xenoflux), founder of Hydromancer, on Telegram': 140, 'Contact us': 130, 'Contact': 120, 'Get API keys!': 90})
+    # Reservoir venue folders and layout: the query guide's venue table answers these.
+    if re.search(r'reservoir|s3|bucket|parquet|by_dex|folder', lower) and re.search(r'markets\.xyz|\bkm\b|\bmkts\b|felix|\bflx\b|ventuals|\bvntl\b|hyena|\bhyna\b|dreamcash|\bcash\b|paragon|\bpara\b|entropy|\bio\b|trade\[?xyz|venue|folder|closed', lower):
+        extra += ['by_dex', 'venue', 'folder', 'km', 'mkts', 'Reservoir']
+        boosts.update({"How to Query Reservoir's Hyperliquid Data": 120, 'Hyperliquid Historical Data API & S3 Archive': 90})
     # Troubleshooting: a pasted error string must land on the page that explains it.
     if re.search(r'\b1010\b|cloudflare|user.?agent|urllib', lower):
         extra += ['User-Agent', 'urllib', '403']
