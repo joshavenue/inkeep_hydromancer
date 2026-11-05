@@ -23,9 +23,11 @@ test('assistant is grounded in the three public sources and never answers from m
 
 test('prompt and tool description stay compact because they are billed on every question', () => {
   // About 1,300 tokens per question; raised for the COACHING and TROUBLESHOOTING sections.
-  assert.ok(prompt.length < 5900, `prompt is ${prompt.length} characters`);
+  assert.ok(prompt.length < 6600, `prompt is ${prompt.length} characters`);
   assert.match(prompt, /COACHING/);
   assert.match(prompt, /TROUBLESHOOTING/);
+  assert.match(prompt, /TONE\./);
+  assert.doesNotMatch(prompt, /add one sentence that Hyperliquid's own API may be enough/);
   assert.match(prompt, /error code: 1010/);
   assert.match(prompt, /under 200 words/);
   assert.match(source, /stepCountIs: 5/);
