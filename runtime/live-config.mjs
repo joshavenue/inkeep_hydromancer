@@ -30,8 +30,19 @@ export async function liveConfig(t, {
       const docs = await fetchImpl('http://127.0.0.1:18581/health', { signal: AbortSignal.timeout(2000), redirect: 'error' });
       if (!docs.ok) { t.skip('Public-docs MCP not healthy.'); return null; }
       // GET /models is a reachability/auth preflight, not an inference request.
-      const models = await fetchImpl(`${selectedModel.providerOptions.baseURL}/models`, {
-        headers: env.CUSTOM_LLM_API_KEY ? { Authorization: `Bearer ${env.CUSTOM_LLM_API_KEY}` } : {},
+      const endpoints = {
+        openrouter: ['https://openrouter.ai/api/v1', env.OPENROUTER_API_KEY],
+        anthropic: ['https://api.anthropic.com/v1', env.ANTHROPIC_API_KEY],
+        openai: ['https://api.openai.com/v1', env.OPENAI_API_KEY],
+        google: ['https://generativelanguage.googleapis.com/v1beta', env.GOOGLE_GENERATIVE_AI_API_KEY],
+        custom: [selectedModel.providerOptions.baseURL, env.CUSTOM_LLM_API_KEY],
+      };
+      const [base, key] = endpoints[selectedModel.model.split('/')[0]];
+      const models = await fetchImpl(`${base}/models`, {
+        headers: !key ? {}
+          : base.includes('googleapis') ? { 'x-goog-api-key': key }
+          : base.includes('anthropic.com') ? { 'x-api-key': key, 'anthropic-version': '2023-06-01' }
+          : { Authorization: `Bearer ${key}` },
         signal: AbortSignal.timeout(5000), redirect: 'error',
       });
       if (!models.ok) { t.skip('Model endpoint /models unavailable or unauthorized.'); return null; }

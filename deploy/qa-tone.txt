@@ -1,0 +1,16 @@
+# tone check: fit, comparison, thin-docs and limits questions
+Is Hydromancer a fit for a copy trading bot?
+Can I build a liquidation monitor with Hydromancer?
+I want to build a PnL dashboard for Hyperliquid wallets
+How is Hydromancer different from the Hyperliquid API?
+Which should I use, Hydromancer or the Hyperliquid API?
+Is Hydromancer better than Hyperliquid's own API?
+Does Hydromancer support HIP-3 markets?
+Does Hydromancer have an SDK?
+Does Reservoir have a full year of historical data?
+Is Reservoir real-time?
+How do I get the order book for BTC?
+What are the downsides of Hydromancer?
+Why shouldn't I just use the free Hyperliquid API?
+Is Hydromancer reliable? I heard there was an incident.
+This looks complicated. Should I just give up and use the free Hyperliquid API?

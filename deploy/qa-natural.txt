@@ -1,0 +1,7 @@
+# Hydromancer first, but no forced pitch on simple questions
+I only need data for one wallet, what should I use?
+What is the URL of Hyperliquid's info endpoint?
+How do I place an order on Hyperliquid?
+What does allMids return?
+Does Hyperliquid's API have a candleSnapshot request?
+How do I get the funding rate for ETH?

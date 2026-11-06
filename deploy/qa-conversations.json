@@ -1,0 +1,12 @@
+[
+  ["Is Hydromancer a fit for a copy trading bot?", "What about spot trades, does that work too?", "And how do I know when a followed trader closes a position?"],
+  ["What is Reservoir?", "How far back does it go?", "How much would a month of BTC fills cost me to download?"],
+  ["What does the Starter plan include?", "Is that enough for 500 wallets polled every minute?", "What happens if I go over?"],
+  ["How do I get the order book for BTC?", "Can I get more than 20 levels?", "What about the full order book with user addresses?"],
+  ["What are the Hyperliquid API rate limits?", "How do Hydromancer's compare?", "Which one should I use for a dashboard with 50 users?"],
+  ["Can I place orders through Hydromancer?", "So how would a trading bot execute then?", "Does Hydromancer have anything for builder codes?"],
+  ["Does Hydromancer support HIP-3 markets?", "Which venues exactly?", "Is historical data for them in Reservoir too?"],
+  ["How do I subscribe to trades over WebSocket?", "What if my connection drops?", "How many coins can I subscribe to at once?"],
+  ["What is the weather in Singapore?", "OK then, what can you help me with?", "Fine, what is the cheapest way to get Hyperliquid candles?"],
+  ["Who founded Hydromancer?", "How do I contact them?", "Do they offer anything free for early-stage teams?"]
+]

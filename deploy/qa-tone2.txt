@@ -1,0 +1,6 @@
+Which should I use, Hydromancer or the Hyperliquid API?
+What are the downsides of Hydromancer?
+Why shouldn't I just use the free Hyperliquid API?
+Is Hydromancer reliable? I heard there was an incident.
+This looks complicated. Should I just give up and use the free Hyperliquid API?
+Is Hydromancer worth $300 a month?

@@ -4,12 +4,23 @@ import { createPreviewServer } from './server.mjs';
 
 const stateFile = new URL('./state.json', import.meta.url);
 const clientFile = new URL('../runtime/preview-client.json', import.meta.url);
+// Lifetime of a freshly created preview state and the total chat-request budget.
+// Defaults suit a throwaway demo; a longer test environment sets both explicitly.
+const positiveInteger = (name, fallback) => {
+  const raw = process.env[name];
+  if (raw === undefined || raw === '') return fallback;
+  const value = Number(raw);
+  if (!Number.isSafeInteger(value) || value <= 0) throw new Error(`${name} must be a positive integer.`);
+  return value;
+};
+const ttlHours = positiveInteger('PREVIEW_TTL_HOURS', 6);
+const maxRequests = positiveInteger('PREVIEW_MAX_REQUESTS', 40);
 let state;
 try {
   state = JSON.parse(readFileSync(stateFile, 'utf8'));
 } catch (error) {
   if (error.code !== 'ENOENT') throw error;
-  state = { accessToken: randomBytes(32).toString('hex'), expiresAt: Date.now() + 6 * 60 * 60 * 1000, usedRequests: 0, publishedOrigin: null };
+  state = { accessToken: randomBytes(32).toString('hex'), expiresAt: Date.now() + ttlHours * 60 * 60 * 1000, usedRequests: 0, publishedOrigin: null };
   writeFileSync(stateFile, JSON.stringify(state, null, 2), { mode: 0o600, flag: 'wx' });
 }
 if (!state || typeof state !== 'object' || Array.isArray(state)
@@ -32,7 +43,7 @@ const config = {
   accessToken: state.accessToken,
   expiresAt: state.expiresAt,
   usedRequests: state.usedRequests,
-  maxRequests: 40,
+  maxRequests,
   upstreamRoot: 'http://127.0.0.1:18502',
   get appId() { return client().appId; },
   get agentId() { return client().agentId; },
@@ -49,7 +60,14 @@ const config = {
 };
 const server = createPreviewServer(config);
 server.listen(18580, '127.0.0.1', () => console.log(JSON.stringify({ service: 'hydromancer-inkeep-preview', bind: '127.0.0.1:18580', expiresAt: new Date(state.expiresAt).toISOString() })));
-setTimeout(() => {
-  server.closeAllConnections();
-  server.close(() => process.exit(0));
-}, Math.max(1, state.expiresAt - Date.now()));
+// Node timers overflow above 2^31-1 ms (about 24.8 days), so re-arm until expiry.
+const MAX_TIMER_MS = 2_147_483_647;
+const scheduleShutdown = () => {
+  const remaining = state.expiresAt - Date.now();
+  if (remaining > MAX_TIMER_MS) { setTimeout(scheduleShutdown, MAX_TIMER_MS); return; }
+  setTimeout(() => {
+    server.closeAllConnections();
+    server.close(() => process.exit(0));
+  }, Math.max(1, remaining));
+};
+scheduleShutdown();

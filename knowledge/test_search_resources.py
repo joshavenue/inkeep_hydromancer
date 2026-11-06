@@ -66,6 +66,6 @@ def test_search_does_not_materialize_full_documents_per_passage(
     first = hits[0]
     assert first['id'] == 'hydro-' + str(record['id'])
     assert first['start_offset'] == 0  # endpoint ranking still favors introduction
-    assert first['excerpt'] == data[:first['end_offset']].decode()
-    assert first['context_excerpt'] == data[:1000].decode()
+    assert data.decode().startswith(first['excerpt']) and len(first['excerpt']) <= k.SEARCH_EXCERPT
+    assert first['context_excerpt'] == ''  # excerpt already starts at the page opening
     assert first['document_chars'] == size

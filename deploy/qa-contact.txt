@@ -1,0 +1,14 @@
+# no contact line expected (visitor did not ask)
+Is Hydromancer a fit for a copy trading bot?
+How can I build an app like fomo?
+What are the downsides of Hydromancer?
+Which should I use, Hydromancer or the Hyperliquid API?
+Does Hydromancer have an SDK?
+What is Reservoir?
+I get 403 error code 1010 when calling the Hydromancer API from Python
+What does the Starter plan include?
+# contact line expected (visitor asked)
+How do I get an API key?
+Who is the founder?
+How do I contact the team?
+My key returns 403 on walletLabels, how do I get that add-on enabled?

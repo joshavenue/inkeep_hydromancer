@@ -77,9 +77,10 @@ def test_search_exact_endpoints_and_natural_fit(tmp_path):
     for h in hits:
         assert h['excerpt'] in source[h['id']]
         assert h['context_excerpt'] in source[h['id']]
-        assert h['title'] and h['heading'] and h['url'] and h['sha256'] and h['snapshot_date'] and h['section']
-        assert len(h['excerpt']) <= 4200 and len(h['context_excerpt']) <= 1000
-        assert 'source_path' not in h and 'body' not in h
+        assert h['title'] and h['heading'] and h['url'] and h['snapshot_date'] and h['section']
+        assert len(h['excerpt']) <= k.SEARCH_EXCERPT and len(h['context_excerpt']) <= k.SEARCH_CONTEXT
+        assert 'source_path' not in h and 'body' not in h and 'sha256' not in h
+        assert len(json.dumps(h)) < 2600, 'search results stay compact; fetch carries the full page'
 
 
 def test_native_endpoint_passages_keep_associated_headings(tmp_path):
@@ -166,3 +167,17 @@ def test_bounded_queries_and_readonly_fetch(tmp_path):
             k.fetch(identifier, db=db)
     with pytest.raises(ValueError):
         k.fetch('hydro-132', offset=-1, db=db)
+
+def test_results_cite_rendered_pages_not_markdown_mirrors(tmp_path):
+    k = module()
+    assert k.page_url('https://docs.hydromancer.xyz/readme/get-api-keys.md') == 'https://docs.hydromancer.xyz/readme/get-api-keys'
+    assert k.page_url('https://hyperliquid.gitbook.io/hyperliquid-docs/historical-data.md') == 'https://hyperliquid.gitbook.io/hyperliquid-docs/historical-data'
+    assert k.page_url('https://hydromancer.xyz/blog/readme.md') == 'https://hydromancer.xyz/blog/readme.md'
+    db = tmp_path / 'urls.sqlite'
+    k.build_index(db)
+    hits = k.search('userFills', 4, db=db)['results']
+    assert hits
+    for item in hits:
+        assert not item['url'].endswith('.md'), item['url']
+        assert 'llms' not in item['url']
+    assert not k.fetch(hits[0]['id'], db=db)['url'].endswith('.md')

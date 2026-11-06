@@ -11,32 +11,30 @@ from pathlib import Path
 import re
 from urllib.parse import urlparse
 
-from contracts import DOCUMENT_ID_PATTERN, read_document
+from contracts import DOCUMENT_ID_PATTERN, MAX_CATALOG_SOURCES, PROVIDERS, SECTIONS, read_document
 
 ROOT = Path(__file__).resolve().parent
-SECTIONS = ('rest-a', 'rest-b', 'websocket', 'platform', 'native')
 
 
 def import_snapshot(catalog, captures, destination):
     catalog = json.loads(Path(catalog).read_text(encoding='utf-8'))
     sources = catalog['sources']
-    if catalog.get('format_version') != 1 or not isinstance(sources, list) or not 1 <= len(sources) <= 224:
-        raise ValueError('Expected catalog format 1 with 1 to 224 reviewed public sources')
+    if catalog.get('format_version') != 1 or not isinstance(sources, list) or not 1 <= len(sources) <= MAX_CATALOG_SOURCES:
+        raise ValueError(f'Expected catalog format 1 with 1 to {MAX_CATALOG_SOURCES} reviewed public sources')
     captures, destination = Path(captures).resolve(), Path(destination).resolve()
     prepared = []
     ids, urls = set(), set()
     for source in sources:
-        native = source['provider'] == 'native'
-        prefix = 'native' if native else 'hydro'
-        host = 'hyperliquid.gitbook.io' if native else 'docs.hydromancer.xyz'
-        if (source['provider'] not in ('native', 'hydromancer') or
-                source['section'] not in (('native',) if native else SECTIONS[:-1]) or
+        spec = PROVIDERS.get(source['provider'])
+        if (spec is None or
+                source['section'] not in spec['sections'] or
                 not isinstance(source['id'], str) or
                 not re.fullmatch(DOCUMENT_ID_PATTERN, source['id']) or
-                not source['id'].startswith(prefix + '-')):
+                not source['id'].startswith(spec['prefix'] + '-')):
             raise ValueError('Invalid provider, section or document ID')
+        native = source['provider'] == 'native'
         parsed = urlparse(source['url'])
-        if parsed.scheme != 'https' or parsed.netloc != host:
+        if parsed.scheme != 'https' or parsed.netloc != spec['host']:
             raise ValueError('Non-public source URL in catalog')
         if source['id'] in ids or source['url'] in urls:
             raise ValueError('Duplicate document ID or URL in catalog')
@@ -45,7 +43,7 @@ def import_snapshot(catalog, captures, destination):
         if not source['title'].strip() or not source['snapshot_date_basis'].strip():
             raise ValueError('Title and capture date basis are required')
         datetime.fromisoformat(source['snapshot_date'])
-        filename = source['id'] + ('.txt' if native else '.md')
+        filename = source['id'] + spec['suffix']
         path = (captures / filename).resolve()
         if not path.is_relative_to(captures):
             raise ValueError('Capture outside supplied directory')
@@ -53,7 +51,7 @@ def import_snapshot(catalog, captures, destination):
         if hashlib.sha256(data).hexdigest() != source['sha256']:
             raise ValueError(f'Source hash mismatch: {source["id"]}')
         data.decode('utf-8')
-        relative = ('pages/' if native else 'sources/') + filename
+        relative = spec['directory'] + '/' + filename
         record = {key: source[key] for key in ('url', 'title', 'snapshot_date', 'snapshot_date_basis')}
         record.update(id=source['id'].split('-')[1], status=200, retrieved_at=source['snapshot_date'])
         if native:
@@ -63,14 +61,16 @@ def import_snapshot(catalog, captures, destination):
         prepared.append((source['section'], relative, data, record))
     destination.mkdir(parents=True, exist_ok=False)
     for section in SECTIONS:
-        root = destination / ('native' if section == 'native' else 'hydromancer')
-        (root / ('pages' if section == 'native' else 'sources')).mkdir(parents=True, exist_ok=True)
+        provider = next(p for p, spec in PROVIDERS.items() if section in spec['sections'])
+        spec = PROVIDERS[provider]
+        root = destination / provider
+        (root / spec['directory']).mkdir(parents=True, exist_ok=True)
         records = []
         for candidate, relative, data, record in prepared:
             if candidate == section:
                 (root / relative).write_bytes(data)
                 records.append(record)
-        ledger = root / ('source_records.json' if section == 'native' else f'{section}-assignment.json')
+        ledger = root / ('source_records.json' if provider == 'native' else f'{section}-assignment.json')
         ledger.write_text(json.dumps(records, indent=2) + '\n', encoding='utf-8')
     return len(prepared)
 

@@ -19,6 +19,13 @@ def pytest_collection_modifyitems(config, items):
                 item.add_marker(pytest.mark.skip(reason=f'Optional test: pass {option} explicitly'))
 
 
+@pytest.fixture(autouse=True)
+def isolated_ecosystem(tmp_path, monkeypatch):
+    """The repo ships a curated knowledge/ecosystem corpus; tests must never index it."""
+    monkeypatch.setattr(k, 'ECOSYSTEM', tmp_path / 'no-ecosystem')
+    monkeypatch.setattr(k, '_ECO_NAMES', None)
+
+
 @pytest.fixture
 def synthetic_corpus(tmp_path, monkeypatch):
     """Exercise index mechanics only; these deliberately tiny texts are invented."""
@@ -66,4 +73,8 @@ def synthetic_corpus(tmp_path, monkeypatch):
         ledger.write_text(json.dumps(rows), encoding='utf-8')
     monkeypatch.setattr(k, 'HYDRO', hydro)
     monkeypatch.setattr(k, 'NATIVE', native)
+    # No website ledger: an operator's real snapshots/site must never leak into fixtures.
+    monkeypatch.setattr(k, 'SITE', tmp_path / 'site')
+    monkeypatch.setattr(k, 'TELEGRAM', tmp_path / 'telegram')
+    monkeypatch.setattr(k, 'ECOSYSTEM', tmp_path / 'ecosystem')
     return records

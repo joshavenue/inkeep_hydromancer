@@ -1,21 +1,57 @@
 # Local Inkeep runtime
 
-This is the actual released **Inkeep 0.80.6** demo, not a replacement chatbot.
+This is the released **Inkeep 0.80.6** agent runtime, not a replacement chatbot.
 `agents-api`, `agents-core`, and `agents-sdk` remain pinned to 0.80.6; Zod is pinned
 and overridden to **4.3.6** for this release's schema compatibility. Preserve
-`pnpm-lock.yaml` and use a frozen install. The default remains `custom/grok-4.6`,
-with a configured 500,000-token context and **1,200-token output cap**. The
-scoped-Yes prompt, retrieval evidence gate, classic execution, step and transfer
-limits remain in `project.mjs`.
+`pnpm-lock.yaml` and use a frozen install.
 
-No live App IDs, credentials, databases, migration snapshots or historical chat
-logs are included. No TypeSafe integration is present. Nothing here creates a
-hosted account, starts a tunnel, changes Docker/system units, or provisions a
-model endpoint automatically. This is not a one-command deployment.
+The assistant answers only from the public knowledge index (see
+`../knowledge/README.md`): docs.hydromancer.xyz, hydromancer.xyz and the Hyperliquid
+API docs. Its prompt, the retrieval evidence gate, classic execution, step and
+transfer limits live in `project.mjs`.
+
+## Model and cost
+
+`config.mjs` selects the model. The default is the cheapest model that handles tool
+calls and citations reliably:
+
+| Setting | Value | Why |
+| --- | --- | --- |
+| `MODEL` | `openrouter/openai/gpt-6-luna` | GPT-6 Luna through the team's OpenRouter account: $0.10 per 1M input tokens, $0.50 per 1M output (OpenRouter passes OpenAI's list price through) |
+| reasoning | off (`reasoningEffort: 'none'`) | reasoning tokens are billed as output; a docs assistant does not need them |
+| `maxOutputTokens` | 700 | the prompt asks for answers under 200 words; the cap stops runaway output |
+| `stepCountIs` | 4 | at most one or two searches plus the answer per question |
+| prompt | about 3,300 characters | it is resent on every model call, so it stays short |
+
+Measured on 4 November 2026 with the real index and eight typical questions: one
+search per question, about 10,000 input and 190 output tokens, **about $0.0011 per
+answered question** ($1.10 per 1,000 questions). Every answer cited only the four
+allowed hosts.
+
+Alternatives, all set through `MODEL` in `.env`:
+
+- `anthropic/claude-haiku-5-5` ($0.10 / $0.50 for prompts under 100k tokens) with
+  `ANTHROPIC_API_KEY`: same rate as Luna; useful when the team has Anthropic credit.
+  Haiku 5.5 turns on adaptive thinking by default once a tool result is in the
+  conversation; measured on 4 November 2026 it then spent 230-300 billed thinking
+  tokens and searched again instead of answering, leaving about one answer in four
+  empty. `config.mjs` sends `thinking: { type: 'disabled' }`, and
+  `patches/@ai-sdk__anthropic@3.0.7.patch` (applied by pnpm on install) makes the
+  pinned provider forward that value, which it otherwise drops. Remove the patch when
+  the Inkeep release moves to `@ai-sdk/anthropic` 3.0.138 or later.
+- `openrouter/openai/gpt-5.4-nano` ($0.20 / $1.25): newer nano model, roughly double the cost.
+- `openrouter/google/gemini-2.5-flash-lite` ($0.10 / $0.40): slightly cheaper output;
+  Google recommends 3.5 Flash-Lite ($0.30 / $2.50) for new projects.
+- `custom/<id>` with `MODEL_BASE_URL` and `CUSTOM_LLM_API_KEY`: any OpenAI-compatible
+  Chat Completions endpoint, for example the previous `grok-4.6` demo setup
+  ($2 / $6, about 15 times the cost of Luna).
+
+Set a monthly credit limit on the OpenRouter key; the gateway's request limits are abuse
+protection, not billing control.
 
 ## 1. Offline checks and local configuration
 
-Use Node 24 (offline tests exercised with 24.16.0). From `runtime/`:
+Use Node 24 (offline tests exercised with 24.17.0). From `runtime/`:
 
 ```sh
 node --test
@@ -32,19 +68,17 @@ values and **refuses to overwrite an existing file**. Keep `.env` private;
 
 Edit the generated `.env` in a local editor:
 
-- **Set `MODEL_BASE_URL` explicitly** to a trusted OpenAI-compatible **Chat
-  Completions** endpoint (normally ending in `/v1`). No old proxy is assumed. Use
-  HTTPS for a remote provider, or loopback HTTP for a separately managed proxy.
-  A proxy does not need to use Hermes. No model/proxy is supplied.
-- Set **`CUSTOM_LLM_API_KEY` server-side only**. Inkeep's `custom/` provider reads
-  this variable; it is never put in project provider options, App metadata or
-  browser configuration. URLs containing credentials, query parameters or
-  fragments are rejected. For an intentionally keyless **loopback** proxy only,
-  explicitly set `MODEL_ALLOW_UNAUTHENTICATED_LOOPBACK=1`.
-- `MODEL_ID=grok-4.6` preserves the demo selection. Your provider/proxy must offer
-  that model/alias, tool calls and streaming. If deliberately selecting another
-  model, change the raw `MODEL_ID`, not the `custom/` provider. The context setting
-  is a configuration assumption, not proof of provider capacity.
+- Set **`OPENROUTER_API_KEY`** server-side only (or the key for the provider you select
+  through `MODEL`). Keys are never put in project provider options, App metadata or
+  browser configuration. Set a monthly spending limit on the key in the provider
+  dashboard; the gateway's request limits are a second line of defence, not billing
+  control.
+- Leave `MODEL=openrouter/openai/gpt-6-luna` unless you have a reason to change it.
+  Any OpenRouter model works as `openrouter/<vendor>/<model>`; `openai/` and
+  `google/` call those vendors directly with their own keys. The
+  `custom/` provider additionally requires `MODEL_BASE_URL` (HTTPS, or loopback HTTP
+  with `MODEL_ALLOW_UNAUTHENTICATED_LOOPBACK=1` for a keyless local proxy); URLs with
+  credentials, query strings or fragments are rejected.
 - Use only newly dedicated database/authorization services below. Never point
   these URLs at an existing preview, shared database or production system.
 
@@ -55,8 +89,7 @@ force warn before loading Inkeep. Treat operational logs as private.
 
 Upstream Inkeep also looks for ancestor `.env` files and `~/.inkeep/config` (the
 latter can override environment values). Use an isolated checkout/account with
-neither shared config nor inherited Inkeep/provider credentials. Do not modify a
-shared account's configuration to make this demo run.
+neither shared config nor inherited Inkeep/provider credentials.
 
 ## 2. Dedicated databases / authorization (manual prerequisite)
 
@@ -147,7 +180,7 @@ and upstream compatibility before retrying or upgrading. Do not replace it with
 `SELECT 1`, mark it applied manually, drop tables, edit the journal, or proceed
 with existing skills unmigrated. A fresh install is not proof of an empty table.
 There is no skip flag here; an upstream-compatible resolution is a manual
-prerequisite. End-to-end bootstrap is not claimed verified in this cleanup task.
+prerequisite.
 
 ## 4. Initialize tenant/project and create a new local App
 
@@ -162,22 +195,24 @@ node --env-file=.env server.mjs
 
 Auth init creates `TENANT_ID=hydromancer-preview`, local admin and SpiceDB schema.
 No admin UI is supplied. Do not enable force-password-reset on an existing
-account. Start the approved public-docs MCP separately following
-`../knowledge/README.md` (loopback `18581`) and ensure the explicitly selected
-model endpoint is available. In another terminal, still in `runtime/`:
+account. Start the public-docs MCP separately following `../knowledge/README.md`
+(loopback `18581`, after `refresh.py` has built the index) and make sure the
+selected model key is set. In another terminal, still in `runtime/`:
 
 ```sh
 node --env-file=.env project.mjs
 node --env-file=.env scripts/create-local-app.mjs --create-anonymous-app
 ```
 
-App creation requires the explicit flag (or equivalent `pnpm init:app`). It POSTs
-to loopback management with server-only bypass authorization, then GETs **that
-exact new App** to verify tenant/project/agent, enabled state, anonymous mode and
-exact allowlist before saving `preview-client.json` mode `0600`. Only safe
-metadata is saved. It refuses to overwrite existing metadata. If POST succeeds
-but readback/disk write fails, inspect the created App with management tools
-before retrying, to avoid duplicate orphan Apps. App creation calls no model.
+`project.mjs` is idempotent: rerun it after changing the prompt or model to push the
+new configuration. App creation requires the explicit flag (or equivalent
+`pnpm init:app`). It POSTs to loopback management with server-only bypass
+authorization, then GETs **that exact new App** to verify tenant/project/agent,
+enabled state, anonymous mode and exact allowlist before saving
+`preview-client.json` mode `0600`. Only safe metadata is saved. It refuses to
+overwrite existing metadata. If POST succeeds but readback/disk write fails,
+inspect the created App with management tools before retrying, to avoid duplicate
+orphan Apps. App creation calls no model.
 
 `preview-client.example.json` shows the shape with **empty** App ID/URL; do not
 copy it as working state. A new DB must issue its own App ID. Initial allowed
@@ -200,15 +235,15 @@ INKEEP_LIVE_TESTS=1 INKEEP_MODEL_TESTS=1 node --env-file=.env --test chat-smoke.
 ```
 
 Tests skip if opt-ins/configuration/credentials/services are missing. Model tests
-preflight API health, MCP health and authenticated `GET /models`; endpoints
-without `/models` skip, not pass. No inference happens unless both flags and
-preflights pass. Auth/semantic/stream errors **after preflight fail tests**. Skips
-are not live verification. SSE transcripts/answers stay in ignored `logs/`; never
-publish them without a separate privacy review.
+preflight API health, MCP health and an authenticated `GET /models` on the selected
+provider; endpoints without `/models` skip, not pass. No inference happens unless
+both flags and preflights pass. Auth/semantic/stream errors **after preflight fail
+tests**. Skips are not live verification. SSE transcripts/answers stay in ignored
+`logs/`; never publish them without a separate privacy review.
 
 Offline tests cover secret permissions/non-overwrite, endpoint/credential
 separation, early startup refusal, unmodified migration copying, App readback
-rejection and live-test gates. Synthetic HTTP fixtures exercise contracts only;
-they do not establish DB/provider compatibility. Stop only processes/dedicated
-resources you started. Setup scripts never change system units, shared Docker
-state, frontend expiry or budgets.
+rejection, prompt policy and live-test gates. Synthetic HTTP fixtures exercise
+contracts only; they do not establish DB/provider compatibility. Stop only
+processes/dedicated resources you started. Setup scripts never change system
+units, shared Docker state, frontend expiry or budgets.

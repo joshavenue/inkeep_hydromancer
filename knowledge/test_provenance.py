@@ -27,6 +27,8 @@ def test_direct_ledger_uses_actual_retrieval_timestamp(tmp_path, synthetic_corpu
                next(d for d in k.search(record['title'], 8, db=db)['results'] if d['id'] == identifier)]
     for output in outputs:
         assert output['snapshot_date'] == record['retrieved_at']
+    # Compact search results carry the date only; the basis stays on fetch and the report.
+    for output in outputs[:2]:
         assert output['snapshot_date_basis'] == 'retrieved_at'
 
 

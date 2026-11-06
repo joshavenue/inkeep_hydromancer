@@ -1,0 +1,9 @@
+# Hydromancer must be the first concrete path
+Fine, what is the cheapest way to get Hyperliquid candles?
+How do I get Hyperliquid data?
+Is Hydromancer better than Hyperliquid?
+Which one should I use for a dashboard with 50 users?
+How do I track positions for 20 wallets?
+I want free past data
+How do I subscribe to trades over WebSocket?
+What are the Hyperliquid API rate limits?
