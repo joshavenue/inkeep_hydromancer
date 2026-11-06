@@ -1,7 +1,16 @@
 diff --git a/dist/index.js b/dist/index.js
-index 492d864c7ceec6057867c4c56187eac3dd4f070a..dc0711391e75093803eea7cd33efbe0b946cc266 100644
+index 492d864c7ceec6057867c4c56187eac3dd4f070a..81fd6362846b0caae6522a47201a87a44d4a43f9 100644
 --- a/dist/index.js
 +++ b/dist/index.js
+@@ -813,7 +813,7 @@ var anthropicProviderOptions = import_v43.z.object({
+   /**
+    * @default 'high'
+    */
+-  effort: import_v43.z.enum(["low", "medium", "high"]).optional(),
++  effort: import_v43.z.enum(["low", "medium", "high", "xhigh", "max"]).optional(),
+   contextManagement: import_v43.z.object({
+     edits: import_v43.z.array(
+       import_v43.z.discriminatedUnion("type", [
 @@ -2465,6 +2465,9 @@ var AnthropicMessagesLanguageModel = class {
        ...isThinking && {
          thinking: { type: "enabled", budget_tokens: thinkingBudget }
@@ -13,9 +22,18 @@ index 492d864c7ceec6057867c4c56187eac3dd4f070a..dc0711391e75093803eea7cd33efbe0b
          output_config: { effort: anthropicOptions.effort }
        },
 diff --git a/dist/index.mjs b/dist/index.mjs
-index 0d13d6f806f846e9ee14ce1470152927bd5e4b60..ae276e01c68461d40f049c31d27de546a3d009b8 100644
+index 0d13d6f806f846e9ee14ce1470152927bd5e4b60..f0688b52a9512d43f42c2e43b49246fa3bc9dece 100644
 --- a/dist/index.mjs
 +++ b/dist/index.mjs
+@@ -807,7 +807,7 @@ var anthropicProviderOptions = z3.object({
+   /**
+    * @default 'high'
+    */
+-  effort: z3.enum(["low", "medium", "high"]).optional(),
++  effort: z3.enum(["low", "medium", "high", "xhigh", "max"]).optional(),
+   contextManagement: z3.object({
+     edits: z3.array(
+       z3.discriminatedUnion("type", [
 @@ -2488,6 +2488,9 @@ var AnthropicMessagesLanguageModel = class {
        ...isThinking && {
          thinking: { type: "enabled", budget_tokens: thinkingBudget }
@@ -26,3 +44,29 @@ index 0d13d6f806f846e9ee14ce1470152927bd5e4b60..ae276e01c68461d40f049c31d27de546
        ...(anthropicOptions == null ? void 0 : anthropicOptions.effort) && {
          output_config: { effort: anthropicOptions.effort }
        },
+diff --git a/dist/internal/index.js b/dist/internal/index.js
+index 7629bcc9c5942546c5a47a65611df9c64e8f6395..ac0ed4c22edcf4b64eb8872a8cddeb5cba7af7eb 100644
+--- a/dist/internal/index.js
++++ b/dist/internal/index.js
+@@ -805,7 +805,7 @@ var anthropicProviderOptions = import_v43.z.object({
+   /**
+    * @default 'high'
+    */
+-  effort: import_v43.z.enum(["low", "medium", "high"]).optional(),
++  effort: import_v43.z.enum(["low", "medium", "high", "xhigh", "max"]).optional(),
+   contextManagement: import_v43.z.object({
+     edits: import_v43.z.array(
+       import_v43.z.discriminatedUnion("type", [
+diff --git a/dist/internal/index.mjs b/dist/internal/index.mjs
+index 2b0686636787d5c2b911e220689a7770318112b9..b951853f84aa42e8000cd7e99ae8528f9890dd37 100644
+--- a/dist/internal/index.mjs
++++ b/dist/internal/index.mjs
+@@ -792,7 +792,7 @@ var anthropicProviderOptions = z3.object({
+   /**
+    * @default 'high'
+    */
+-  effort: z3.enum(["low", "medium", "high"]).optional(),
++  effort: z3.enum(["low", "medium", "high", "xhigh", "max"]).optional(),
+   contextManagement: z3.object({
+     edits: z3.array(
+       z3.discriminatedUnion("type", [

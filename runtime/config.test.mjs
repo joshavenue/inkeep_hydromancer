@@ -42,7 +42,8 @@ test('Anthropic provider needs its own key and disables adaptive thinking', asyn
   const high = modelConfig({ ...env, ANTHROPIC_EFFORT: 'high' });
   assert.deepEqual(high.providerOptions.anthropic, { effort: 'high' });
   assert.ok(high.providerOptions.maxOutputTokens >= 4000, 'thinking needs output headroom');
-  assert.throws(() => modelConfig({ ...env, ANTHROPIC_EFFORT: 'max' }), /low, medium or high/);
+  assert.deepEqual(modelConfig({ ...env, ANTHROPIC_EFFORT: 'xhigh' }).providerOptions.anthropic, { effort: 'xhigh' });
+  assert.throws(() => modelConfig({ ...env, ANTHROPIC_EFFORT: 'ultra' }), /low, medium, high, xhigh or max/);
 });
 test('direct OpenAI provider keeps reasoning off and low verbosity', async () => {
   const { modelConfig, MAX_OUTPUT_TOKENS } = await import('./config.mjs');
