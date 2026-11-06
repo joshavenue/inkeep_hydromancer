@@ -1,0 +1,20 @@
+Is Hydromancer a fit for a copy trading bot?
+How is Hydromancer different from the Hyperliquid API?
+Why would I pay for Hydromancer when the Hyperliquid API is free?
+which plan should i use if i am building an app like fomo?
+I want to build something like Dexari. Where do I start?
+I'm not a developer, can I still build a trading dashboard?
+What data does Reservoir contain?
+Which Reservoir venues have closed and when?
+How much would a month of BTC fills cost me to download?
+Fine, what is the cheapest way to get Hyperliquid candles?
+I get 403 error code 1010 when calling the Hydromancer API from Python
+My WebSocket keeps disconnecting after a minute, why?
+How do I track positions for 20 wallets?
+How do I place an order on Hyperliquid?
+What does the Starter plan include?
+Which plan is tread.fi on?
+Who is the founder?
+What are the downsides of Hydromancer?
+How reliable is Hydromancer?
+What is the weather in Singapore?
