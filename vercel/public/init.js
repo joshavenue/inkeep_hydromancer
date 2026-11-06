@@ -5,8 +5,23 @@ if (!response.ok) throw new Error('The assistant is not ready. Please reload sho
 const config = await response.json();
 const BASE_URL = window.location.origin + '/api';
 window.Inkeep.ChatButton({
-  avatar: '/hydromancer-cat.webp',
-  baseSettings: { shouldBypassCaptcha: true, primaryBrandColor: '#1e3a5f' },
+  avatar: '/hydromancer-cat-wave.gif',
+  label: 'Ask the Hydromancer assistant',
+  baseSettings: {
+    shouldBypassCaptcha: true,
+    primaryBrandColor: '#1e3a5f',
+    theme: {
+      styles: [{
+        key: 'hydromancer-cat-button',
+        type: 'style',
+        value: `
+          .ikp-chat-button__button { width: 64px; height: 64px; padding: 0; border-radius: 9999px; overflow: hidden; justify-content: center; }
+          .ikp-chat-button__text { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+          .ikp-chat-button__avatar-content, .ikp-chat-button__avatar-image { width: 64px; height: 64px; margin: 0; border-radius: 9999px; }
+        `,
+      }],
+    },
+  },
   aiChatSettings: {
     appId: config.appId,
     baseUrl: BASE_URL,
