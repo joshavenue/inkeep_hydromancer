@@ -5,11 +5,13 @@ if (!response.ok) throw new Error('The assistant is not ready. Please reload sho
 const config = await response.json();
 const BASE_URL = window.location.origin + '/api';
 window.Inkeep.ChatButton({
+  avatar: '/hydromancer-cat.webp',
   baseSettings: { shouldBypassCaptcha: true, primaryBrandColor: '#1e3a5f' },
   aiChatSettings: {
     appId: config.appId,
     baseUrl: BASE_URL,
     aiAssistantName: 'Hydromancer assistant',
+    aiAssistantAvatar: '/hydromancer-cat.webp',
     chatSubjectName: 'Hydromancer',
     placeholder: 'Ask about the Hydromancer API, Reservoir or the Hyperliquid API',
     introMessage: 'Ask about the Hydromancer API, Reservoir or the Hyperliquid API. Answers cite the public docs and hydromancer.xyz only.',
